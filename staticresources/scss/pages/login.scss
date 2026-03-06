@@ -1,0 +1,47 @@
+// Login page [Start]
+.loginPage{
+  .videoWrapper{
+    height: calc(100vh - toRem(16)); border-radius: toRem(36);
+    .contentHolder{background: rgba(map-get($bt-primary, 100), 90%); position: absolute; left:0; top:0; z-index: $z-index-default;
+
+      .portalType{letter-spacing: toRem(2.56); line-height: toRem(26); 
+        &:after{content:''; background: $white; width: toRem(150); border-top: toRem(1) solid $white; margin-left: toRem(20);}
+      }
+      .mainHeading{line-height: toRem(72); letter-spacing: toRem(-2.88);}
+      .slogan{line-height: toRem(26)}
+    }
+    .videoPlayer{
+      object-fit: cover; position: relative; z-index: 0;
+    }
+  }
+  .loginForm{width: 100%; height: 100%; margin: 0 auto;
+
+    > div:first-of-type{
+      width: 100%;
+    }
+
+    .formWrapper{max-width: toRem(430);}
+    .infoMessage{max-width: toRem(610); color:#3D3D3D; margin-left: auto; margin-right: auto;}
+
+    .slds-form-element{
+      .slds-input{background: $gray-100; font-size: toRem(14); line-height: toRem(20);}
+    }
+
+    .iconRight > button{ bottom: toRem(10) !important;
+       > img{
+        @extend .filter-grey-600;
+      }
+    }
+
+    @include mq(0, $mq-medium) {
+      max-width: 100%;
+    }
+  }
+  
+  .formCol{
+    @include mq(0, $mq-medium){
+      height: 100vh;
+    }
+  }
+}
+// Login page [END]

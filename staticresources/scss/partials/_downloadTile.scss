@@ -1,0 +1,7 @@
+.downloadTile{max-width: toRem(300); padding: toRem(8) toRem(10); border-radius: toRem(6); border:toRem(1) solid rgba($black, 10%); display: flex; align-items: center; gap: toRem(8);
+    .details{flex: 1; width: calc(100% - toRem(60));
+        .icon{width: toRem(32);}
+        .title{width: 100%; @extend .fw-medium; margin-bottom: toRem(2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        .fileSize{font-size: toRem(10);}
+    }
+}

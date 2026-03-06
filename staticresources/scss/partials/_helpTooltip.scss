@@ -1,0 +1,11 @@
+// help tooltip
+.customInfo{
+ 
+  &.primaryTooltip{
+    lightning-helptext{
+      .slds-button{
+        @extend .filter-primary-100;
+      }
+    }
+  }
+}

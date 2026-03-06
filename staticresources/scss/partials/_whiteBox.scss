@@ -1,0 +1,41 @@
+.whiteBox{background: $white; padding:toRem(24); border-radius: toRem(6); border: toRem(1) solid rgba($gray-900, 0.10); transition: all 0.3s ease-in-out;
+    
+    @include mq(0, $mq-medium){
+        padding: toRem(16);
+    }
+
+    // focused
+    &.focused{
+        border: toRem(1) solid $primary;
+    }
+
+    //healthWalletWrapper
+    &.healthWalletWrapper{margin: 0 0 toRem(-10);
+        @extend %cardBoxShadow2;
+
+        .posterWrapper{max-width: toRem(190);
+            @include mq(0, $mq-small){
+                max-width: unset;
+            }
+        }
+    }
+
+    .heading{
+        .h3{
+            @include mq(0, $mq-medium){
+                font-size: toRem(20);
+            }
+        }
+    }
+    // .subheading{}
+    .desc{
+        ul, ol{
+            padding: unset; margin: unset; list-style: unset;
+        }
+        ol{list-style: decimal; margin-left: toRem(20);
+            > li {
+                &::marker{color: text-primary;}
+            }
+        }
+    }
+}

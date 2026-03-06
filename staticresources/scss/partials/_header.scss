@@ -1,0 +1,36 @@
+// Header [Start]
+.mblMainHeader{
+  padding: toRem(14) toRem(16); box-shadow: 0px 4px 22.9px 0px rgba(7, 18, 26, 0.25);
+
+  .btn-menuBar, .btn-AI{background: unset; padding:0; border: none;}
+
+  .btn-AI{
+    img{@include square(toRem(30))}
+  }
+}
+.mainHeader{
+  @include mq(0, $mq-medium){
+    position: absolute; top: -100vh; left: -100vw;
+  }
+
+  // .mainHeading{}
+  .userInfo{
+    // .userName{}
+    .avatar{width: toRem(40); height: toRem(40); border-radius: 50%;
+      .avatarWrapper{
+        > img{width: toRem(36);}
+      }
+      .menu.slds-dropdown-trigger{width: 100% !important; height: 100% !important; position: absolute !important; left:0; top: 0;
+        .slds-button{width: 100%; height: 100%; opacity: 0;}
+      }
+    }
+  }
+  .btn-helpCircle{background: transparent; padding:0;}
+}
+.btn-ai{@extend .bg-graddient-4; width: toRem(256); font-weight: $font-weight-semibold; line-height: 110%; padding: toRem(8) toRem(16); border:toRem(1) $white solid; box-shadow: 0px 22px 6px 0px rgba(0, 0, 0, 0.00), 0px 14px 6px 0px rgba(0, 0, 0, 0.01), 0px 8px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
+  
+  @include mq(0 , $mq-small){
+    width: 100%;
+  }
+}
+// Header [END]

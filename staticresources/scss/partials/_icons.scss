@@ -1,0 +1,150 @@
+// Icon [Start]
+$icoEye: url("./../images/ico-eye.svg");
+$icoEyeSlash: url("./../images/ico-eye-slash.svg");
+$icoSideArrowUp: url("./../images/ico-side-arrow-up.svg");
+$icoThumb: url("./../images/ico-thumbs-up.svg");
+$icoMoney: url("./../images/ico-money.svg");
+$icoOctagonAlert: url("./../images/ico-octagon-alert.svg");
+$icoOther: url("./../images/ico-other.svg");
+$icoPaperClip: url("./../images/ico-paperclip.svg");
+$icoCaretDown: url("./../images/ico-caretDown.svg");
+$icoCaretRight: url("./../images/ico-caretRight.svg");
+$icoCircleArrowRight :url("./../images/ico-circle-arrow-right.svg");
+$icoSearch: url("./../images/ico-search.svg");
+$icoCircleHelp: url("./../images/ico-circle-help.svg");
+$icoFilter: url("./../images/ico-filter.svg");
+$icoTimes: url("./../images/ico-times.svg");
+$icoPlus: url("./../images/ico-plus.svg");
+$icoCircleTimes: url("./../images/ico-circle-times.svg");
+$icoCircleInfo: url("./../images/ico-circle-info.svg");
+$icoFileText: url("./../images/ico-file-text.svg");
+$icoFileLock: url("./../images/ico-fileLock.svg");
+$icoFilePDF: url("./../images/ico-pdf.svg");
+$icoFilePicture: url("./../images/ico-picture.svg");
+$icoFileDashed: url("./../images/ico-fileDashed.svg");
+$icoDownload: url("./../images/ico-downloadSimple.svg");
+$icolink: url("./../images/ico-linkSimple.svg");
+$icoArrowLeft: url("./../images/ico-arrow-left.svg");
+$icoArrowRight: url("./../images/ico-arrow-right.svg");
+$icoMapPin: url("./../images/ico-mapPin.svg");
+$icoCirclePlus: url("./../images/ico-circlePlus.svg");
+$icoChevronDown: url("./../images/ico-chevron-down.svg");
+$icoPlanBrochure: url("./../images/ico-planBrochure.svg");
+$icoArrowSquareOut: url("./../images/ico-arrow-square-out.svg");
+$icoArrowRotate: url("./../images/ico-arrow-rotate.svg");
+$icoRegisterBook: url("./../images/ico-register-book.svg");
+$icoPhone: url("./../images/ico-phone.svg");
+$icoMail : url("./../images/ico-mail.svg");
+$icoHeadset: url("./../images/ico-headset.svg");
+$icoCheck: url("./../images/ico-check.svg");
+$icoEdit: url("./../images/ico-edit.svg");
+$icoChevronRight: url("./../images/ico-chevron-right.svg");
+$icoChevronLeft: url("./../images/ico-chevron-left.svg");
+$icoArrowDown: url("./../images/ico-arrowDown.svg");
+$icoRightUp: url("./../images/ico-right-up.svg");
+$icoFile: url("./../images/ico-file.svg");
+$iconIdCard: url('./../images/ico-id-card.svg');
+$icoClipboard: url("./../images/ico-clipboard.svg");
+$icoSealQuestion: url("./../images/ico-sealQuestion.svg");
+$icoClose: url("./../images/ico-menu-close.svg");
+$icoChat: url("./../images/ico-chat.svg");
+$icoHome: url("./../images/ico-home.svg");
+$icoIDCard: url("./../images/ico-IDcard.svg");
+$icoFilePlus: url("./../images/ico-file-plus.svg");
+$icoCheckSquareOffset: url("./../images/ico-check-square-offset.svg");
+$icoFileSearch: url("./../images/ico-file-search.svg");
+$icoMagnifyingGlassPlus: url("./../images/ico-magnifying-glass-plus.svg");
+$icoFilterBars: url("./../images/ico-filterBars.svg");
+$icoCreditCard: url("./../images/ico-creditCard.svg");
+$icoBank: url("./../images/ico-bank.svg");
+$icoNotes: url("./../images/ico-notes.svg");
+$icoHistory: url("./../images/ico-history.svg");
+$icoNote: url("./../images/ico-notes.svg");
+$icoIndustry: url("./../images/ico-industry.svg");
+$icoOnlineBusiness: url("./../images/ico-onlineBusiness.svg");
+$icoCradit: url("./../images/ico-cradit.svg");
+
+$icoLead: url("./../images/ico-lead.svg");
+$icoSearchBox: url("./../images/ico-searchBox.svg");
+$icoNotesStar: url("./../images/ico-notesStar.svg");
+$icoAccountInfo: url("./../images/ico-accountInfo.svg");
+$icoSettingsList: url("./../images/ico-settingsList.svg");
+$icoClear: url("./../images/ico-clear.svg");
+$icoAdditional: url("./../images/ico-additional.svg");
+$icoClipboardCheck: url("./../images/ico-clipboardCheck.svg");
+$icoCrown: url("./../images/ico-crown.svg");
+$icoMultiFiles: url("./../images/ico-multifiles.svg");
+
+$iconSalesNote: url("./../images/ico-salesNote.svg");
+$iconEditNotes: url("./../images/ico-editNotes.svg");
+
+$icoSFArrowdown : url("./../images/ico-sf-arrowdown.svg");
+
+$icoPolicy: url("./../images/ico-policy.svg");
+
+$icons: (
+  "icoEye" : $icoEye,
+  "icoEyeSlash" : $icoEyeSlash,
+  "icoSideArrowUp" : $icoSideArrowUp,
+  "icoThumb" : $icoThumb,
+  "icoMoney" : $icoMoney,
+  "icoOctagonAlert" : $icoOctagonAlert,
+  "icoOther" : $icoOther,
+  "icoPaperClip" : $icoPaperClip,
+  "icoCaretDown" : $icoCaretDown,
+  "icoCaretRight" : $icoCaretRight,
+  "icoCircleArrowRight" : $icoCircleArrowRight,
+  "icoSearch" : $icoSearch,
+  "icoCircleHelp" : $icoCircleHelp,
+  "icoFilter" : $icoFilter,
+  "icoTimes" : $icoTimes,
+  "icoPlus" : $icoPlus,
+  "icoCircleTimes" : $icoCircleTimes,
+  "icoCircleInfo" : $icoCircleInfo,
+  "icoFileText" : $icoFileText,
+  "icoFileLock" : $icoFileLock,
+  "icoFilePDF" : $icoFilePDF,
+  "icoFilePicture" : $icoFilePicture,
+  "icoFileDashed" : $icoFileDashed,
+  "icoDownload" : $icoDownload,
+  "icolink" : $icolink,
+  "icoArrowLeft" : $icoArrowLeft,
+  "icoArrowRight" : $icoArrowRight,
+  "icoMapPin" : $icoMapPin,
+  "icoCirclePlus" : $icoCirclePlus,
+  "icoChevronDown" : $icoChevronDown,
+  "icoPlanBrochure" : $icoPlanBrochure,
+  "icoArrowSquareOut" : $icoArrowSquareOut,
+  "icoArrowRotate" : $icoArrowRotate,
+  "icoRegisterBook" : $icoRegisterBook,
+  "icoPhone" : $icoPhone,
+  "icoMail" : $icoMail,
+  "icoHeadset" : $icoHeadset,
+  "icoCheck" : $icoCheck,
+  "icoEdit" : $icoEdit,
+  "icoChevronRight" : $icoChevronRight,
+  "icoChevronLeft" : $icoChevronLeft,
+  "icoArrowDown" : $icoArrowDown,
+  "icoRightUp" : $icoRightUp,
+  "icoFile" : $icoFile,
+  "iconIdCard" : $iconIdCard,
+  "icoClipboard" : $icoClipboard,
+  "icoSealQuestion" : $icoSealQuestion,
+  "icoClose" : $icoClose,
+  "icoChat" : $icoChat,
+  "icoHome" : $icoHome,
+  "icoIDCard" : $icoIDCard,
+  "icoFilePlus" : $icoFilePlus,
+  "icoCheckSquareOffset" : $icoCheckSquareOffset,
+  "icoFileSearch" : $icoFileSearch,
+  "icoMagnifyingGlassPlus" : $icoMagnifyingGlassPlus,
+  "icoFilterBars" : $icoFilterBars,
+  "icoCreditCard" : $icoCreditCard,
+  "icoBank" : $icoBank,
+  "icoNotes" : $icoNotes,
+  // "icoHistory" : $icoHistory,
+  // "icoNote" : $icoNote,
+  "icoCradit" : $icoCradit,
+  "icoSFArrowdown": $icoSFArrowdown,
+  "icoPolicy": $icoPolicy,
+);

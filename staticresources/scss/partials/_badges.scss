@@ -1,0 +1,33 @@
+// Badge [Start]
+@use "sass:map";
+.badge {
+  background-color: $badge-default-bg;
+  color: $badge-default-color;
+  font-size: $badge-font-size;
+  font-weight: $badge-font-weight;
+  // line-height: normal;
+  padding: $badge-padding;
+  border-radius: $badge-border-radius;
+
+  // badges generator
+  // @include badge-variants;
+
+  &.success {
+    background-color: var(--success-300);
+  }
+  &.warning {
+    background-color: var(--warning-300);
+  }
+  &.error {
+    background-color: var(--error-300);
+  }
+  &.disabled {
+    background-color: var(--disabled-300);
+  }
+
+  &.alignment-right {
+    margin-left: auto;
+    @extend .mr-10px;
+  }
+}
+// Badge [END]

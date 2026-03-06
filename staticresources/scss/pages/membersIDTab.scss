@@ -1,0 +1,45 @@
+// Members Tabs [Start]
+.membersTabs{
+  .slds-tabs_default{
+    // Tab Nav [Start]
+    .slds-tabs_default__nav{
+      gap: toRem(12); border-bottom: none;
+      .slds-tabs_default__item{border: unset !important;
+        &:not(.slds-tabs_default__overflow-button){
+          background: $gray-100; padding:toRem(6) toRem(25); border-radius: toRem(6); display: flex; align-items: center; position: relative;
+
+          @extend .trans-3all;
+          
+          &:before{content: ''; @include square(toRem(16)); background: $icoUser no-repeat center center; background-size: cover; margin-right: toRem(4); display: block;
+          }
+          &:after{display: none;}
+          
+          .slds-tabs_default__link{color:$black; font-size: toRem(14); line-height: toRem(19); height: toRem(32); display: flex; align-items: center; justify-content: center;}
+
+          //hover , active
+          &:hover, &.slds-is-active{
+            background-color: $primary;
+            &:before{@extend .filter-white;}
+            .slds-tabs_default__link{color:$white; font-weight: $font-weight-semibold;}
+          }
+        }
+        &.slds-tabs_default__overflow-button{
+          .slds-button{@extend .py-0px;}
+        }
+      }
+    }
+    // Tab Nav [END]
+    // Tab Panel [Start]
+    .slds-tabs_default__content{
+      margin-top: toRem(32);
+    }// Tab Panel [END]
+  }
+
+  .slds-accordion__content{background: $white; padding:toRem(24); border-radius: toRem(6); border: toRem(1) solid rgba($gray-900, 0.10); transition: all 0.3s ease-in-out;
+            
+      @include mq(0, $mq-small) {
+          padding: toRem(12);
+      }
+  }
+}
+// Members Tabs [END]

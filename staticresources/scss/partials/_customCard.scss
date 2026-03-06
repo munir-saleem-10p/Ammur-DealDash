@@ -1,0 +1,8 @@
+.customCard{
+    .slds-card{@extend .brd-4; border: toRem(1) $gray-375 solid; @extend .p-16px;
+        .slds-card__header{
+            @extend %pageheader; padding: toRem(16); @extend .brd-4;
+        }
+        .slds-card__body{margin-bottom: 0;}
+    }
+}

@@ -1,0 +1,17 @@
+.paginationWrapper {display: flex; justify-content: end;  padding-top: toRem(12);
+  .pagination {list-style: none; margin: 0; padding: 0; display: flex; gap: toRem(6);
+    li {
+      button {background: $gray-100; width: toRem(28); color: $gray-600; font-size: toRem(13); font-weight: $font-weight-semibold; text-align: center; text-decoration: none; line-height: toRem(16); padding: toRem(8); border: none; border-radius: toRem(4); display: block; @extend .trans-3;
+        
+        &[aria-current="page"],
+        &:hover,
+        &.current {
+          &:not([aria-disabled="true"]){
+          background-color: $primary; color: $white;
+          }
+        }
+        &[aria-disabled="true"]{background: $gray-375; color: $gray-600; border-color: $gray-350; pointer-events: none; cursor: none;}
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.downloadFileTile{
+    background: url('./../images/ico-pdf-big.svg') no-repeat 10px 10px rgba($black, 0.01); max-width: toRem(400); border: toRem(1) solid rgba($black, 0.1); border-radius: toRem(6); padding: toRem(8) toRem(12) toRem(8) toRem(48);  display: inline-flex; align-items: center; transition: all 0.3s ease-in-out;
+
+    .desc{display: flex; align-items: center; gap: toRem(8);
+        .info{
+            .fileTitle{font-size: toRem(14); font-weight: $font-weight-medium;}
+            .fileSize{font-size: toRem(10); }
+        }
+        .actions{ color:$primary; display: flex; align-items: center; gap: toRem(8);
+        }
+    }
+
+    &[data-fileType="pdf"]{
+        background-image: url("./../images/ico-pdf.svg");
+    }
+    &[data-fileType="jpg"],
+    &[data-fileType="jpeg"],
+    &[data-fileType="png"],
+    &[data-fileType="gif"]{
+        background-image: url("./../images/ico-picture.svg");
+    }
+    &[data-fileType="unknown"]{
+        background-image: url("./../images/ico-fileDashed.svg");
+    }
+
+    //hover
+    &:hover{
+        border-color: $primary;
+    }
+}

@@ -1,0 +1,115 @@
+/* Buttons [Start] */
+.btn{color:$button-font-color; padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
+  /* box-shadow: 0 toRem(22) toRem(6) 0 rgba($black, 0.00), 0 toRem(14) toRem(6) 0 rgba($black, 0.01), 0 toRem(8) toRem(5) 0 rgba($black, 0.05), 0 toRem(4) toRem(4) 0 rgba($black, 0.09), 0 toRem(1) toRem(2) 0 rgba($black, 0.10); */
+
+  &:disabled{
+    background: $button-disabled-bg; color: $button-disabled-font-color;
+  }
+  //primary
+  &.btn-primary{
+    background: $button-primary-bg; color: $button-primary-font-color;
+
+    // hover / active
+    &:hover, &:active, &.active{
+      background: $button-primary-bg-hover !important;
+      color:$button-font-color;
+    }
+
+    &:disabled{
+      background: $primary !important; color: inherit !important; opacity: 0.5;
+    }
+  }
+  //secondary
+  &.btn-secondary{
+    background: $button-secondary-bg; color: $button-secondary-font-color;
+
+    &:hover, &:active, &.active{
+      background: $button-secondary-bg-hover !important;
+      color: $button-secondary-font-color;
+    }
+  }
+
+  &.btn-disabled, &:disabled{
+    &, &:hover, &:active, &.active{
+    background: var(--gray-300) !important; color: $gray-400 !important; pointer-events: none;
+    }
+  }
+
+  // button-text
+  &.btn-text{
+    background: none; border: none; box-shadow: none;
+  }
+}
+
+.btn-icon{background: none; border: none; box-shadow: none;}
+/* Buttons [END] */
+
+/* Neutral button */
+.dealDashWrapper{
+  lightning-button .slds-button_neutral {
+    @include custom-brand-button(#f3f3f3, #e0e0e0, #cccccc);
+    color: #000;
+  }
+
+  /* Brand button */
+  lightning-button .slds-button_brand {
+    @include custom-brand-button($button-primary-bg, $button-primary-bg-hover, $button-primary-focus);
+    color: $button-primary-font-color;
+
+    &:disabled{
+      background: $primary !important; color: inherit !important; opacity: 0.5;
+    }
+  }
+
+  /* Brand-outline button */
+  lightning-button .slds-button_brand-outline {
+    @include custom-brand-button($button-outline-primary-bg-hover, $button-outline-primary-bg-hover, $button-outline-primary-focus);
+    color: $button-outline-primary-font-color;
+  }
+
+  /* Destructive button */
+  lightning-button .slds-button_destructive {
+    @include custom-brand-button(#c23934, #a61d1a, #ff9999);
+    color: #fff;
+  }
+
+  /* Destructive-text button */
+  lightning-button .slds-button_destructive-text {
+    @include custom-brand-button(transparent, #ffe5e5, #ff9999);
+    color: #c23934;
+  }
+
+  /* Inverse button */
+  lightning-button .slds-button_inverse {
+    @include custom-brand-button(#ffffff, #f0f0f0, #cccccc);
+    color: #005fb2;
+  }
+
+  /* Success button */
+  lightning-button .slds-button_success {
+    @include custom-brand-button(#2e844a, #27663f, #99cc99);
+    color: #fff;
+  }
+}
+
+.status-button {
+    border: none;
+    border-radius: 12px;  
+    display: inline-flex;
+    align-items: center;
+    padding: toRem(12) toRem(20);
+    gap: 0.35rem;
+    cursor: default;
+
+    svg {
+        width: toRem(17);
+        height: toRem(17);
+        fill: $secondary;
+    }
+}
+
+.convert-button {
+  width: 100%;
+  max-width: toRem(320);
+  border-radius: toRem(25);
+}

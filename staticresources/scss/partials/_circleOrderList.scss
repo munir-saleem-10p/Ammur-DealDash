@@ -1,0 +1,9 @@
+.circleOrderList {list-style-type: decimal !important; padding-left: 0;
+
+    .item{margin-bottom: toRem(16); position: relative; display: flex; gap: toRem(10);
+        .number{background:$primary; width: toRem(21); height: toRem(21); color:$white; font-size: toRem(12); font-weight: $font-weight-semibold; border-radius: 50%; display: flex; align-items: center; justify-content: center;}
+        .desc{
+            max-width: calc(100% - toRem(36));
+        }
+    }
+}

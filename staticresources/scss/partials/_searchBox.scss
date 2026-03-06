@@ -1,0 +1,12 @@
+// SearchBox
+.searchBox{max-width: toRem(520) ;  position: relative;
+  .slds-input{background: $white !important; font-weight: $font-weight-normal; border: toRem(1) solid $primary !important; padding: toRem(11) toRem(10) toRem(11) toRem(35) !important; border-radius: toRem(4);}
+  .slds-input__icon{fill: $bfcolor; width: toRem(16);height: toRem(16); transform: translateY(toRem(-5));}
+
+  .suggestionResults{background: $white; width: 100%; border: toRem(1) solid $gray-100; padding: toRem(5); display: none; position: absolute; left: 0; top: calc(100% - toRem(5)); z-index: 1;
+    &.show{display: block;}
+    .suggestion{font-weight: $font-weight-normal; padding:toRem(8) toRem(11); transition: all 0.3s ease-in-out;
+      &:hover{background: $gray-100;}
+    }
+  }
+}

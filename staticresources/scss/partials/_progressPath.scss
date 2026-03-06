@@ -1,0 +1,275 @@
+@use "sass:map";
+:root{
+    --lwc-heightSalesPath: 43px;
+    --lwc-mobileheightSalesPath: 24px;
+    --lwc-colorBackgroundPathIncomplete: #868686;
+    --lwc-colorBackgroundPathIncompleteHover: #868686;
+}
+
+$arrowEndPad: toRem(25);
+
+.progressPath{
+    &:not(.themeStyle-v2).noCursor{
+        &, *, *::before, *::after{cursor: default !important;}
+    }
+    .slds-path__item{min-width: unset; margin: 0 toRem(8);
+
+        // arrow height
+        &:before, &:after
+        {height: calc(var(--lwc-heightSalesPath) / 2);
+            @include mq(0, $mq-small){
+                height: calc(var(--lwc-mobileheightSalesPath) / 2);
+            }
+        }
+
+        // arrow positions
+        &:before, &:after{
+            left: -6px;
+            right: -6px;
+        }
+
+        // first pill
+        &:first-of-type{margin-left: 0;
+            // arrow positions
+            &:before, &:after{
+                left:$arrowEndPad;
+            }
+        }
+
+        // last pill
+        &:last-of-type{margin-right: 0;
+            // arrow positions
+            &:before, &:after{
+                right:$arrowEndPad;
+            }
+        }
+
+        // active / current / complete
+        &.slds-is-complete,
+        &.slds-is-current,
+        &.slds-is-active
+        {
+            &::before, &::after{background: inherit;}
+
+            .slds-path__title{
+                color: $gray-900; font-weight: $font-weight-semibold;
+            }
+        }
+        
+        .slds-path__link{
+            &:focus{box-shadow: none !important;}
+
+            @include mq(0, $mq-small){
+                height: var(--lwc-mobileheightSalesPath) !important;
+            }
+        }
+        // text
+        .slds-path__title{color: $white; font-size: $bfsize; line-height: normal; transform: unset !important;}
+
+        // helper text (mobile tooltip)
+        .slds-form-element__icon{position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 10;
+            
+            .slds-button_icon{width: 100%; height: 107%; padding: 0; margin-top: -3px;
+                &:focus{box-shadow: none !important;}
+                .slds-button__icon{opacity: 0;}
+            }
+        }
+
+        //status
+        &.slds-is-complete{background: $secondary;}
+        &.slds-is-active{
+            &:not(&.slds-is-complete){
+                &.status-new{background: map.get(map.get($badge-colors, new), bg);}
+                &.status-inProcess{background: map.get(map.get($badge-colors, in-process), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, closed), color) !important;}
+                }
+                &.status-pendingInformation{background: map.get(map.get($badge-colors, pending-info), bg);}
+                &.status-underReview{background: map.get(map.get($badge-colors, in-negotiations), bg);}
+                &.status-pendingPayment{background: map.get(map.get($badge-colors, pending-payment), bg);}
+                &.status-closed{background: map.get(map.get($badge-colors, closed), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, closed), color) !important;}
+                }
+            }
+        }
+        
+    }
+
+
+    // themeStyle-v2
+    &.themeStyle-v2{
+        --lwc-heightSalesPath: 51px;
+        --lwc-mobileheightSalesPath: 32px;
+        --lwc-colorBackgroundPathIncomplete: #C9CBE6;
+        --lwc-colorBackgroundPathIncompleteHover: #C9CBE6;
+
+        .slds-path__nav{padding: toRem(2) 0;}
+
+        .slds-path__item{min-width: unset; margin: 0 toRem(10); position: relative; overflow-y: clip;
+            
+
+            // arrow height
+            &:before, &:after
+            {height: calc(var(--lwc-heightSalesPath) / 2);
+                @include mq(0, $mq-small){
+                    height: calc(var(--lwc-mobileheightSalesPath) / 2);
+                }
+            }
+    
+            // arrow positions
+            &:before, &:after{
+                left: -6px;
+                right: -6px;
+                border-width: 4px;
+                border-style: solid;
+
+                @include mq(0, $mq-medium){
+                    border-width: 2px;
+                }
+            }
+    
+            // first pill
+            &:first-of-type{margin-left: 0; border-top-left-radius: toRem(12) !important; border-bottom-left-radius: 0 !important;
+                // arrow positions
+                &:before, &:after{
+                    left:$arrowEndPad;
+                }
+            }
+    
+            // last pill
+            &:last-of-type{margin-right: 0; border-top-right-radius: toRem(12) !important; border-bottom-right-radius: 0 !important;
+                // arrow positions
+                &:before, &:after{
+                    width: 96%;
+                    right:$arrowEndPad;
+                }
+            }
+            // &:not(:first-of-type), &:not(:last-of-type){
+            //     border-top-right-radius: toRem(200); border-bottom-right-radius: toRem(200);
+            // }
+
+            //in-active / in-complete
+            &.slds-is-incomplete{
+                &::before, &::after{
+                    border-color: var(--lwc-colorBackgroundPathIncomplete);
+                }
+            }
+
+            .slds-path__link{padding: toRem(8) toRem(10);}
+            // text
+            .slds-path__title{color: $gray-900;
+                &::before{content: ''; background: var(--lwc-colorBackgroundPathIncomplete); width: 100%; height: toRem(1); display: block; position: absolute; right: toRem(-12); top: 50%; z-index:2; border-radius: 200px;  transform: translateY(-50%);}
+                .slds-path__title-wrapper{position: relative; z-index: 5;}
+                .count{background: $primary; @include square(toRem(24), 50%); color: $white; font-size: toRem(15);
+                    @include mq(0, $mq-medium){
+                        @include square(toRem(20)); font-size: toRem(11); font-weight: normal;
+                    }
+                }
+            }
+
+            //hover / active
+            &:hover, &.slds-is-active{overflow-y: clip;
+                background: map.get($bt-tertiary, 100) !important;
+                &::before, &::after, &:first-of-type, &:last-of-type{
+                    background: map.get($bt-tertiary, 100) !important;
+                }
+                &::before, &::after{
+                    border-color: map.get($bt-tertiary, 100); border-image: unset !important;
+                }                  
+
+                .slds-path__title{color:$white !important;
+                    &::before{background:map.get($bt-tertiary, 100);
+                        @include mq(0, $mq-medium){
+                            display: none;
+                        }
+                    }
+
+                    .count{background: $secondary; color: $primary;}
+                }
+            }
+
+            //Futher
+            &.slds-is-future {
+                $glowEffect: toRem(2);
+                
+                &:not(:hover){
+                    &::before, &::after {
+                        background: $white; border-image: linear-gradient(to right, #2331B5, #3EDDBF) 1;
+                    }
+                
+                    &::before {border-bottom: none; animation: glowForBefore 1s infinite alternate;}
+                    &::after {border-top: none; animation: glowForAfter 1s infinite alternate;}
+                }
+            
+                .slds-path__title {
+                    color: $bfcolor;
+            
+                    &:not(:hover) {
+                        &::before {display: none;}
+                    }
+                }
+
+                // Glow Before animation definition
+                @keyframes glowForBefore {
+                    0% {
+                        filter: drop-shadow($glowEffect -3px 0 rgba($secondary, 0));
+                    }
+                    100% {
+                        filter: drop-shadow($glowEffect -3px #{$glowEffect} rgba($secondary, 1));
+                    }
+                }
+
+                // Glow After animation definition
+                @keyframes glowForAfter {
+                    0% {
+                        filter: drop-shadow($glowEffect 3px 0 rgba($secondary, 0));
+                    }
+                    100% {
+                        filter: drop-shadow($glowEffect 3px $glowEffect rgba($secondary, 1));
+                    }
+                }
+            }
+        }
+
+        //benefit Progress Bar
+        &.benefitProgressBar{
+            .slds-path__item{ 
+                &:first-of-type{
+                    &.slds-is-active{
+                        .slds-path__title-wrapper, .icon-icoShieldCheck.hideIcon{color:$secondary;}
+                    }
+                    .icon-icoShieldCheck.hideIcon{
+                        @include mq(0, $mq-medium){
+                            display: block;
+                        }
+                    }
+                }
+                
+                .hideIcon{display: none;}
+            }
+        }
+    }
+
+
+    // Case Center
+    &.caseCenterProgressBar{
+        .slds-path__item{
+            &.slds-is-active{
+                &.cc-status-new{background: map.get(map.get($badge-colors, 'cc-new'), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, 'cc-new'), color);}
+                }
+                &.cc-status-inProgress{background: map.get(map.get($badge-colors, 'cc-inProgress'), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, 'cc-inProgress'), color);}
+                }
+                &.cc-status-moreInfoNeeded{background: map.get(map.get($badge-colors, 'cc-moreInfoNeeded'), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, 'cc-moreInfoNeeded'), color);}
+                }
+                &.cc-status-closed{background: map.get(map.get($badge-colors, 'cc-closed'), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, 'cc-closed'), color);}
+                }
+                &.cc-status-closedDenied{background: map.get(map.get($badge-colors, 'cc-closedDenied'), bg);
+                    .slds-path__title{color: map.get(map.get($badge-colors, 'cc-closedDenied'), color);}
+                }
+            }
+        }
+    }
+}

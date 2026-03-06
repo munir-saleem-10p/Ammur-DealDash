@@ -1,0 +1,22 @@
+.amr-feeds{max-width: unset; box-shadow: 0 3px 3px 0px rgba($black, 0.15); border-radius: 10px; overflow: hidden;
+    
+    .slds-feed__item{
+        .slds-post__header{border-bottom: toRem(1) $gray-375 solid;}
+        .slds-post__content{margin-bottom: 0; padding-top: toRem(16);}
+        > .slds-feed__item-comments{border: unset;
+            background: #eff6ff; border-top: unset; 
+            .slds-rich-text-editor__output{
+                img{display: block;}
+            }
+            .slds-post{background: unset; @extend .px-32px;
+                .slds-post__content{margin-bottom: 0;}
+            }
+            .slds-feed__item-comments{margin-top: 0 !important; margin-bottom: 0 !important; border-top: toRem(1) rgb(178 190 203) dashed; box-shadow: 0 1px 0 0px #fff;
+            }
+        }
+    }
+
+    .sub-comments{
+        .slds-post__content{padding-top:toRem(8) !important;}
+    }
+}

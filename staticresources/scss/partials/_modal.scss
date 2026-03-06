@@ -1,0 +1,35 @@
+.slds-modal{
+    // size
+    &.slds-modal_xsmall{
+        .slds-modal__container{max-width: toRem(380);}
+    }
+    
+    //simple Modal [Start]
+    &.simpleModal{
+
+        %before{content: ''; width: calc(100% - ($modal-padding * 2)); height: toRem(1); background: rgba($black, 0.1); position: absolute; left: toRem(20); z-index: 1; display: block;}
+
+        .slds-modal__container{}
+        //header
+        .slds-modal__header{text-align: left; padding:$modal-padding;
+        border-bottom: none; position: relative; border-radius: $modal-border-radius $modal-border-radius 0 0;
+
+            &:before{border-bottom-width: toRem(1); bottom: 0; @extend %before;}
+
+            .slds-modal__title{color:$primary; font-size: $modal-heading-size; font-weight: $modal-heading-font-weight; line-height: toRem(24); margin-bottom: toRem(12);}
+
+            .headerBanner{
+                .banner{max-width: 100%;}
+                .btn-close{top: toRem(-8); right: toRem(-8); z-index: 1;}
+            }
+        }
+        .slds-modal__content{
+            padding: $modal-padding;
+        }
+        .slds-modal__footer{padding: $modal-padding; border-radius: 0 0 $modal-border-radius $modal-border-radius; border-top: none; position: relative;
+
+            &:before{border-top-width: toRem(1); top: 0; @extend %before;}
+        }
+    }
+    //simple Modal [END]
+}

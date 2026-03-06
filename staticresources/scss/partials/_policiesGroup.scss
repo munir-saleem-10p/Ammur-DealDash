@@ -1,0 +1,42 @@
+.policiesGroup{
+  .tile{
+    @extend %cardBoxShadow;
+
+    &:not(:last-of-type){
+      margin-bottom: toRem(1);
+    }
+    &:first-of-type{
+      border-top-left-radius: toRem(4); border-top-right-radius: toRem(4);
+    }
+    &:last-of-type{
+      border-bottom-left-radius: toRem(4); border-bottom-right-radius: toRem(4);
+    }
+
+    .icon{@include square(toRem(32)); object-fit: contain;}
+    .arrowIcon{width: toRem(24);
+      @media screen and (min-width: $mq-large) {
+        margin-right: toRem(28);
+      }
+    }
+    .badge{@extend .position-relative; top: toRem(-4);}
+
+    @media screen and (max-width: $mq-medium) {
+      .title{font-size: toRem(18) !important;}
+    }
+
+    //hover
+    &:hover{background: $primary !important; 
+      .title {color:$white !important;}
+      .icon, .arrowIcon{@extend .filter-white;}
+      .badge{background-color: $white; color: $primary;}
+      .aiIcon{filter: unset !important;}
+    }
+  }
+  .policyToggler{letter-spacing: toRem(0.48);
+    .btnToggler{
+      @extend .trans-3;
+      &.open{transform: rotate(180deg);}
+    }
+  }
+}
+// Policies Group [END]

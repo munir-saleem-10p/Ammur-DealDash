@@ -1,0 +1,42 @@
+.providerFooter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: toRem(20);
+  gap: toRem(20);
+  @include mq(1200px){
+    flex-direction: row;
+    padding: toRem(50);
+  }
+  &_nav{
+    display: flex;
+    gap: toRem(12);
+    font-size: toRem(12);
+    flex-wrap: wrap;
+    justify-content: center;
+    @include mq(1200px){
+      flex-direction: column;
+    }
+  }
+  &_extras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq(1200px){
+      align-items: flex-end;
+    }
+  }
+  &_links{
+    column-gap: toRem(24);
+    margin-top: toRem(20);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: toRem(14);
+    justify-content: center;
+    row-gap: toRem(12);
+    @include mq(1200px){
+      margin-top: toRem(30);
+    }
+  }
+}

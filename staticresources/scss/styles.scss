@@ -1,0 +1,88 @@
+@use "sass:math";
+@use "sass:color";
+@import './../../node_modules/@salesforce-ux/design-system/scss/design-tokens';
+@import './mixins';
+@import './variables';
+
+// @import './partials/_fonts';
+@import './partials/_general';
+
+// Generator color base class
+@include generate-root-color($theme-colors);
+@include generate-color-classes($theme-colors);
+
+//Font and line-height Class Generator
+@include fontSizeClass();
+@include fontWeightClass();
+
+//Padding and Margin Generator
+@include magpadClass();
+
+// Width Short Class
+@include widthClass();
+
+// responsive flex classes
+@include responsiveClass();
+
+// gap classes
+@include gapClass();
+
+// border - radius generator
+@include border-radius-generator();
+
+@include iconClass();
+
+//Buttons
+@import './partials/_buttons';
+
+// // Input
+@import './partials/_input';
+
+// // Typography
+@import './partials/typography';
+
+// // Alert
+// @import './partials/_alerts';
+
+// // Badge
+// @import './partials/badges';
+
+// // SlDS Table
+// @import './partials/_slds-table.scss';
+
+// // Main Layout
+// @import './partials/mainLayout';
+
+// // Headers
+// @import './partials/header';
+
+// // Accordance [Start]
+// @import './partials/accordance';
+
+// // simple Tabs
+// @import './partials/_simpleTabs';
+
+// // modal
+// @import './partials/_modal';
+
+// // pagination
+// // @import './partials/pagination';
+
+// // Breadcrumb
+// // @import './partials/_breadcrumb';
+
+// // download Tile
+// // @import './partials/_downloadTile';
+
+// // Progress Path
+// // @import './partials/progressPath';
+
+// // helptooltip
+// @import './partials/_helpTooltip';
+
+// // Custom card
+// @import './partials/_customCard';
+
+// ===============
+
+// Pages

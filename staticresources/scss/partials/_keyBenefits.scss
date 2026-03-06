@@ -1,0 +1,33 @@
+// Key Benefits [Start]
+.keyBenefitsTileWrapper{column-gap: toRem(16); row-gap: toRem(19);
+  .keyBenefitsTile{
+    @extend %cardBoxShadow;
+
+    @media screen and (min-width: 1023px) and (max-width:1810px) {
+      flex:1 1 573px;
+      max-width: 573px;
+    }
+
+    @media screen and (min-width: 1811px){
+      max-width: 573px;
+    }
+  }
+
+  .contentHolder, .details{flex: 1;}
+  .poster{width: toRem(171); height: toRem(133);
+    @include mq(0, $mq-medium){
+      width: 100%; height: toRem(190);
+    }
+  }
+  .caption{letter-spacing: toRem(0.48);}
+  .heading{line-height: toRem(24);}
+}
+// Key Benefits [END]
+
+.careCoordinationTile{
+  .poster{min-width: toRem(171);  height: toRem(133);
+    @include mq(0, $mq-medium){
+      width: 100%; height: toRem(200);
+    }
+  }
+}

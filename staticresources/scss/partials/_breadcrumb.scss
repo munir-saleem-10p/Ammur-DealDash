@@ -1,0 +1,28 @@
+.breadcrumb{
+    $gap: toRem(4);
+    display: flex; gap: $gap; padding: 0; margin:0;  flex-wrap: wrap;
+    > li{font-size: toRem(16); font-weight: $font-weight-medium; white-space: nowrap; list-style: none; display: flex; align-items: center; position: relative;
+
+        &:not(:last-of-type):after{
+            content:''; @include square(toRem(24)); background: url("./../images/ico-caretRight.svg") no-repeat center center; margin-left: $gap; display: block;
+            
+            @include mq(0, $mq-medium) {
+                margin-left: toRem(7);
+            }
+        }
+
+        @include mq(0, $mq-medium){
+           & a:not(&.size-small){
+                font-size: toRem(14);
+            }
+        }
+
+        &.size-small{
+            a{font-size: toRem(12);}
+        }
+        
+        a{@extend .text-link; position: relative; display: flex; align-items: center;}
+
+        .amr-icon{font-size: toRem(18); margin-right: toRem(8);}
+    }
+}

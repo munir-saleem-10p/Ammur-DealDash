@@ -1,0 +1,512 @@
+// AI Companion [Start]
+.aiCompanion{@extend .bg-graddient-1; display: flex; flex-direction: column; justify-content: space-between; border-radius: toRem(6); overflow: hidden;
+  // @include mq(0 , $mq-medium){
+  //   padding: toRem(12) toRem(4);
+  // }
+
+  .chatThreadWrapper,
+  .chatInputWrapper
+  {margin: 0 toRem(24);}
+}
+
+// inline Chat Toggler
+.togglerHeading{
+  @include mq(0, $mq-medium){
+    background: linear-gradient(232deg, $secondary 16.85%, $primary 60.71%, $primary 71.17%, $primary 88.85%); color: $white; position: relative; z-index: 10; box-shadow: 0 toRem(5) toRem(5) rgba($black, 15%);
+  }
+
+  .togglerHeadingBar{
+    @include mq(0, $mq-medium){
+      padding: toRem(10) 0 toRem(10) toRem(24);
+    }
+    @include mq($mq-medium){
+      padding: toRem(14) 0 toRem(14) toRem(24);
+    }
+  }
+  .inlineAILogo{
+    img{
+      @include mq(0, $mq-medium){
+        max-width: toRem(150);
+      }
+    }
+  }
+  .amr-icon{color:$primary; @extend .trans-3all;
+    //hover
+    &:hover{color: $white;}
+  }
+  .btn-ChatToggler{transform:translateY(2px);
+    &[aria-expanded="true"]{
+      .amr-icon{transform:rotate(180deg);}
+    }
+    .helpText{z-index:1; left:0; top:0; opacity:0;}
+  }
+  // Logo
+  .title{
+    sup{position:relative; top:toRem(-18); right:toRem(12);}
+  }
+}
+
+//Chat Thread Wrapper [Start]
+.chatThreadWrapper{max-height: toRem(429); padding:0 toRem(12);  overflow: auto;
+  // @include mq(0 , $mq-medium){
+  //   padding: toRem(8);
+  // }
+
+  &[aria-hidden="false"]{
+    margin-top: toRem(14);
+  }
+
+  .thread{display: flex; margin-bottom: toRem(17);
+    &:not(.aiChat){justify-content: flex-end;}
+
+    .avatarWrapper{align-self: flex-start;
+      .avatar{background:$gray-600; @include square(toRem(40), 50%); margin-top: toRem(4); display: flex; justify-content: center; align-items: center; overflow: hidden;
+        
+        @include mq(0, $mq-medium){
+          margin-top: 0;
+          @include square(toRem(32));
+        }
+        
+        img{object-fit: cover;}
+      }
+    }
+    .chatBody{
+      max-width: 80%;
+
+      @include mq(0, $mq-medium){
+        max-width: none;
+      }
+      .replyBox{background: $white; color: $bfcolor; font-size: toRem(16); line-height: 140%; margin-bottom: toRem(12); overflow: hidden; position: relative; display: inline-flex;}
+        .replyWrapper{flex: 1;}
+        .thumbsButton{background: $gray-100; height: toRem(35); gap: toRem(4); padding: toRem(6); border-radius: toRem(4); display: flex; justify-content: space-between; align-items: center;
+
+          [class^="btn-"]{background:none; color:$gray-600; border: none; padding:0;
+            .amr-icon::before{
+              @include square(toRem(16));
+            }
+            &.btn-dislike{transform: rotate(180deg);}
+
+            //hover , active
+            &:hover, &.active{
+              .amr-icon{color: $primary;}
+            }
+          }
+        }
+        .lnk-source{color:$primary; font-size: $bfsize; font-weight: $font-weight-semibold; display: flex; align-items: center; position: relative;
+        }
+
+        .lightTable{
+          td, th {
+            &, > *{@include mq(0, $mq-medium){white-space: normal;}}
+          }
+        }
+    }
+
+    //Ai Chat
+    &.aiChat{
+      animation: fadeInUp 0.8s ease-out forwards;
+
+      .chatBody{margin:0 0 toRem(24) toRem(10);
+        @include mq(0, $mq-medium){
+          margin-left: 0;
+        }
+
+        .replyBox{padding: toRem(4); margin-top: toRem(4); border-radius: toRem(6);
+          @extend .bg-graddient-4;
+          @extend %cardBoxShadow2;
+
+          .replyWrapper{background: $white; padding: toRem(16) toRem(20); border-radius: toRem(6);
+            
+            @include mq(0, $mq-medium){
+              padding: toRem(10);
+            }
+          }
+
+          @include mq(0, $mq-medium){
+            &, .replyWrapper{border-radius: toRem(6);}
+          }
+        }
+      }
+    }
+    //user Chat
+    &.userChat{flex-direction: row-reverse; justify-content: flex-start;
+      .avatar{
+          img{@extend .filter-white;}
+      }
+      .chatBody{margin:0 toRem(10) 0 0;
+        @include mq(0 , $mq-medium){
+          margin-right: 0;
+        }
+        .replyBox{background: $gray-100; padding: toRem(9) toRem(12); margin: toRem(4) 0 0; border-radius: toRem(6);
+
+          @include mq(0, $mq-medium){
+            border-radius: toRem(6);
+          }
+        }
+      }
+    }
+  }
+  // tags List
+  .tagsList{gap: toRem(4); padding: toRem(8) 0; display: flex; align-items: center;
+    .title{color: $gray-600; font-size: toRem(10); font-weight: $font-weight-semibold; line-height: toRem(13);}
+    .badge{font-weight: $font-weight-medium;}
+  }
+
+  @extend %white-scrollbar;
+}
+.chatInputWrapper{display: flex; align-items: center; gap: toRem(10); padding: toRem(10) toRem(12) 0;
+  @include mq(0 , $mq-medium){
+    padding: 0 toRem(8);
+  }
+  
+  .inputWrapper{background: $white; flex:1; padding: toRem(10) toRem(12); border-radius: toRem(6); position: relative; display: flex; align-items: center;
+    .fld-userInput{background: none; max-height: toRem(100); width:100%; color: $bfcolor; font-weight: $font-weight-medium; border: none; padding: 0; resize: none; overflow: auto; 
+      &, &:focus, &:focus-visible{outline:none; box-shadow: none;}
+    }
+    .btn-send{background: none; border: none;}
+  }
+  .actionsButtons{width: auto; display: flex; align-items: center;
+    .btn-voiceInput{background: $primary; @include square(toRem(47), 50%); color:$white; border: none; box-shadow: 0 10px 10px rgba($black, 0.35); display: flex; align-items: center; justify-content: center;
+      &.listing{
+        background: $white; color: $primary;
+      }
+    }
+  }
+}
+.scrolltoBottomWrapper{
+  $chatBlur: blur(toRem(1.5));
+  width: calc(100% - toRem(16)); height:toRem(40); background: linear-gradient(180deg, rgba(21, 33, 119, 0) 0.97%, rgba(21, 33, 119, 0.04) 28.16%, rgba(21, 33, 119, 0.2) 89.13%);
+  display: flex; justify-content: center; align-items: center; border-radius: toRem(11); backdrop-filter: $chatBlur; -webkit-backdrop-filter: $chatBlur; position: absolute; top: toRem(-38); animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+
+  .btn-scrollToBottom{background: $secondary; @include square(toRem(32), 100%); padding: toRem(8); border: 0; display: flex; align-items: center; filter: drop-shadow(0px 5px 12px rgba($black, 0.10)) drop-shadow(0px 21px 21px rgba($black, 0.09)) drop-shadow(0px 47px 28px rgba($black, 0.05)) drop-shadow(0px 84px 34px rgba($black, 0.01)) drop-shadow(0px 132px 37px rgba($black, 0.00)); transform: translateY(toRem(-16));
+  }
+}
+//Chat Thread Wrapper [END]
+
+// AI Modal [Start]
+.ai-modal{
+  .slds-modal__container{max-width: toRem(1300); padding:0;}
+  .slds-modal__content{
+    @extend .bg-graddient-1; color:$white; padding: toRem(16) 0; border-radius: toRem(12) !important;
+
+    .header{display: flex; align-items: center; justify-content: center; margin-bottom: toRem(24); position: relative;
+      .aiBrand{
+        display: flex; align-items: center;
+      }
+      .slds-modal__close{position: absolute; top: 0; right: toRem(16); z-index: 1;}
+    }
+    .chatThreadWrapper{
+      height: calc(100vh - toRem(300)); max-height: none; padding: 0 toRem(16); margin: 0 toRem(4); overflow: auto;
+
+      @include mq(0, $mq-medium){
+        height: calc(100vh - toRem(145));
+      }
+    }
+    .chatInputWrapper{margin:0 toRem(16);}
+  }
+}
+// AI Modal [END]
+
+// AI Child Comp [Start]
+.ai-fileDownload{background: $gray-100; border: toRem(0.25) solid $gray-600; border-radius: toRem(4); box-shadow:0 toRem(3) toRem(2) rgba($black,.15), inset 0 0 toRem(1) $gray-200; margin: toRem(12) 0;
+  .iconLeft, .iconRight{
+    width: toRem(46); height: toRem(36);
+  }
+  .iconLeft{background: $white; border-radius: toRem(4);}
+}
+// AI Child Comp [END]
+
+// Ai Full Screen [Start]
+.aiFullScreen{@extend .bg-graddient-4; height: 100%; min-height: 100vh; color:$white; padding: toRem(12) toRem(24) 0;
+
+  @include mq(0, $mq-medium){
+    padding: toRem(24) toRem(19);
+  }
+
+  .logo{max-width: toRem(300);
+    @include mq(0, $mq-medium){
+      max-width: toRem(200);
+    }
+  }
+
+  //main header
+  .mainHeader{
+    .btn-back{background: transparent; color: $white; font-size: toRem(16); font-weight: $font-weight-normal; box-shadow: none; padding: 0;}
+  }
+
+  .isFullScreenMode{
+    // Chat Wrapper
+    .chatThreadWrapper{
+      height: calc(100vh - toRem(225)); max-height: unset;  padding: toRem(10) toRem(8) 0 0; margin-right: toRem(-11);
+    }
+
+    //chat Input Wrapper
+    .chatInputWrapper{justify-content: center; padding-left: 0; padding-right: 0;
+
+      @include mq(0, $mq-medium){
+        padding-top: toRem(8);
+      }
+
+      .scrolltoBottomWrapper{width: 100%; top: toRem(-34);}
+      .inputWrapper{max-width: toRem(795);}
+    }
+  }
+  //info Bar
+  .infoBar{margin:toRem(8) auto toRem(24);}
+
+  //Welcome Screen
+  .welcomeScreenWrapper{
+    @include mq($mq-medium){
+      min-height: calc(100vh - toRem(83));
+    }
+  }
+  .welcomeScreen{margin: 0 auto; display: flex;
+
+    // > .slds-grid{
+    //   &,
+    //   > .slds-col
+    //   // > .slds-col > .firstCol,
+    //   // > .slds-col > .secondCol
+    //   {
+    //     height: 100%;
+    //   } 
+    // }
+
+    .firstCol, .secondCol{padding:toRem(12); /* min-height: calc(100vh - 38vh); */
+      @include mq(0, $mq-medium){
+        padding:0;
+      }
+    }
+
+    // first col
+    .firstCol{display: flex; 
+      .firstColWrapper{display: flex; flex-direction: column; justify-content: space-between;
+        @include mq($mq-medium){
+          min-height: 100%; padding: toRem(50) toRem(34); border: toRem(1) rgba($white, 0.5) solid; border-radius: toRem(6);
+        }
+      }
+      
+      .chatThreadWrapper, .chatInputWrapper {padding-left: 0; padding-right: 0;}
+      .chatThreadWrapper{max-height: unset; padding-bottom: 0; overflow: unset;
+        
+        .thread.aiChat{margin-bottom: toRem(24);
+          .replyBox, .chatBody{margin:0;}
+          .chatBody{
+            @include mq($mq-medium){
+              margin-left: toRem(10);}
+            }
+        }
+        
+      }
+    }
+
+    // second col
+    .secondCol{display: flex;}
+
+    .welcomeTile{background: url('./../images/graphic-1.svg') no-repeat left bottom $white; max-width: toRem(616); border-radius: toRem(5); 
+      box-shadow: 0 21.425px 5.843px 0px rgba($black, 0.00), 0px 13.634px 5.843px 0px rgba($black, 0.01), 0px 7.791px 4.869px 0px rgba($black, 0.05), 0px 3.896px 3.896px 0px rgba($black, 0.09), 0px 0.974px 1.948px 0px rgba($black, 0.10);
+
+      @include mq(0, $mq-small){
+        max-width: none;
+      }
+
+      .graphic{width: toRem(151);
+        img{max-width: 100%;}
+
+        @include mq(0, $mq-small){
+          width: auto;
+        }
+      }
+      .content{color:$bfcolor; font-size:toRem(15); line-height: toRem(18);
+        .heading{color: $primary; font-size: toRem(38); font-weight: $font-weight-semibold; line-height: toRem(42); margin-bottom: toRem(8);
+        }
+      }
+    }
+  }
+
+  //Welcome Chat Message
+  .welcomeChatMessage{
+    .chatThreadWrapper{height: auto;
+      .thread{
+        .aiChat{
+          // .replyBox{}
+          .replyWrapper{padding: toRem(12) toRem(30); }
+        }
+      }
+    }
+  }
+
+  //Quick Chat Starter
+  .quickChatStarter{
+    // .heading{}
+  }
+
+  // Message Center
+  .messageCenter{
+    .btn-messasgetoggler{
+      background: none; padding: 0;
+      &, &:hover, &:focus{
+        border: none; outline: none;
+      }
+    }
+    
+    // &.withHistory{height: 100%;}
+
+    .messageHistoryListWrapper{
+      @include mq(0, $mq-medium){
+        &:not(.open){display: none;}
+      }
+    }
+    .messageHistoryList{
+      height: toRem(309); padding-right: toRem(8); margin-right: toRem(-8);
+
+      @include mq(0, $mq-medium){
+        min-height: 45vh;
+      }
+
+      @extend %white-scrollbar;
+
+      // .heading{}
+      .message{background: rgba($white, 0.2); 
+        &:not(:last-of-type){margin-bottom: toRem(12);}
+
+          .timeStamp{top: toRem(6); right: toRem(12);}
+
+          .text{
+            @include mq(0, $mq-medium){
+              padding-top: toRem(4);
+            }
+            @include mq($mq-medium){
+              width:calc(100% - toRem(50));
+            }
+          }
+
+          // hover, // focus
+          &:hover, &:focus{
+            background: $white;
+              .text{color: $primary; font-weight: $font-weight-semibold;}
+              .timeStamp{color: $bfcolor;}
+          }
+      }
+    }
+    .btn-viewMore{background: transparent; box-shadow: none;}
+    // .btn-startChat{}
+  }
+}
+// Ai Full Screen [END]
+
+//suggested
+.suggested{display: flex; align-items: center; flex-wrap: wrap; gap: toRem(8);
+  .suggestion{background: rgba($white, 0.2); color: $white; font-size: toRem(14); font-weight: $font-weight-normal; line-height: toRem(16);  border: none; border-radius: toRem(6); padding: toRem(10); 
+    @extend .trans-3;
+
+    @include mq(0, $mq-medium){
+      width: 100%; text-align: left;
+    }
+
+    .amr-icon{transform: translateY(toRem(-2));}
+
+    &:hover, &:focus{
+      background: rgba($white, 0.35);
+    }
+  }
+}
+
+//benefitTile
+.benefitTile {
+  .membersCoveredList{width: auto !important;}
+}
+
+//PoliciesGrouo
+.policiesGroup{position: relative;
+
+  .idCardContainer{
+    background: $gray-100; border: toRem(1) solid rgba(7, 18, 26, 0.10); border-radius:0 0 toRem(6) toRem(6);
+  }
+  .tile{position: relative; z-index: 1; @extend %cardBoxShadow2;
+    .arrowIcon{margin-right: 0 !important;}
+  }
+  .idCardContainer{position: relative; z-index: 0;
+    // .innerHeader{}
+    .idCardWrapper{ }
+  } 
+}
+
+//responseLoader
+.responseLoader{
+  &.replyBox{max-width: toRem(81) !important;
+    .loaderWaves{background: url("./../images/loader-waves.svg"); width: toRem(193); height: toRem(30); margin: 0 toRem(10); 
+      animation: waves 8s linear infinite alternate-reverse; position: relative; bottom: toRem(0); z-index: 0;}
+
+    .loader {
+      @include square(toRem(8), 50%);
+      display: block;
+      margin:0 auto;
+      position: absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -250%);
+      color: $white;
+      box-sizing: border-box;
+      animation: animloader 0.5s linear infinite alternate;
+      z-index: 1;
+    }
+  }
+}
+
+//Animations
+@keyframes waves {
+  0% {right:15%;}
+  100% {right: 175%;}
+}
+
+@keyframes animloader {
+  0% {
+      opacity: .3;
+      box-shadow: 0 20px, 12px 20px, -12px 20px;
+      
+  }
+
+  33% {
+      opacity: .5;
+      box-shadow: 0 20px, 12px 20px, -12px 15px;
+      
+  }
+
+  66% {
+      opacity: .3;
+      box-shadow: 0 15px, 12px 20px, -12px 20px;
+  }
+
+  100% {
+      opacity: .5;
+      box-shadow: 0 20px, 12px 15px, -12px 20px;
+  }
+}
+
+// entry key frame
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to the final position */
+    }
+}
+
+// flip in from bottom
+@keyframes swing-in-bottom-fwd {
+  0% {
+    transform: rotateX(100deg);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+}
+// AI Companion [END]

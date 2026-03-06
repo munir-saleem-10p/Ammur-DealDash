@@ -1,0 +1,79 @@
+.howTouseBenefitsDetails{
+    background-color: $white; border:toRem(1) solid rgba($gray-900, 0.1); border-radius: toRem(6); 
+
+    @include mq($mq-large){
+        min-height: toRem(700);
+    }
+
+    // .headerTabs{background: map-get($bt-tertiary, 100); padding: toRem(10) toRem(20); display: flex; align-items: center;  margin-bottom: toRem(10); border-top-left-radius: toRem(4); border-top-right-radius: toRem(4);
+    //     > .tabButton{background: transparent; color: $white; padding: toRem(20) 0; border: none; display: flex; align-items: center; flex: 1;
+
+    //         &:not(&:last-of-type):after{
+    //             content:''; background: url('./../images/boder-dashed.svg'); width: 100%; height: toRem(1); display: block;
+    //         }
+    //         &, *{transition: all 0.15s ease-in-out;}
+    //         &:last-of-type{flex: none;}
+
+    //         .label{font-size: toRem(20); white-space: nowrap; margin-right: toRem(8); display: flex; align-items: center;
+    //             @include mq(0, $mq-small){
+    //                 font-size: toRem(14);
+    //             }
+    //             @include mq($mq-small, $mq-medium){
+    //                 font-size: toRem(16);
+    //             }
+    //             @include mq(0, $mq-medium){padding: toRem(4);}
+    //         }
+    //         .radioVisual{@include square(toRem(24), 50%); color: transparent; font-size: toRem(12); border: toRem(2) solid $secondary; display: flex; align-items: center; justify-content: center; margin-right: toRem(8);
+    //             &:before{
+    //                 content: ''; @include square("100%", 50%); background-color: rgba($primary, 0); display: block;
+    //             }
+    //         }
+
+    //         // hover / active
+    //         &:hover, &.active{
+    //             color: $secondary; font-weight: $font-weight-semibold;
+
+    //             .radioVisual{background: $secondary; color: $primary;
+    //                 &:before{background-color: rgba($primary, 1);}
+    //             }
+    //         }
+    //     }
+
+    //     //responsive
+    //     @include mq(0, $mq-small){
+    //         padding:toRem(10) toRem(8);
+    //         .label{font-size: toRem(12);
+    //             .radioVisual{display: none;}
+    //         }
+    //     }
+    // }
+    .tabsContent{padding: toRem(10);
+        @include mq(0, $mq-small) {
+            padding: 0;
+        }
+
+        .tab{display: none;}
+        .tab-active{display: block;}
+
+        .heading, .subHeading{@extend .fw-semibold;}
+        .heading{@extend .h3;}
+        .subHeading{@extend .h4;}
+        .textWrapper{padding: toRem(10);
+            .content{padding-left:toRem(28);
+                @include mq(0, $mq-small) {
+                    padding: 0;
+                }
+                p{padding-bottom: toRem(12);}
+            }
+        }
+        .sendCard{background:rgba(map-get($bt-secondary, 100), 20%); padding: toRem(18) toRem(28); border-radius: toRem(4); border: toRem(1) solid $secondary;
+            .slds-input{background:$white; width:100%; max-width: toRem(250); padding: toRem(6) toRem(12); border:toRem(1) solid $gray-600;}
+        }
+        .slds-accordion__content{background: $white; padding:toRem(24); border-radius: toRem(6); border: toRem(1) solid rgba($gray-900, 0.10); transition: all 0.3s ease-in-out;
+            
+            @include mq(0, $mq-small) {
+                padding: toRem(12);
+            }
+        }
+    }
+}

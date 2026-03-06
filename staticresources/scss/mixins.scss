@@ -1,0 +1,1590 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@import "./variables";
+@import "./../../node_modules/bourbon/core/bourbon.scss";
+
+// conver px to rem
+@function toRem($value) {
+  $remValue: math.div($value, 16) + rem;
+  @return $remValue;
+}
+
+// Media Query [Start]
+@mixin mq-only($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint, $max: null) {
+  @if $max == null {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $breakpoint) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+//usage::after
+// @include mq-only($mq-medium, $mq-mediumPlus1) {
+//   // Styles for medium to large screens only
+// }
+
+// @include mq($mq-small) {
+//   // Styles for small screens and above
+// }
+
+// @include mq($mq-small, $mq-medium) {
+//   // Styles for small to medium screens only
+// }
+
+
+@mixin small-screen {
+  @media screen and (max-width: #{$mq-small}) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media screen and (min-width: #{$mq-medium}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media screen and (min-width: #{$mq-mediumPlus1}) {
+    @content;
+  }
+}
+
+@mixin medium-landscape-screen {
+  @media screen and (min-width: #{$mq-medium-landscape}) and (min-aspect-ratio: 4/3) {
+    @content;
+  }
+}
+
+// Media Query [END]}
+
+// Define mixin to generate classes
+@mixin generate-root-color($colors) {
+  :root {
+    @each $name, $value in $colors {
+      --amr-#{$name}: #{$value};
+    }
+  }
+}
+
+@mixin generate-color-classes($colors) {
+  @each $name, $value in $colors {
+    .text-#{$name} {
+      color: $value !important;
+    }
+
+    .bg-#{$name} {
+      background-color: $value !important;
+    }
+
+    // Skip button generation for primary and secondary
+    @if type-of($value) == 'color' {
+      .btn-#{$name} {
+        background-color: $value !important;
+        color: color.scale($value, $lightness: -70%);
+
+        &:hover {
+          background-color: color.adjust($value, $lightness: -30%);
+          color: color.scale($value, $lightness: -70%);
+        }
+
+        &.active {
+          background-color: color.adjust($value, $lightness: -20%);
+          color: color.scale($value, $lightness: -70%);
+        }
+      }
+
+      .btn-outlined-#{$name} {
+        background-color: rgba($value, 0) !important; /* border: toRem(2) $value solid !important; */ color: $value !important; box-shadow: inset 0 0 0 toRem(2)  $value  !important;
+
+        &:hover,  &.active  {
+          background-color:$value !important; color: $white !important; text-decoration: none;
+        }
+      }
+    }
+
+    .border-#{$name} {
+      border: toRem(1) #{$value} solid !important;
+    }
+    .border-top-#{$name} {
+      border-top: toRem(1) #{$value} solid !important;
+    }
+    .border-bottom-#{$name} {
+      border-bottom: toRem(1) #{$value} solid !important;
+    }
+    .border-left-#{$name} {
+      border-left: toRem(1) #{$value} solid !important;
+    }
+    .border-right-#{$name} {
+      border-right: toRem(1) #{$value} solid !important;
+    }
+
+    // .text-darkmode-#{$name} {
+    //   color: $value !important;
+    // }
+
+    // .bg-darkmode-#{$name} {
+    //   background-color: $value !important;
+    // }
+
+    // icon
+    .action-#{$name}{
+      &.slds-icon_container{
+        background-color: #{$value};
+      }
+    }
+  }
+}
+
+//Font size Classes Auto Generator
+@mixin fontSizeClass() {
+  @each $fontSize in $fontSizes {
+    .fs-#{$fontSize}px {
+      font-size: toRem($fontSize) !important;
+    }
+
+    .lh-normal{line-height: normal !important;}
+
+    .lh-#{$fontSize}px {
+      line-height: toRem($fontSize) !important;
+    }
+  }
+
+  // Mobile class generator
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    @each $fontSize in $fontSizes {
+      .fs-xs-#{$fontSize}px {
+        font-size: toRem($fontSize) !important;
+      }
+
+      .lh-xs-normal{line-height: normal !important;}
+
+      .lh-xs-#{$fontSize}px {
+        line-height: toRem($fontSize) !important;
+      }
+    }
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    @each $fontSize in $fontSizes {
+      .fs-sm-#{$fontSize}px {
+        font-size: toRem($fontSize) !important;
+      }
+
+      .lh-sm-normal{line-height: normal !important;}
+
+      .lh-sm-#{$fontSize}px {
+        line-height: toRem($fontSize) !important;
+      }
+    }
+  }
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    @each $fontSize in $fontSizes {
+      .fs-md-#{$fontSize}px {
+        font-size: toRem($fontSize) !important;
+      }
+      .lh-md-normal{line-height: normal !important;}
+      .lh-md-#{$fontSize}px {
+        line-height: toRem($fontSize) !important;
+      }
+    }
+  }
+}
+
+//Font size Classes Auto Generator
+@mixin fontWeightClass() {
+  .fw-lighter {
+    font-weight: $font-weight-lighter !important;
+  }
+
+  .fw-light {
+    font-weight: $font-weight-light !important;
+  }
+
+  .fw-normal {
+    font-weight: $font-weight-normal !important;
+  }
+
+  .fw-medium {
+    font-weight: $font-weight-medium !important;
+  }
+
+  .fw-semibold {
+    font-weight: $font-weight-semibold !important;
+  }
+
+  .fw-bold {
+    font-weight: $font-weight-bold !important;
+  }
+
+  .fw-bolder {
+    font-weight: $font-weight-bolder !important;
+  }
+
+  .text-left{text-align: left !important;}
+  .text-center{text-align: center !important;}
+  .text-right{text-align: right !important;}
+  .text-italic{font-style: italic !important;}
+  .text-normal{font-style: normal !important;}
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    .fw-md-lighter {
+      font-weight: $font-weight-lighter !important;
+    }
+
+    .fw-md-light {
+      font-weight: $font-weight-light !important;
+    }
+
+    .fw-md-normal {
+      font-weight: $font-weight-normal !important;
+    }
+
+    .fw-md-medium {
+      font-weight: $font-weight-medium !important;
+    }
+
+    .fw-md-semibold {
+      font-weight: $font-weight-semibold !important;
+    }
+
+    .fw-md-bold {
+      font-weight: $font-weight-bold !important;
+    }
+
+    .fw-md-bolder {
+      font-weight: $font-weight-bolder !important;
+    }
+
+    .text-md-left{text-align: left !important;}
+    .text-md-center{text-align: center !important;}
+    .text-md-right{text-align: right !important;}
+    .text-md-italic{font-style: italic !important;}
+    .text-md-normal{font-style: normal !important;}
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    .fw-sm-lighter {
+      font-weight: $font-weight-lighter !important;
+    }
+
+    .fw-sm-light {
+      font-weight: $font-weight-light !important;
+    }
+
+    .fw-sm-normal {
+      font-weight: $font-weight-normal !important;
+    }
+
+    .fw-sm-medium {
+      font-weight: $font-weight-medium !important;
+    }
+
+    .fw-sm-semibold {
+      font-weight: $font-weight-semibold !important;
+    }
+
+    .fw-sm-bold {
+      font-weight: $font-weight-bold !important;
+    }
+
+    .fw-sm-bolder {
+      font-weight: $font-weight-bolder !important;
+    }
+
+    .text-sm-left{text-align: left !important;}
+    .text-sm-center{text-align: center !important;}
+    .text-sm-right{text-align: right !important;}
+    .text-sm-italic{font-style: italic !important;}
+    .text-sm-normal{font-style: normal !important;}
+  }
+
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    .fw-xs-lighter {
+      font-weight: $font-weight-lighter !important;
+    }
+
+    .fw-xs-light {
+      font-weight: $font-weight-light !important;
+    }
+
+    .fw-xs-normal {
+      font-weight: $font-weight-normal !important;
+    }
+
+    .fw-xs-medium {
+      font-weight: $font-weight-medium !important;
+    }
+
+    .fw-xs-semibold {
+      font-weight: $font-weight-semibold !important;
+    }
+
+    .fw-xs-bold {
+      font-weight: $font-weight-bold !important;
+    }
+
+    .fw-xs-bolder {
+      font-weight: $font-weight-bolder !important;
+    }
+
+    .text-xs-left{text-align: left !important;}
+    .text-xs-center{text-align: center !important;}
+    .text-xs-right{text-align: right !important;}
+    .text-xs-italic{font-style: italic !important;}
+    .text-xs-normal{font-style: normal !important;}
+  }
+}
+
+//Margin Classes Auto Generator
+@mixin magpadClass() {
+  @each $magpad in $magpads {
+
+    //margin Class
+    .m-#{$magpad}px {
+      margin: toRem($magpad) !important;
+    }
+
+    //padding class
+    .p-#{$magpad}px {
+      padding: toRem($magpad) !important;
+    }
+
+    .px-#{$magpad}px {
+      padding-left: toRem($magpad) !important;
+      padding-right: toRem($magpad) !important;
+    }
+
+    .py-#{$magpad}px {
+      padding-top: toRem($magpad) !important;
+      padding-bottom: toRem($magpad) !important;
+    }
+
+    .mx-#{$magpad}px {
+      margin-left: toRem($magpad) !important;
+      margin-right: toRem($magpad) !important;
+    }
+
+    .mx-auto{margin-left: auto !important; margin-right: auto !important;}
+
+    .my-#{$magpad}px {
+      margin-top: toRem($magpad) !important;
+      margin-bottom: toRem($magpad) !important;
+    }
+
+    //specific corner margins
+    .mt-#{$magpad}px {
+      margin-top: toRem($magpad) !important;
+    }
+
+    .mb-#{$magpad}px {
+      margin-bottom: toRem($magpad) !important;
+    }
+
+    .ml-#{$magpad}px {
+      margin-left: toRem($magpad) !important;
+    }
+
+    .mr-#{$magpad}px {
+      margin-right: toRem($magpad) !important;
+    }
+
+    //specific corner paddings
+    .pt-#{$magpad}px {
+      padding-top: toRem($magpad) !important;
+    }
+
+    .pb-#{$magpad}px {
+      padding-bottom: toRem($magpad) !important;
+    }
+
+    .pl-#{$magpad}px {
+      padding-left: toRem($magpad) !important;
+    }
+
+    .pr-#{$magpad}px {
+      padding-right: toRem($magpad) !important;
+    }
+  }
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    @each $magpad in $magpads {
+
+
+      .mx-md-auto{margin-left: auto !important; margin-right: auto !important;}
+
+      //margin Class
+      .m-md-#{$magpad}px {
+        margin: toRem($magpad) !important;
+      }
+
+      //padding class
+      .p-md-#{$magpad}px {
+        padding: toRem($magpad) !important;
+      }
+
+      .px-md-#{$magpad}px {
+        padding-left: toRem($magpad) !important;
+        padding-right: toRem($magpad) !important;
+      }
+
+      .py-md-#{$magpad}px {
+        padding-top: toRem($magpad) !important;
+        padding-bottom: toRem($magpad) !important;
+      }
+
+      .mx-md-#{$magpad}px {
+        margin-left: toRem($magpad) !important;
+        margin-right: toRem($magpad) !important;
+      }
+
+      .my-md-#{$magpad}px {
+        margin-top: toRem($magpad) !important;
+        margin-bottom: toRem($magpad) !important;
+      }
+
+      //specific corner margins
+      .mt-md-#{$magpad}px {
+        margin-top: toRem($magpad) !important;
+      }
+
+      .mb-md-#{$magpad}px {
+        margin-bottom: toRem($magpad) !important;
+      }
+
+      .ml-md-#{$magpad}px {
+        margin-left: toRem($magpad) !important;
+      }
+
+      .mr-md-#{$magpad}px {
+        margin-right: toRem($magpad) !important;
+      }
+
+      //specific corner paddings
+      .pt-md-#{$magpad}px {
+        padding-top: toRem($magpad) !important;
+      }
+
+      .pb-md-#{$magpad}px {
+        padding-bottom: toRem($magpad) !important;
+      }
+
+      .pl-md-#{$magpad}px {
+        padding-left: toRem($magpad) !important;
+      }
+
+      .pr-md-#{$magpad}px {
+        padding-right: toRem($magpad) !important;
+      }
+    }
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    @each $magpad in $magpads {
+
+      .mx-sm-auto{margin-left: auto !important; margin-right: auto !important;}
+
+      //margin Class
+      .m-sm-#{$magpad}px {
+        margin: toRem($magpad) !important;
+      }
+
+      //padding class
+      .p-sm-#{$magpad}px {
+        padding: toRem($magpad) !important;
+      }
+
+      .px-sm-#{$magpad}px {
+        padding-left: toRem($magpad) !important;
+        padding-right: toRem($magpad) !important;
+      }
+
+      .py-sm-#{$magpad}px {
+        padding-top: toRem($magpad) !important;
+        padding-bottom: toRem($magpad) !important;
+      }
+
+      .mx-sm-#{$magpad}px {
+        margin-left: toRem($magpad) !important;
+        margin-right: toRem($magpad) !important;
+      }
+
+      .my-sm-#{$magpad}px {
+        margin-top: toRem($magpad) !important;
+        margin-bottom: toRem($magpad) !important;
+      }
+
+      //specific corner margins
+      .mt-sm-#{$magpad}px {
+        margin-top: toRem($magpad) !important;
+      }
+
+      .mb-sm-#{$magpad}px {
+        margin-bottom: toRem($magpad) !important;
+      }
+
+      .ml-sm-#{$magpad}px {
+        margin-left: toRem($magpad) !important;
+      }
+
+      .mr-sm-#{$magpad}px {
+        margin-right: toRem($magpad) !important;
+      }
+
+      //specific corner paddings
+      .pt-sm-#{$magpad}px {
+        padding-top: toRem($magpad) !important;
+      }
+
+      .pb-sm-#{$magpad}px {
+        padding-bottom: toRem($magpad) !important;
+      }
+
+      .pl-sm-#{$magpad}px {
+        padding-left: toRem($magpad) !important;
+      }
+
+      .pr-sm-#{$magpad}px {
+        padding-right: toRem($magpad) !important;
+      }
+    }
+  }
+
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    @each $magpad in $magpads {
+
+      .mx-xs-auto{margin-left: auto !important; margin-right: auto !important;}
+
+      //margin Class
+      .m-xs-#{$magpad}px {
+        margin: toRem($magpad) !important;
+      }
+
+      //padding class
+      .p-xs-#{$magpad}px {
+        padding: toRem($magpad) !important;
+      }
+
+      .px-xs-#{$magpad}px {
+        padding-left: toRem($magpad) !important;
+        padding-right: toRem($magpad) !important;
+      }
+
+      .py-xs-#{$magpad}px {
+        padding-top: toRem($magpad) !important;
+        padding-bottom: toRem($magpad) !important;
+      }
+
+      .mx-xs-#{$magpad}px {
+        margin-left: toRem($magpad) !important;
+        margin-right: toRem($magpad) !important;
+      }
+
+      .my-xs-#{$magpad}px {
+        margin-top: toRem($magpad) !important;
+        margin-bottom: toRem($magpad) !important;
+      }
+
+      //specific corner margins
+      .mt-xs-#{$magpad}px {
+        margin-top: toRem($magpad) !important;
+      }
+
+      .mb-xs-#{$magpad}px {
+        margin-bottom: toRem($magpad) !important;
+      }
+
+      .ml-xs-#{$magpad}px {
+        margin-left: toRem($magpad) !important;
+      }
+
+      .mr-xs-#{$magpad}px {
+        margin-right: toRem($magpad) !important;
+      }
+
+      //specific corner paddings
+      .pt-xs-#{$magpad}px {
+        padding-top: toRem($magpad) !important;
+      }
+
+      .pb-xs-#{$magpad}px {
+        padding-bottom: toRem($magpad) !important;
+      }
+
+      .pl-xs-#{$magpad}px {
+        padding-left: toRem($magpad) !important;
+      }
+
+      .pr-xs-#{$magpad}px {
+        padding-right: toRem($magpad) !important;
+      }
+    }
+  }
+}
+
+//Width and Height Classes Auto Generator
+@mixin widthClass() {
+
+  @each $width in $widths {
+    .w-auto{width: auto;}
+    .w-#{$width}px {
+      width: toRem($width) !important;
+    }
+
+    .h-#{$width}px {
+      height: toRem($width) !important;
+    }
+
+    .m-h-#{$width}px {
+      min-height: toRem($width) !important;
+    }
+  }
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    @each $width in $widths {
+      .w-md-auto{width: auto;}
+      .w-md-#{$width}px {
+        width: toRem($width) !important;
+      }
+
+      .h-md-#{$width}px {
+        height: toRem($width) !important;
+      }
+    }
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    @each $width in $widths {
+      .w-sm-auto{width: auto;}
+      .w-sm-#{$width}px {
+        width: toRem($width) !important;
+      }
+
+      .h-sm-#{$width}px {
+        height: toRem($width) !important;
+      }
+    }
+  }
+
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    @each $width in $widths {
+      .w-xs-auto{width: auto;}
+      .w-xs-#{$width}px {
+        width: toRem($width) !important;
+      }
+
+      .h-xs-#{$width}px {
+        height: toRem($width) !important;
+      }
+    }
+  }
+}
+
+@mixin gapClass() {
+
+  @each $gap in $gaps {
+    .gap-#{$gap}px {
+      gap: toRem($gap) !important;
+    }
+  }
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    @each $gap in $gaps {
+      .gap-md-#{$gap}px {
+        gap: toRem($gap) !important;
+      }
+    }
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    @each $gap in $gaps {
+      .gap-sm-#{$gap}px {
+        gap: toRem($gap) !important;
+      }
+    }
+  }
+
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    @each $gap in $gaps {
+      .gap-xs-#{$gap}px {
+        gap: toRem($gap) !important;
+      }
+    }
+  }
+}
+
+
+// Border Radius generator -- works only if enable
+@mixin border-radius-generator() {
+
+  @each $brdRadius in $borderRadius {
+    .brd-#{$brdRadius} {
+      border-radius: toRem($brdRadius);
+    }
+
+    .brd-top-#{$brdRadius} {
+      border-top-left-radius: toRem($brdRadius);
+      border-top-right-radius: toRem($brdRadius);
+    }
+
+    .brd-bottom-#{$brdRadius} {
+      border-bottom-left-radius: toRem($brdRadius);
+      border-bottom-right-radius: toRem($brdRadius);
+    }
+
+    .brd-left-#{$brdRadius} {
+      border-top-left-radius: toRem($brdRadius);
+      border-bottom-left-radius: toRem($brdRadius);
+    }
+
+    .brd-right-#{$brdRadius} {
+      border-top-right-radius: toRem($brdRadius);
+      border-bottom-right-radius: toRem($brdRadius);
+    }
+  }
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    @each $brdRadius in $borderRadius {
+      .brd-lg-#{$brdRadius} {
+        border-radius: toRem($brdRadius);
+      }
+  
+      .brd-top-lg-#{$brdRadius} {
+        border-top-left-radius: toRem($brdRadius);
+        border-top-right-radius: toRem($brdRadius);
+      }
+  
+      .brd-bottom-lg-#{$brdRadius} {
+        border-bottom-left-radius: toRem($brdRadius);
+        border-bottom-right-radius: toRem($brdRadius);
+      }
+  
+      .brd-left-lg-#{$brdRadius} {
+        border-top-left-radius: toRem($brdRadius);
+        border-bottom-left-radius: toRem($brdRadius);
+      }
+  
+      .brd-right-lg-#{$brdRadius} {
+        border-top-right-radius: toRem($brdRadius);
+        border-bottom-right-radius: toRem($brdRadius);
+      }
+    }
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    @each $brdRadius in $borderRadius {
+      .brd-md-#{$brdRadius} {
+        border-radius: toRem($brdRadius);
+      }
+  
+      .brd-top-md-#{$brdRadius} {
+        border-top-left-radius: toRem($brdRadius);
+        border-top-right-radius: toRem($brdRadius);
+      }
+  
+      .brd-bottom-md-#{$brdRadius} {
+        border-bottom-left-radius: toRem($brdRadius);
+        border-bottom-right-radius: toRem($brdRadius);
+      }
+  
+      .brd-left-md-#{$brdRadius} {
+        border-top-left-radius: toRem($brdRadius);
+        border-bottom-left-radius: toRem($brdRadius);
+      }
+  
+      .brd-right-md-#{$brdRadius} {
+        border-top-right-radius: toRem($brdRadius);
+        border-bottom-right-radius: toRem($brdRadius);
+      }
+    }
+  }
+
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    @each $brdRadius in $borderRadius {
+      .brd-sm-#{$brdRadius} {
+        border-radius: toRem($brdRadius);
+      }
+  
+      .brd-top-sm-#{$brdRadius} {
+        border-top-left-radius: toRem($brdRadius);
+        border-top-right-radius: toRem($brdRadius);
+      }
+  
+      .brd-bottom-sm-#{$brdRadius} {
+        border-bottom-left-radius: toRem($brdRadius);
+        border-bottom-right-radius: toRem($brdRadius);
+      }
+  
+      .brd-left-sm-#{$brdRadius} {
+        border-top-left-radius: toRem($brdRadius);
+        border-bottom-left-radius: toRem($brdRadius);
+      }
+  
+      .brd-right-sm-#{$brdRadius} {
+        border-top-right-radius: toRem($brdRadius);
+        border-bottom-right-radius: toRem($brdRadius);
+      }
+    }
+  }
+}
+
+
+// responsive  breakpoint base classes generator [Start]
+@mixin responsiveClass() {
+  .display-none {
+    display: none !important;
+  }
+
+  .display-block {
+    display: block !important;
+  }
+
+  .display-inline-block {
+    display: inline-block !important;
+  }
+
+  .display-flex {
+    display: flex !important;
+  }
+
+  .display-flex-inline {
+    display: inline-flex !important;
+  }
+
+  .flex-column {
+    flex-direction: column !important;
+  }
+
+  .flex-row {
+    flex-direction: row !important;
+  }
+
+  .flex-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .flex-no-wrap{
+    flex-wrap: nowrap;
+  }
+  
+  .flex-wrap{
+    flex-wrap: wrap;
+  }
+
+  .flex-wrap-reverse{
+    flex-wrap: wrap-reverse;
+  }
+
+  .flex-auto {
+    flex: auto;
+  }
+
+  .flex-none {
+    flex: none;
+  }
+
+  .align-item-start {
+    align-items: start !important;
+  }
+
+  .align-item-center {
+    align-items: center !important;
+  }
+
+  .align-item-end {
+    align-items: end !important;
+  }
+
+  .align-self-start {
+    align-self:flex-start !important;
+  }
+
+  .align-self-center {
+    align-self:center !important;
+  }
+
+  .align-self-end {
+    align-self: flex-end !important;
+  }
+
+  .justify-start {
+    justify-content: flex-start !important;
+  }
+
+  .justify-center {
+    justify-content: center !important;
+  }
+
+  .justify-end {
+    justify-content: flex-end !important;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-around {
+    justify-content: space-around;
+  }
+
+  .justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  @media only screen and (max-width: $mq-small) {
+    .display-none-xs {
+      display: none !important;
+    }
+
+    .display-block-xs {
+      display: block !important;
+    }
+
+    .display-inline-block-xs {
+      display: inline-block !important;
+    }
+
+    .display-flex-xs {
+      display: flex !important;
+    }
+
+    .display-flex-inline-xs {
+      display: inline-flex !important;
+    }
+
+    .flex-column-xs {
+      flex-direction: column !important;
+    }
+
+    .flex-row-xs {
+      flex-direction: row !important;
+    }
+
+    .flex-column-reverse-xs {
+      flex-direction: column-reverse !important;
+    }
+  
+    .flex-row-reverse-xs {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex-no-wrap-xs {
+      flex-wrap: nowrap;
+    }
+
+    .flex-wrap-xs {
+      flex-wrap: wrap;
+    }
+
+    .flex-auto-xs {
+      flex: auto;
+    }
+
+    .flex-none-xs {
+      flex: none;
+    }
+
+    .flex-wrap-reverse-xs {
+      flex-wrap: wrap-reverse;
+    }
+
+    .align-item-start-xs {
+      align-items: start !important;
+    }
+
+    .align-item-center-xs {
+      align-items: center !important;
+    }
+
+    .align-item-end-xs {
+      align-items: end !important;
+    }
+
+    .align-self-start-xs {
+      align-self:flex-start !important;
+    }
+  
+    .align-self-center-xs {
+      align-self:center !important;
+    }
+  
+    .align-self-end-xs {
+      align-self: flex-end !important;
+    }
+
+    .justify-start-xs {
+      justify-content: flex-start !important;
+    }
+
+    .justify-center-xs {
+      justify-content: center !important;
+    }
+
+    .justify-end-xs {
+      justify-content: flex-end !important;
+    }
+
+    .justify-between-xs {
+      justify-content: space-between;
+    }
+
+    .justify-around-xs {
+      justify-content: space-around;
+    }
+
+    .justify-evenly-xs {
+      justify-content: space-evenly;
+    }
+  }
+
+  @media only screen and (min-width: $mq-medium) {
+    .display-none-md {
+      display: none !important;
+    }
+
+    .display-block-md {
+      display: block !important;
+    }
+
+    .display-inline-block-md {
+      display: inline-block !important;
+    }
+
+    .display-flex-md {
+      display: flex !important;
+    }
+
+    .display-flex-inline-md {
+      display: inline-flex !important;
+    }
+
+    .flex-column-md {
+      flex-direction: column !important;
+    }
+
+    .flex-row-md {
+      flex-direction: row !important;
+    }
+
+    .flex-column-reverse-md {
+      flex-direction: column-reverse !important;
+    }
+  
+    .flex-row-reverse-md {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex-no-wrap-md {
+      flex-wrap: nowrap;
+    }
+    
+    .flex-wrap-md {
+      flex-wrap: wrap;
+    }
+
+    .flex-auto-md {
+      flex: auto;
+    }
+
+    .flex-none-md {
+      flex: none;
+    }
+
+    .flex-wrap-reverse-md {
+      flex-wrap: wrap-reverse;
+    }
+
+    .align-item-start-md {
+      align-items: start !important;
+    }
+
+    .align-item-center-md {
+      align-items: center !important;
+    }
+
+    .align-item-end-md {
+      align-items: end !important;
+    }
+
+    .align-self-start-md {
+      align-self:flex-start !important;
+    }
+
+    .align-self-center-md {
+      align-self:center !important;
+    }
+
+    .align-self-end-md {
+      align-self: flex-end !important;
+    }
+
+    .justify-start-md {
+      justify-content: flex-start !important;
+    }
+
+    .justify-center-md {
+      justify-content: center !important;
+    }
+
+    .justify-end-md {
+      justify-content: flex-end !important;
+    }
+
+    .justify-between-md {
+      justify-content: space-between;
+    }
+
+    .justify-around-md {
+      justify-content: space-around;
+    }
+
+    .justify-evenly-md {
+      justify-content: space-evenly;
+    }
+  }
+
+  @media only screen and (min-width: $mq-mediumPlus1) {
+    .display-none-lg {
+      display: none !important;
+    }
+
+    .display-block-lg {
+      display: block !important;
+    }
+
+    .display-inline-block-lg {
+      display: inline-block !important;
+    }
+
+    .display-flex-lg {
+      display: flex !important;
+    }
+
+    .display-flex-inline-lg {
+      display: inline-flex !important;
+    }
+
+    .flex-column-lg {
+      flex-direction: column !important;
+    }
+
+    .flex-row-lg {
+      flex-direction: row !important;
+    }
+
+    .flex-column-reverse-lg {
+      flex-direction: column-reverse !important;
+    }
+  
+    .flex-row-reverse-lg {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex-no-wrap-lg {
+      flex-wrap: nowrap;
+    }
+    
+    .flex-wrap-lg {
+      flex-wrap: wrap;
+    }
+
+    .flex-auto-lg{
+      flex: auto;
+    }
+    .flex-none-lg{
+      flex: none;
+    }
+
+    .flex-wrap-reverse-lg {
+      flex-wrap: wrap-reverse;
+    }
+
+    .align-item-start-lg {
+      align-items: start !important;
+    }
+
+    .align-item-center-lg {
+      align-items: center !important;
+    }
+
+    .align-item-end-lg {
+      align-items: end !important;
+    }
+
+    .align-self-start-lg {
+      align-self:flex-start !important;
+    }
+
+    .align-self-center-lg {
+      align-self:center !important;
+    }
+
+    .align-self-end-lg {
+      align-self: flex-end !important;
+    }
+
+    .justify-start-lg {
+      justify-content: flex-start !important;
+    }
+
+    .justify-center-lg {
+      justify-content: center !important;
+    }
+
+    .justify-end-lg {
+      justify-content: flex-end !important;
+    }
+
+    .justify-between-lg {
+      justify-content: space-between;
+    }
+
+    .justify-around-lg {
+      justify-content: space-around;
+    }
+
+    .justify-evenly-lg {
+      justify-content: space-evenly;
+    }
+  }
+
+  @media only screen and (max-width: $mq-large) {
+    .display-none-max-md {
+      display: none !important;
+    }
+
+    .display-block-max-md {
+      display: block !important;
+    }
+
+    .display-inline-block-max-md {
+      display: inline-block !important;
+    }
+
+    .display-flex-max-md {
+      display: flex !important;
+    }
+
+    .display-flex-inline-max-md {
+      display: inline-flex !important;
+    }
+
+    .flex-column-max-md {
+      flex-direction: column !important;
+    }
+
+    .flex-row-max-md {
+      flex-direction: row !important;
+    }
+
+    .flex-column-reverse-max-md {
+      flex-direction: column-reverse !important;
+    }
+  
+    .flex-row-reverse-max-md {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex-no-wrap-max-md {
+      flex-wrap: nowrap;
+    }
+    
+    .flex-wrap-max-md {
+      flex-wrap: wrap;
+    }
+
+    .flex-auto-max-md{
+      flex: auto;
+    }
+    .flex-none-max-md{
+      flex: none;
+    }
+
+    .flex-wrap-reverse-max-md {
+      flex-wrap: wrap-reverse;
+    }
+
+    .align-item-start-max-md {
+      align-items: start !important;
+    }
+
+    .align-item-center-max-md {
+      align-items: center !important;
+    }
+
+    .align-item-end-max-md {
+      align-items: end !important;
+    }
+
+    .align-self-start-max-md {
+      align-self:flex-start !important;
+    }
+
+    .align-self-center-max-md {
+      align-self:center !important;
+    }
+
+    .align-self-end-max-md {
+      align-self: flex-end !important;
+    }
+
+    .justify-start-max-md {
+      justify-content: flex-start !important;
+    }
+
+    .justify-center-max-md {
+      justify-content: center !important;
+    }
+
+    .justify-end-max-md {
+      justify-content: flex-end !important;
+    }
+
+    .justify-between-max-md {
+      justify-content: space-between;
+    }
+
+    .justify-around-max-md {
+      justify-content: space-around;
+    }
+
+    .justify-evenly-max-md {
+      justify-content: space-evenly;
+    }
+  }
+
+    @media only screen and (max-width: $mq-large-max) {
+    .display-none-max-lg {
+      display: none !important;
+    }
+
+    .display-block-max-lg {
+      display: block !important;
+    }
+
+    .display-inline-block-max-lg {
+      display: inline-block !important;
+    }
+
+    .display-flex-max-lg {
+      display: flex !important;
+    }
+
+    .display-flex-inline-max-lg {
+      display: inline-flex !important;
+    }
+
+    .flex-column-max-lg {
+      flex-direction: column !important;
+    }
+
+    .flex-row-max-lg {
+      flex-direction: row !important;
+    }
+
+    .flex-column-reverse-max-lg {
+      flex-direction: column-reverse !important;
+    }
+  
+    .flex-row-reverse-max-lg {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex-no-wrap-max-lg {
+      flex-wrap: nowrap;
+    }
+    
+    .flex-wrap-max-lg {
+      flex-wrap: wrap;
+    }
+
+    .flex-auto-max-lg{
+      flex: auto;
+    }
+    .flex-none-max-lg{
+      flex: none;
+    }
+
+    .flex-wrap-reverse-max-lg {
+      flex-wrap: wrap-reverse;
+    }
+
+    .align-item-start-max-lg {
+      align-items: start !important;
+    }
+
+    .align-item-center-max-lg {
+      align-items: center !important;
+    }
+
+    .align-item-end-max-lg {
+      align-items: end !important;
+    }
+
+    .align-self-start-max-lg {
+      align-self:flex-start !important;
+    }
+
+    .align-self-center-max-lg {
+      align-self:center !important;
+    }
+
+    .align-self-end-max-lg {
+      align-self: flex-end !important;
+    }
+
+    .justify-start-max-lg {
+      justify-content: flex-start !important;
+    }
+
+    .justify-center-max-lg {
+      justify-content: center !important;
+    }
+
+    .justify-end-max-lg {
+      justify-content: flex-end !important;
+    }
+
+    .justify-between-max-lg {
+      justify-content: space-between;
+    }
+
+    .justify-around-max-lg {
+      justify-content: space-around;
+    }
+
+    .justify-evenly-max-lg {
+      justify-content: space-evenly;
+    }
+  }
+}
+// responsive  breakpoint base classes generator [END]
+
+// width and height mixin with optional border-radius [Start]
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius !=0 {
+    border-radius: $radius;
+  }
+}
+// width and height mixin with optional border-radius [END]
+
+// Filter Color Generator [Start]
+@mixin filterColor($color) {
+  $hue: color.hue($color);
+  $saturation: color.saturation($color);
+  $lightness: color.lightness($color);
+
+  filter: invert(15%) sepia(95%) saturate(3775%) hue-rotate(#{$hue}deg) brightness(75%) contrast(92%);
+}
+// Filter Color Generator [END]
+
+// icon generator
+@mixin iconClass() {
+  @each $class, $icon in $icons {
+    .icon-#{$class} {
+        &:before {
+            -webkit-mask-image: $icon;
+            mask-image: $icon;
+        }
+    }
+  }
+}
+
+// element parenet style mixin
+@mixin is-parent($parent-selector) {
+  $current-sequences: &;
+  $new-sequences: (
+  );
+
+  @each $sequence in $current-sequences {
+    $current-selector: list.nth($sequence, -1);
+    $prepended-selector: list.join($parent-selector, $current-selector);
+    $new-sequence: list.set-nth($sequence, -1, $prepended-selector);
+    $new-sequences: list.append($new-sequences, $new-sequence, comma);
+  }
+
+  @at-root #{$new-sequences} {
+    @content;
+  }
+}
+
+
+// Mixin to generate badge classes
+// @mixin badge-variants {
+//   @each $name, $values in $badge-colors {
+//     &-#{$name} {
+//       background-color: map.get($values, bg);
+//       color: map.get($values, color);
+//     }
+//   }
+// }
+
+// White Scroll Bar
+%white-scrollbar{
+  // css scrollbar [Start]
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 toRem(6) rgba($black,.15);
+    border-radius: toRem(10);
+    background-color: rgba($white, 0.25);
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: toRem(4);
+    height: toRem(4);
+    background-color: rgba($white, 0.25);
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    border-radius: toRem(10);
+    -webkit-box-shadow: inset 0 0 toRem(6) rgba($black,.15);
+    background-color: rgba($white, 0.85);
+  }
+}
+
+// salesforce button class generator
+  @mixin custom-brand-button($bg, $hover, $focus) {
+    background-color: $bg; border-color: $bg; font-weight: $button-font-weight;
+    &:hover { background-color: $hover; }
+    &:focus { box-shadow: 0 0 0 2px $focus; }
+  }

@@ -1,0 +1,121 @@
+// Slds Table [Start]
+.slds-table{
+  // lightTable
+  &.lightTable{border:toRem(1) $gray-100 solid; border-radius: toRem(6); overflow: hidden;
+
+    thead{
+      > tr{
+        > th{background-color: $gray-100; font-size:toRem(12); font-weight: $font-weight-semibold; text-transform: uppercase; letter-spacing: toRem(0.48); padding: toRem(14) toRem(12);
+          > div{color: $black !important;}
+        }
+      }
+    }
+    tbody{
+      > tr {
+        td{font-size: toRem(14); line-height: normal; font-weight: $font-weight-normal; padding: toRem(14) toRem(12); border-bottom:toRem(1) $gray-100 solid; border-top: none;
+          
+          &:first-of-type{
+            *:not(.badge){
+              color: $bfcolor !important; font-weight: $font-weight-semibold !important;
+              &.text-primary{
+                @extend .text-primary;
+              }
+              &.fw-normal{
+                @extend .fw-normal;
+              }
+            }            
+          }
+          .badge{margin: 0 !important; font-size: $badge-font-size !important;}
+        }
+
+        //hover
+        &:hover{
+          td{
+            box-shadow: none !important;
+            background: none;
+          }
+        }
+      }
+    }
+
+    thead > tr > th, tbody > tr > td{
+      &:first-of-type{padding-left: toRem(19);}
+    }
+  }
+
+  // Contained Table in Wrap
+  &.tableContained{
+    background: none;
+    border: none;
+    thead{
+      > tr{
+        > th{font-size:toRem(12); font-weight: $font-weight-semibold; text-transform: uppercase; letter-spacing: toRem(0.48); padding: toRem(12);
+          > div{color: $black !important;}
+        }
+      }
+    }
+    tbody{
+      > tr {
+        &:last-of-type > td {border:none}
+
+        td{line-height: normal; font-weight: $font-weight-normal; padding: toRem(14) toRem(8); border-bottom:toRem(1) rgba($black, 0.1) solid; border-top: none; white-space: normal;
+        }
+      }
+    }
+  }
+
+  &.simpleTable{    
+    background: none;
+    tbody{
+      > tr {
+
+        td{line-height: normal; padding: toRem(5) toRem(4); border: none;
+          &:first-child{
+            padding-left: 0;
+          }
+          &:last-child{
+            padding-right: 0;
+          }
+        }
+        &:first-child{
+          td{
+            padding-top: 0;
+          }
+        }
+        &:last-child{
+          td{
+            padding-bottom: 0;
+          }
+        }
+        //hover
+        &:hover{
+          td{
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  // grey Table
+  &.greyTable{background: $gray-100;
+    tbody > tr{
+      &:last-of-type > td {border:none}
+
+      > td{border-bottom-color: rgba($black, 0.1);} 
+    }
+  } 
+
+  // Responsive Table
+  &.responsive-table{
+    thead,
+    tbody{
+      > tr{
+        @include mq(0, $mq-small){
+          display: flex; flex-direction: column; 
+        }
+      }
+    }
+  }
+}
+// Slds Table [END]

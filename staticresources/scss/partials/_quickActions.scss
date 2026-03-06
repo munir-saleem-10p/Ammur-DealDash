@@ -1,0 +1,22 @@
+// Quick Actions [Start]
+.quickActions{
+  margin-top: toRem(3);
+  .heading{
+    @include mq(0, $mq-small){
+      font-size: toRem(20);
+    }
+  }
+  .card{@extend %cardBoxShadow; text-decoration: none;
+    // @include mq(0, $mq-small){
+    //   flex-direction: column;
+    // }
+    // .title{}
+
+    //hover
+    &:hover{background: $primary !important;
+      .amr-icon{@extend .filter-white;}
+      .title{color: $white !important;}
+    }
+  }
+}
+// Quick Actions [END]

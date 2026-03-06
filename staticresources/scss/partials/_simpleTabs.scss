@@ -1,0 +1,63 @@
+.simpleTabs{
+    .slds-tabs_default__nav{
+        @include mq(0, $mq-medium){
+            flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; padding-bottom: toRem(10); 
+        }
+
+        // css scrollbar [Start]
+            // &::-webkit-scrollbar-track
+            // {
+            //     -webkit-box-shadow: inset 0 0 toRem(6) rgba($black,.15);
+            //     border-radius: toRem(10);
+            //     background-color: #F5F5F5;
+            // }
+
+            // &::-webkit-scrollbar
+            // {
+            //     width: toRem(6);
+            // height: toRem(6);
+            //     background-color: #F5F5F5;
+            // }
+
+            // &::-webkit-scrollbar-thumb
+            // {
+            //     border-radius: toRem(10);
+            //     -webkit-box-shadow: inset 0 0 toRem(6) rgba($black,.15);
+            //     background-color: $gray-600 !important;
+            // }
+            // css scrollbar [END]
+
+        .slds-tabs_default__item{padding:0;
+
+            // &:not(.slds-is-active){
+            //     &:not(:hover){
+            //         [class*="badge-"]{background: $gray-600; color: $white;}
+            //     }
+            // }
+
+            .slds-tabs_default__link{font-size: toRem(16); font-weight:$font-weight-bold; padding-left: toRem(24); padding-right: toRem(24);}
+
+            //hover , active
+            &:hover, &.slds-is-active{
+                color: $secondary;
+                // .slds-tabs_default__link{
+                //     font-weight:$font-weight-bold !important;
+                // }
+
+                &::after{
+                    background: $primary;
+                }
+            }
+        }
+    }
+
+    &.mainTabs{
+        .slds-tabs_default__nav{
+            justify-content: center; margin-bottom: toRem(16); border-bottom-color:$gray-300;
+            
+            // &::before{
+            //     content: ''; background-color: $gray-300; width: 100vw; height: toRem(16); display: block; position: absolute; bottom: 0; left: toRem(-32);
+            // }
+        }
+    }
+}

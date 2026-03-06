@@ -1,0 +1,159 @@
+@use "sass:map";
+/* Input [Start] */
+
+
+.error,
+.warning,
+.info,
+.success{
+  .slds-border_bottom{border-width: 2px;}
+}
+
+.error{
+  .slds-border_bottom {border-color: $danger !important}
+  .amr-output-fld .slds-form-element__static{color: $danger; font-weight: $font-weight-bold;}
+}
+
+.warning{
+  .slds-border_bottom {border-color: $warning !important}
+  .amr-output-fld .slds-form-element__static{color: $warning; font-weight: $font-weight-bold;}
+}
+
+.info{
+  .slds-border_bottom {border-color: $info !important}
+  .amr-output-fld .slds-form-element__static{color: $info; font-weight: $font-weight-bold;}
+}
+
+.success{
+  .slds-border_bottom {border-color: $success !important}
+  .amr-output-fld .slds-form-element__static{color: $success; font-weight: $font-weight-bold;}
+}
+
+.amr-output-fld{
+  padding: $input-padding !important;
+  .slds-form-element__label{font-weight: bold;}
+
+  a{@extend .text-link;}
+
+  .slds-icon-utility-check, .slds-icon-utility-steps {
+    @extend .border-gray-500;
+    @include square(16px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg{
+      @include square(10px);
+      @extend .filter-primary-100;
+      transform: translateY(-2px);
+    }
+  }
+  .slds-icon-utility-steps{
+    svg{opacity: 0;}
+  }
+}
+
+.amr-input-fld{
+  .slds-input:not(.slds-combobox__input){
+    padding-left: toRem(8);
+    padding-right: toRem(8);
+  }
+  .slds-textarea{min-height: toRem(32) !important; font-size: var(--lwc-fontSize3, 0.8125rem); padding-left: toRem(8) !important; padding-right: toRem(8) !important;}
+}
+
+.amr-fulCol-fld{
+  @media (min-width: 48em) {
+    .slds-form-element_horizontal .slds-form-element__control, .slds-form_horizontal .slds-form-element .slds-form-element__control, .slds-form_stacked .slds-form-element_horizontal .slds-form-element__control {
+      padding-left: 15.5%;
+      margin-top: 3px;
+    }
+
+    .slds-form-element_horizontal .slds-form-element__label{
+      max-width: 6.5vw;
+    }
+  }
+}
+
+.slds-form-element{
+  // no label
+  &.nolabel{
+    .slds-form-element__label{display: none;}
+  }
+
+  @media (min-width: 48em) {
+    &.comfy{
+      padding-left: 0; padding-right: toRem(4);
+    }
+    &.compact {
+      lightning-datepicker{position: relative;
+        // .slds-form-element__label{position: absolute;}
+        .slds-form-element__label, .slds-form-element__help{max-width: 32%; padding-left: 3px;}
+        .slds-dropdown-trigger .slds-form-element__control {width: calc(100% - 34%); position: absolute; left: 33%; top:0;}
+      }
+
+
+    }
+    &.fld-lookUp{
+      .btnWrapper{
+        .slds-button{@include square(toRem(32));
+          svg{transform: translate(1.85%, 1.85%);}
+        }
+      }
+
+      &.comfy {
+        .btnWrapper{margin-top:toRem(24);
+          .slds-button{height: toRem(33) !important;}
+        }
+      }
+      &.compact {
+        .btnWrapper{margin-top:toRem(2);}
+      }
+    }
+  }
+}
+
+// File upload with drag and drop
+.fileUploaderWrapper {
+  .fld-fileUploader{position: relative; 
+    .slds-form-element{
+      .slds-form-element__label{display: none !important;}
+      .slds-form-element__control{
+        .slds-file-selector_files,
+        .slds-file-selector__dropzone,
+        .slds-file-selector__dropzone > slot,
+        .slds-file-selector__input,
+        .slds-file-selector__body
+        {width: $input-file-dropzone-width; height: $input-file-dropzone-height;}
+
+        .slds-file-selector__body{opacity: 0; position: absolute; z-index: 10;}
+        .slds-file-selector__dropzone{border:$input-file-dropZone-border; @extend .brd-6; @extend .trans-3all;
+          
+          //hover
+          &:hover{border-color: $primary; box-shadow: 0 0 toRem(5) rgba($primary, 50%);}
+        }
+      }
+    }    
+    .beforeuploadContent,
+    .fld-fileUploader,
+    .slds-file-selector__body{@extend .cursor-pointer;}
+  }
+  .beforeuploadContent{width:calc(100% - 50px) !important; height: 145px; z-index: 0;}
+  .uploadedFiles{flex:0 1 toRem(300); border:$input-file-dropZone-border;
+    .file-icon{width: toRem(25);}
+  
+  }
+  .btn-upload{border-radius: toRem(200);}
+}
+
+.no-resize{
+  .slds-textarea{
+    resize: none;
+  }
+}
+
+.textarea-large{
+  .slds-textarea{
+    min-height: toRem(124) !important;    
+  }
+}

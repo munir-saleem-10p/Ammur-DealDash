@@ -1,0 +1,31 @@
+/* Font Families */
+.bf-family { // base font family class
+font-family: $font-family-base;
+}
+.bhdf-family { // base heading font family class
+font-family: $font-family-base;
+}
+.dfont {
+font-family: $dfont;
+}
+.tfont {
+font-family: $tfont;
+}
+
+// headings
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6{
+font-family: $hdffamily;
+}
+
+h1, .h1{font-size: $hd1;}
+h2, .h2{font-size: $hd2;}
+h3, .h3{font-size: $hd3;}
+h4, .h4{font-size: $hd4;}
+h5, .h5{font-size: $hd5;}
+h6, .h6{font-size: $hd6;}
+// text class [END]

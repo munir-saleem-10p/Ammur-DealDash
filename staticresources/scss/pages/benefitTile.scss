@@ -1,0 +1,70 @@
+.benefitTile{border: toRem(1) rgba($black, 0.10) solid; padding: toRem(26);
+
+    // .tileHeader{
+    //     &::after{content:''; background: rgba($black, 0.10); width:100vw; height: 1px; display: block; position: absolute; left:toRem(-26); bottom: 0;
+            
+    //         @include mq(0, $mq-medium){
+    //             left: toRem(-16) !important;
+    //         }
+    //     }
+    // }
+
+    // .heading{}
+    .iconSet{
+        transform: translateY(toRem(-2));
+        @include mq(0, $mq-medium){
+            transform: translateY(toRem(-4)) !important;
+        }
+    }
+
+    .breadcrumb{padding:toRem(6) toRem(22); border-top-right-radius: toRem(200); border-bottom-right-radius: toRem(200); gap: 0; transform: translateX(toRem(-26));
+        &, *{color: $white !important;}
+
+        > li{font-size: toRem(14); font-weight: normal;
+            &:first-of-type{font-weight: $font-weight-semibold;}
+
+            &:not(:last-of-type):after{
+            content: '/'; background: unset; width: toRem(6); margin:0 toRem(6); display: flex; justify-content: center; align-items: center;}
+
+            .amr-icon{margin-right: toRem(4); @include square(toRem(16)); transform: translateY(-1px);}
+            a{
+                &:hover{text-decoration: underline;}
+            }
+        }
+    }
+
+    // .tileBody{}
+    .membersCoveredList{width: toRem(600);
+        
+        @include mq(0, $mq-small){
+            width: 100%;
+        }
+    }
+
+    .policyBadgeList{column-gap: toRem(2); row-gap: toRem(6);}
+
+    //responsive
+    @include mq(0, $mq-medium){
+        padding: toRem(20) toRem(16);
+    }
+}
+
+.advancedFilters{position: relative; border: toRem(1) solid rgba($black, 0.10);
+    &:before{content: ''; background: rgba($black, 0.1); width: 100%; height: toRem(1); display: block; position: absolute; top: toRem(-12); left: 0;}
+}
+
+.categoryListing{
+    .categoryHeader{
+        top: toRem(-1);
+    }
+    &:not(:first-child){
+        .categoryHeader{
+            margin-top: toRem(-15);
+        }
+    }
+    .categoryHeaderShadow  {
+        box-shadow: 0 7px 8px 1px rgba(0, 0, 0, 0.15);; /* Box-shadow when sticky */
+        top: toRem(25);
+        height: toRem(10);
+    }
+}

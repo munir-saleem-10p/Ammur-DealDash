@@ -1,0 +1,64 @@
+.filterSidebar{
+    @include mq($mq-medium){
+        overflow: auto;
+    }
+
+    @include mq($mq-large){
+        width: toRem(325); padding: 0 toRem(24);
+    }
+
+    @include mq($mq-medium){
+        width: toRem(475); padding: 0 toRem(24);
+        max-width: 320px;
+        min-width: 310px;
+    }
+
+    .searchBar{
+        .slds-input{line-height: normal; padding: toRem(11) toRem(9) toRem(11) toRem(30); margin-bottom:0; border: toRem(1) $gray-900 solid; border-radius: toRem(4);}
+    }
+    
+    .searchFilterBox{border-bottom: toRem(1) solid rgba($black, 0.1);
+        // .contentWrapper{}
+        .btn-expCol{background: none; @include square(toRem(24)); border: none;
+            > span{background: $primary; width: toRem(14); height: toRem(2); border-radius: toRem(200); display: block; position: relative; transform: rotate(90deg); @extend .trans-3;
+                &::before{content: ''; background-color: inherit; @include square(inherit, inherit); display: inherit; transform: rotate(90deg); @extend .trans-3;}
+            }
+
+            &.opened{
+                > span{transform: rotate(0deg);
+                    &::before{transform: rotate(0deg);}
+                }
+            }
+        }
+    
+        // .slds-checkbox{
+        //     //input checked
+        //     [type=checkbox]:checked+.slds-checkbox__label .slds-checkbox_faux{
+        //         background: $primary; box-shadow:inset 0 0 0 toRem(1) $primary;
+        //         &:after{display: none;}
+        //         .amr-icon{opacity: 1;}
+        //     }
+    
+        //     .slds-checkbox_faux{background: $white; display: flex; justify-content: center; align-items: center; border: none; box-shadow:inset 0 0 0 toRem(1) $gray-600; border-radius: toRem(4); @extend .trans-2all;
+        //        .amr-icon{opacity: 0; position: relative; z-index: 1;}
+        //     }
+        // }
+    }
+    .contentWrapper{
+        &.hidden{display: none !important;}
+    }
+}
+
+.mblFilterHeader{
+    width: 100%; position: absolute; top: toRem(66); left: 0; z-index: 101; box-shadow: 0 toRem(10) toRem(10) rgba($black, 0.15); 
+}
+
+.searchFiltersWrapper{margin-top: toRem(42);
+    // responsive
+    @include mq(0, $mq-medium){
+        background: $gray-100; width: 100%; position: absolute; left: 0; top: toRem(80); z-index: 100;
+        box-shadow: 0 toRem(10) toRem(50) rgba($black, 0.35);
+
+        &.hidden{display: none !important;}
+    }
+}

@@ -1,0 +1,9 @@
+gulpfile.js
+# gulpfile-web.js
+# gulpfile-pdf.js
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+node_modules
+.history/
