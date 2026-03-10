@@ -100,8 +100,8 @@ $warning2: #FFFF6F66;
 $darkRed: #B34122;
 
 // Theme color Variables [Start]
-$primary: map.get($bt-primary, 100); // todo
-$secondary: map.get($bt-secondary, 100); // todo
+$primary: map.get($bt-primary, 100);
+$secondary: map.get($bt-secondary, 100);
 
 $success: var(--success-200);
 $info: var(--info-200);
