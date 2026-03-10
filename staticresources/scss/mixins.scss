@@ -74,7 +74,7 @@
 @mixin generate-root-color($colors) {
   :root {
     @each $name, $value in $colors {
-      --amr-#{$name}: #{$value};
+      --dd-#{$name}: #{$value};
     }
   }
 }

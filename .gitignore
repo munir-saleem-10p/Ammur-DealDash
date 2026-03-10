@@ -7,3 +7,4 @@ gulpfile.js
 *.scss.map
 node_modules
 .history/
+.vscode/

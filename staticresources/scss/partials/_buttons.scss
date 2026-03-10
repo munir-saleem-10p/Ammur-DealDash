@@ -12,7 +12,7 @@
     // hover / active
     &:hover, &:active, &.active{
       background: $button-primary-bg-hover !important;
-      color:$button-font-color;
+      color:$button-primary-font-color-hover;
     }
 
     &:disabled{
@@ -25,7 +25,7 @@
 
     &:hover, &:active, &.active{
       background: $button-secondary-bg-hover !important;
-      color: $button-secondary-font-color;
+      color: $button-secondary-font-color-hover;
     }
   }
 
@@ -44,7 +44,8 @@
 .btn-icon{background: none; border: none; box-shadow: none;}
 /* Buttons [END] */
 
-/* Neutral button */
+
+/* Sales force button */
 .dealDashWrapper{
   lightning-button .slds-button_neutral {
     @include custom-brand-button(#f3f3f3, #e0e0e0, #cccccc);
@@ -58,6 +59,12 @@
 
     &:disabled{
       background: $primary !important; color: inherit !important; opacity: 0.5;
+    }
+
+    // hover / active
+    &:hover, &:active, &.active{
+      background: $button-primary-bg-hover !important;
+      color:$button-primary-font-color-hover;
     }
   }
 
@@ -91,6 +98,8 @@
     color: #fff;
   }
 }
+
+
 
 .status-button {
     border: none;
