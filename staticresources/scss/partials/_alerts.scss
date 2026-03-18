@@ -1,43 +1,45 @@
 @use "sass:map";
 // Alert [Start]
-.slds-notify{
-  &.onPageTop{
-    border-radius: 0 !important; border-left: 0 !important; border-right:0 !important;
-  }
-  &.slds-notify_alert {
-    background:none $alert-bg-color; color: $alert-font-color; font-weight: $alert-font-weight !important; padding: $alert-padding; border:$alert-border-width $alert-border-type $alert-border-color; border-radius: $alert-border-radius;
-
-    h2{font-size: toRem(14); font-weight: $font-weight-medium; line-height: toRem(20);}
-
-    //alert-danger
-    &.slds-alert_error{
-      background: $alert-danger-bg-color; color:$alert-danger-font-color; border-color: $alert-danger-border-color;
-      // .slds-alert-icon{}
+#{$mainWrapperClass}{
+  .slds-notify{
+    &.onPageTop{
+      border-radius: 0 !important; border-left: 0 !important; border-right:0 !important;
     }
-    //alert-warning
-    &.slds-alert_warning{
-      background: $alert-warning-bg-color; color:$alert-warning-font-color; border-color: $alert-warning-border-color;
+    &.slds-notify_alert {
+      background:none $alert-bg-color; color: $alert-font-color; font-weight: $alert-font-weight !important; justify-content: left; padding: $alert-padding; border:$alert-border-width $alert-border-type $alert-border-color; border-radius: $alert-border-radius;
+
+      h2{font-size: toRem(14); font-weight: $font-weight-medium; line-height: toRem(20);}
+
+      //alert-danger
+      &.slds-theme_error{
+        background: $alert-danger-bg-color; color:$alert-danger-font-color; border-color: $alert-danger-border-color;
+        // .slds-theme_icon{}
+      }
+      //alert-warning
+      &.slds-theme_warning{
+        background: $alert-warning-bg-color; color:$alert-warning-font-color; border-color: $alert-warning-border-color;
+      }
+      //alert-info
+      &.slds-theme_info{
+        background: $alert-info-bg-color; color:$alert-info-font-color; border-color: $alert-info-border-color;
+      }
+      //alert-success
+      &.slds-theme_success{
+        background: $alert-success-bg-color; color:$alert-success-font-color; border-color: $alert-success-border-color;
+      }
+
+      // alert outline
+      &.slds-theme_outlined{background: transparent}
+
+      //icon
+      .slds-theme_icon{font-size: $alert-icon-font-size;}
+      //message
+      .slds-theme_message{color:$bfcolor;}
+
+      // Alert Compact Style
+      &.slds-theme_compact{width: fit-content; font-size: $alert-compact-font-size; font-weight: $alert-compact-font-weight; padding: $alert-compact-padding; display: flex; gap: toRem(4); justify-content: start; border-radius: $alert-compact-border-radius;}
+
     }
-    //alert-info
-    &.slds-alert_info{
-      background: $alert-info-bg-color; color:$alert-info-font-color; border-color: $alert-info-border-color;
-    }
-    //alert-success
-    &.slds-alert_success{
-      background: $alert-success-bg-color; color:$alert-success-font-color; border-color: $alert-success-border-color;
-    }
-
-    // alert outline
-    &.slds-alert-outlined{background: transparent}
-
-    //icon
-    .slds-alert-icon{font-size: $alert-icon-font-size;}
-    //message
-    .slds-alert-message{color:$bfcolor;}
-
-    // Alert Compact Style
-    &.slds-alert-compact{width: fit-content; font-size: $alert-compact-font-size; font-weight: $alert-compact-font-weight; padding: $alert-compact-padding; display: flex; gap: toRem(4); justify-content: start; border-radius: $alert-compact-border-radius;}
-
   }
 }
 // Alert [END]

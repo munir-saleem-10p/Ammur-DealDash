@@ -103,10 +103,22 @@ $darkRed: #B34122;
 $primary: map.get($bt-primary, 100);
 $secondary: map.get($bt-secondary, 100);
 
-$success: var(--success-200);
-$info: var(--info-200);
-$warning: var(--warning-200);
-$danger: var(--error-200);
+$success: var(--dd-success-100);
+$success-bg: var(--dd-success-300);
+$success-border: var(--dd-success-200);
+
+$info: var(--dd-info-100);
+$info-bg: var(--dd-info-300);
+$info-border: var(--dd-info-200);
+
+$warning: var(--dd-warning-100);
+$warning-bg: var(--dd-warning-300);
+$warning-border: var(--dd-warning-200);
+
+$danger: var(--dd-error-100);
+$danger-bg: var(--dd-error-300);
+$danger-border: var(--dd-error-200);
+
 
 $light: $gray-200 !default;
 $dark: $gray-900 !default;
@@ -207,6 +219,10 @@ $theme-colors: (
   // "dodgerBlue": $dodgerBlue,
 );
 // scss-docs-end theme-colors-map
+
+
+// Main Wrapper class
+$mainWrapperClass : ".dealDashWrapper";
 
 //defualt fonts
 $dfont: Arial, Helvetica, sans-serif !important;
@@ -338,7 +354,7 @@ $button-font-color: $gray-200;
 $button-font-size: $bfsize;
 $button-font-weight: $font-weight-normal;
 $button-line-height: normal;
-$button-padding: toRem(8) toRem(16);
+$button-padding: toRem(6) toRem(16);
 // $button-padding-mobile: toRem(6) rem(12);
 // $button-padding-sm: toRem(4) rem(12);
 $button-border-radius: toRem(200);
@@ -350,24 +366,26 @@ $button-disabled-font-color: var(--disabled-100);
 // link
 $button-link-font-color: map.get($bt-primary, 100);
 $button-link-hover-font-color: map.get($bt-primary, 100);
+
+
 // primary
 $button-primary-font-color: map.get($bt-secondary, 300);
 $button-primary-bg: map.get($bt-primary, 500);
-$button-primary-font-color-hover:$white;
-$button-primary-bg-hover: map.get($bt-primary, 300);
+$button-primary-font-color-hover: $button-primary-font-color;
+$button-primary-bg-hover: map.get($bt-primary, 400);
 $button-primary-bg-active: $button-primary-bg-hover;
 $button-primary-focus: $button-primary-bg-hover;
 
 // secondary
-$button-secondary-font-color: map.get($bt-primary, 100);
-$button-secondary-bg: map.get($bt-secondary, 100);
+$button-secondary-font-color: $white;
+$button-secondary-bg: map.get($bt-secondary, 300);
 $button-secondary-font-color-hover:$white;
-$button-secondary-bg-hover: map.get($bt-primary, 100);
+$button-secondary-bg-hover: map.get($bt-secondary, 200);
 $button-secondary-bg-active: $button-secondary-bg-hover;
 $button-secondary-focus: $button-secondary-bg-hover;
 
 // outline primary
-$button-outline-primary-font-color: map.get($bt-primary, 100);
+$button-outline-primary-font-color: map.get($bt-secondary, 300);
 $button-outline-primary-bg: transparent;
 $button-outline-primary-font-color-hover: $white;
 $button-outline-primary-bg-hover: map.get($bt-primary, 100);
@@ -379,9 +397,25 @@ $button-outline-primary-focus: $button-outline-primary-bg-hover;
 $button-outline-secondary-font-color: map.get($bt-secondary, 100);
 $button-outline-secondary-bg: transparent;
 $button-outline-secondary-font-color-hover: map.get($bt-primary, 100);
-$button-outline-secondary-bg-hover: map.get($bt-secondary, 100);
-$button-outline-secondary-border: map.get($bt-secondary, 100);
+$button-outline-secondary-bg-hover: var(--dd-bg-100);
+$button-outline-secondary-border: map.get($bt-primary, 100);
 $button-outline-secondary-focus: $button-outline-secondary-bg-hover;
+
+// destructive
+$button-destructive-font-color: $danger;
+$button-destructive-bg: $danger-bg;
+$button-destructive-font-color-hover: $white;
+$button-destructive-bg-hover: $button-destructive-font-color;
+$button-destructive-bg-active: $button-destructive-bg-hover;
+$button-destructive-focus: $button-destructive-bg-hover;
+
+// success
+$button-success-font-color: $success;
+$button-success-bg: $success-bg;
+$button-success-font-color-hover: $white;
+$button-success-bg-hover: $button-success-font-color;
+$button-success-bg-active: $button-success-bg-hover;
+$button-success-focus: $button-success-bg-hover;
 
 // button [END]
 
@@ -405,41 +439,24 @@ $alert-compact-padding:toRem(4);
 $alert-compact-border-radius: toRem(4);
 
 //danger
-$alert-danger-font-color:var(--error-100);
-$alert-danger-bg-color: var(--error-300);
-$alert-danger-border-color:var(--error-200);
-
-// $alert-danger-outlined-font-color:$danger;
-// $alert-danger-outlined-bg-color: transparent;
-// $alert-danger-outlined-border-color: $rust;
+$alert-danger-font-color: $danger;
+$alert-danger-bg-color: $danger-bg;
+$alert-danger-border-color: $danger-border;
 
 //warning
-$alert-warning-font-color:var(--warning-100);
-$alert-warning-bg-color: var(--warning-300);
-$alert-warning-border-color: var(--warning-200);
-
-// $alert-warning-outlined-font-color:$warning;
-// $alert-warning-outlined-bg-color: transparent;
-// $alert-warning-outlined-border-color: $yellow;
+$alert-warning-font-color:$warning;
+$alert-warning-bg-color: $warning-bg;
+$alert-warning-border-color: $warning-border;
 
 //success
-$alert-success-font-color: var(--success-100);
-$alert-success-bg-color: var(--success-300);
-$alert-success-border-color: var(--success-200);
-
-// $alert-success-outlined-font-color:$success;
-// $alert-success-outlined-bg-color: transparent;
-// $alert-success-outlined-border-color: map.get($bt-primary, 100);
+$alert-success-font-color: $success;
+$alert-success-bg-color: $success-bg;
+$alert-success-border-color: $success-border;
 
 //info
-$alert-info-font-color:var(--info-100);
-$alert-info-bg-color:var(--info-300);
-$alert-info-border-color:var(--info-200);
-
-// $alert-info-outlined-font-color:$info;
-// $alert-info-outlined-bg-color: transparent;
-// $alert-info-outlined-border-color: $info;
-
+$alert-info-font-color:$info;
+$alert-info-bg-color:$info-bg;
+$alert-info-border-color:$info-border;
 
 // Main Layout config
 $sidebarCol-width: toRem(315);

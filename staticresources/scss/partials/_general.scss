@@ -458,7 +458,7 @@ input::-ms-clear {
 // General Content Styling [END]
 
 // Deal Dash Wrapper [Start]
-.dealDashWrapper{
+#{$mainWrapperClass}{
   font-family: $bffamily; font-size: $bfsize; color: $bfcolor;
 }
 // Deal Dash Wrapper [END]
