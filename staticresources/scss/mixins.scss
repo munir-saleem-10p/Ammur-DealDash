@@ -3,12 +3,12 @@
 @use "sass:map";
 @use "sass:math";
 @import "./variables";
-@import "./../../node_modules/bourbon/core/bourbon.scss";
+// @import "./../../node_modules/bourbon/core/bourbon.scss";
 
 // conver px to rem
 @function toRem($value) {
-  $remValue: math.div($value, 16) + rem;
-  @return $remValue;
+  // $remValue: math.div($value, 16) + rem;
+  @return $value+px;
 }
 
 // Media Query [Start]
@@ -736,6 +736,42 @@
     @each $gap in $gaps {
       .gap-xs-#{$gap}px {
         gap: toRem($gap) !important;
+      }
+    }
+  }
+}
+
+@mixin letterSpacingClass() {
+
+  @each $letterSpacing in $letterSpacings {
+    .ls-#{$letterSpacing}px {
+      letter-spacing: toRem($letterSpacing) !important;
+    }
+  }
+
+  // for laptop
+  @media only screen and (min-width:$mq-mediumPlus1) {
+    @each $letterSpacing in $letterSpacings {
+      .ls-md-#{$letterSpacing}px {
+        letter-spacing: toRem($letterSpacing) !important;
+      }
+    }
+  }
+
+  // for tablet
+  @media only screen and (min-width:$mq-medium) {
+    @each $letterSpacing in $letterSpacings {
+      .ls-sm-#{$letterSpacing}px {
+        letter-spacing: toRem($letterSpacing) !important;
+      }
+    }
+  }
+
+  // for mobile
+  @media only screen and (max-width:$mq-small) {
+    @each $letterSpacing in $letterSpacings {
+      .ls-xs-#{$letterSpacing}px {
+        letter-spacing: toRem($letterSpacing) !important;
       }
     }
   }

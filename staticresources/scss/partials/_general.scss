@@ -6,10 +6,10 @@
 //Global Styles
 *{box-sizing: border-box;}
 
-// body{font-family: $bffamily; font-size: $bfsize; color: $bfcolor;
-// -webkit-font-smoothing: antialiased; /* Chrome, Safari */
-// -moz-osx-font-smoothing: grayscale; /* Firefox */
-// }
+body{font-family: $bffamily; font-size: 16px; color: $bfcolor;
+-webkit-font-smoothing: antialiased; /* Chrome, Safari */
+-moz-osx-font-smoothing: grayscale; /* Firefox */
+}
 
 .bfcolor{color:$bfcolor;}
 

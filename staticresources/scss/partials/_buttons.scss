@@ -1,7 +1,6 @@
 /* Buttons [Start] */
 #{$mainWrapperClass}{
   .btn, .slds-button{color:$button-font-color; font-family: $button-font-family; font-size: $button-font-size;  padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
-    /* box-shadow: 0 toRem(22) toRem(6) 0 rgba($black, 0.00), 0 toRem(14) toRem(6) 0 rgba($black, 0.01), 0 toRem(8) toRem(5) 0 rgba($black, 0.05), 0 toRem(4) toRem(4) 0 rgba($black, 0.09), 0 toRem(1) toRem(2) 0 rgba($black, 0.10); */
 
     &[kx-type="ripple"]{
       &:before, &:after{
@@ -76,6 +75,15 @@
   }
 
   .btn-icon{background: none; border: none; box-shadow: none;}
+
+
+  // slds button group
+  .slds-button-group{
+    .slds-button{border-radius: unset;
+      &:first-of-type{border-top-left-radius: toRem(8); border-bottom-left-radius: toRem(8);}
+      &:last-of-type{border-top-right-radius: toRem(8); border-bottom-right-radius: toRem(8);}
+    }
+  }
   /* Buttons [END] */
 }
 

@@ -19,18 +19,22 @@
     &.success, &.slds-theme_success {
       background-color: $success-bg;
       color: $success;
+      border: toRem(1) solid $success;
     }
     &.warning, &.slds-theme_warning {
       background-color: $warning-bg;
       color: $warning;
+      border: toRem(1) solid $warning;
     }
     &.error, &.slds-theme_error {
       background-color: $danger-bg;
       color: $danger;
+      border: toRem(1) solid $danger;
     }
     &.info, &.slds-theme_info {
       background-color: $info-bg;
       color: $info;
+      border: toRem(1) solid $info;
     }
 
     &.disabled {

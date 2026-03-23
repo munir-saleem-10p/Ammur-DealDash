@@ -1,5 +1,14 @@
 // Main Layout [Start]
 #{$mainWrapperClass}{
-  color: inherit
+  --lwc-fontSize3: 16px;
+  
+  .boxSectionBorder{
+    .boxSection{position: relative;
+      
+      &:not(:last-of-type):after{
+        content: ''; background: var(--boxSectionBorder , $dark); width: toRem(1); height: 80%; display: block; position: absolute; top:50%; bottom:0; right: 0; z-index: 1; border-radius: 200px; transform: translateY(-50%);
+      }
+    }
+  }
 }
 // Main Layout [END]
