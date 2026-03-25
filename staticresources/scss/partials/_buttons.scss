@@ -1,103 +1,145 @@
 /* Buttons [Start] */
-.btn{color:$button-font-color; padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
-  /* box-shadow: 0 toRem(22) toRem(6) 0 rgba($black, 0.00), 0 toRem(14) toRem(6) 0 rgba($black, 0.01), 0 toRem(8) toRem(5) 0 rgba($black, 0.05), 0 toRem(4) toRem(4) 0 rgba($black, 0.09), 0 toRem(1) toRem(2) 0 rgba($black, 0.10); */
+#{$mainWrapperClass}{
+  .btn, .slds-button{color:$button-font-color; font-family: $button-font-family; font-size: $button-font-size;  padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
 
-  &:disabled{
-    background: $button-disabled-bg; color: $button-disabled-font-color;
-  }
-  //primary
-  &.btn-primary{
-    background: $button-primary-bg; color: $button-primary-font-color;
+    &[kx-type="ripple"]{
+      &:before, &:after{
+        display: none;
+      }
+    }
 
-    // hover / active
-    &:hover, &:active, &.active{
-      background: $button-primary-bg-hover !important;
-      color:$button-primary-font-color-hover;
+    &.btn-disabled, &:disabled{
+      &, &:hover, &:active, &.active{
+      background: var(--gray-300) !important; color: $gray-400 !important; pointer-events: none;
+      }
     }
 
     &:disabled{
-      background: $primary !important; color: inherit !important; opacity: 0.5;
+      background: $button-disabled-bg; color: $button-disabled-font-color;
+    }
+    //primary
+    &.btn-primary, &.slds-button_brand{
+      background: $button-primary-bg; color: $button-primary-font-color;
+
+      // hover / active
+      &:hover, &:active, &.active{
+        background: $button-primary-bg-hover;
+        color: $button-primary-font-color-hover;
+      }
+
+      &:disabled{
+        background: $primary; color: inherit; opacity: 0.5;
+      }
+    }
+    //secondary
+    &.btn-secondary, &.slds-button_neutral{
+      background: $button-secondary-bg; color: $button-secondary-font-color;
+
+      &:hover, &:active, &.active{
+        background: $button-secondary-bg-hover; color: $button-secondary-font-color-hover;
+      }
+    }
+
+    // outlined
+    &.btn-outlined-primary, &.slds-button_outline-brand{
+      background: $button-outline-primary-bg; color: $button-outline-primary-font-color; border: toRem(1) $button-outline-primary-border solid;
+
+      &:hover, &:active, &.active{
+        background: $button-outline-primary-bg-hover; color: $button-secondary-font-color-hover;
+      }
+    }
+
+    // destructive
+    &.btn-danger, &.slds-button_destructive{
+      background: $button-destructive-bg; color: $button-destructive-font-color;
+
+      &:hover, &:active, &.active{
+        background: $button-destructive-bg-hover; color: $button-destructive-font-color-hover;
+      }
+    }
+
+    // success
+    &.btn-success, &.slds-button_success{
+      background: $button-success-bg; color: $button-success-font-color;
+
+      &:hover, &:active, &.active{
+        background: $button-success-bg-hover; color: $button-success-font-color-hover;
+      }
+    }
+
+
+    // button-text
+    &.btn-text{
+      background: none; border: none; box-shadow: none;
     }
   }
-  //secondary
-  &.btn-secondary{
-    background: $button-secondary-bg; color: $button-secondary-font-color;
 
-    &:hover, &:active, &.active{
-      background: $button-secondary-bg-hover !important;
-      color: $button-secondary-font-color-hover;
+  .btn-icon{background: none; border: none; box-shadow: none;}
+
+
+  // slds button group
+  .slds-button-group{
+    .slds-button{border-radius: unset;
+      &:first-of-type{border-top-left-radius: toRem(8); border-bottom-left-radius: toRem(8);}
+      &:last-of-type{border-top-right-radius: toRem(8); border-bottom-right-radius: toRem(8);}
     }
   }
-
-  &.btn-disabled, &:disabled{
-    &, &:hover, &:active, &.active{
-    background: var(--gray-300) !important; color: $gray-400 !important; pointer-events: none;
-    }
-  }
-
-  // button-text
-  &.btn-text{
-    background: none; border: none; box-shadow: none;
-  }
+  /* Buttons [END] */
 }
-
-.btn-icon{background: none; border: none; box-shadow: none;}
-/* Buttons [END] */
-
 
 /* Sales force button */
-.dealDashWrapper{
-  lightning-button .slds-button_neutral {
-    @include custom-brand-button(#f3f3f3, #e0e0e0, #cccccc);
-    color: #000;
-  }
+// .dealDashWrapper{
+//   lightning-button .slds-button_neutral {
+//     @include custom-brand-button(#f3f3f3, #e0e0e0, #cccccc);
+//     color: #000;
+//   }
 
-  /* Brand button */
-  lightning-button .slds-button_brand {
-    @include custom-brand-button($button-primary-bg, $button-primary-bg-hover, $button-primary-focus);
-    color: $button-primary-font-color;
+//   /* Brand button */
+//   lightning-button .slds-button_brand {
+//     @include custom-brand-button($button-primary-bg, $button-primary-bg-hover, $button-primary-focus);
+//     color: $button-primary-font-color;
 
-    &:disabled{
-      background: $primary !important; color: inherit !important; opacity: 0.5;
-    }
+//     &:disabled{
+//       background: $primary !important; color: inherit !important; opacity: 0.5;
+//     }
 
-    // hover / active
-    &:hover, &:active, &.active{
-      background: $button-primary-bg-hover !important;
-      color:$button-primary-font-color-hover;
-    }
-  }
+//     // hover / active
+//     &:hover, &:active, &.active{
+//       background: $button-primary-bg-hover !important;
+//       color:$button-primary-font-color-hover;
+//     }
+//   }
 
-  /* Brand-outline button */
-  lightning-button .slds-button_brand-outline {
-    @include custom-brand-button($button-outline-primary-bg-hover, $button-outline-primary-bg-hover, $button-outline-primary-focus);
-    color: $button-outline-primary-font-color;
-  }
+//   /* Brand-outline button */
+//   lightning-button .slds-button_brand-outline {
+//     @include custom-brand-button($button-outline-primary-bg-hover, $button-outline-primary-bg-hover, $button-outline-primary-focus);
+//     color: $button-outline-primary-font-color;
+//   }
 
-  /* Destructive button */
-  lightning-button .slds-button_destructive {
-    @include custom-brand-button(#c23934, #a61d1a, #ff9999);
-    color: #fff;
-  }
+//   /* Destructive button */
+//   lightning-button .slds-button_destructive {
+//     @include custom-brand-button(#c23934, #a61d1a, #ff9999);
+//     color: #fff;
+//   }
 
-  /* Destructive-text button */
-  lightning-button .slds-button_destructive-text {
-    @include custom-brand-button(transparent, #ffe5e5, #ff9999);
-    color: #c23934;
-  }
+//   /* Destructive-text button */
+//   lightning-button .slds-button_destructive-text {
+//     @include custom-brand-button(transparent, #ffe5e5, #ff9999);
+//     color: #c23934;
+//   }
 
-  /* Inverse button */
-  lightning-button .slds-button_inverse {
-    @include custom-brand-button(#ffffff, #f0f0f0, #cccccc);
-    color: #005fb2;
-  }
+//   /* Inverse button */
+//   lightning-button .slds-button_inverse {
+//     @include custom-brand-button(#ffffff, #f0f0f0, #cccccc);
+//     color: #005fb2;
+//   }
 
-  /* Success button */
-  lightning-button .slds-button_success {
-    @include custom-brand-button(#2e844a, #27663f, #99cc99);
-    color: #fff;
-  }
-}
+//   /* Success button */
+//   lightning-button .slds-button_success {
+//     @include custom-brand-button(#2e844a, #27663f, #99cc99);
+//     color: #fff;
+//   }
+// }
 
 
 

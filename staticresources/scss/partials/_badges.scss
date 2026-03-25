@@ -1,33 +1,45 @@
 // Badge [Start]
 @use "sass:map";
-.badge {
-  background-color: $badge-default-bg;
-  color: $badge-default-color;
-  font-size: $badge-font-size;
-  font-weight: $badge-font-weight;
-  // line-height: normal;
-  padding: $badge-padding;
-  border-radius: $badge-border-radius;
 
-  // badges generator
-  // @include badge-variants;
+#{$mainWrapperClass}{
+  .badge, .slds-badge {
+    background-color: $badge-default-bg;
+    color: $badge-default-color;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    // line-height: normal;
+    padding: $badge-padding;
+    border-radius: $badge-border-radius;
 
-  &.success {
-    background-color: var(--success-300);
-  }
-  &.warning {
-    background-color: var(--warning-300);
-  }
-  &.error {
-    background-color: var(--error-300);
-  }
-  &.disabled {
-    background-color: var(--disabled-300);
-  }
+    span{color: inherit;}
 
-  &.alignment-right {
-    margin-left: auto;
-    @extend .mr-10px;
+    // badges generator
+    // @include badge-variants;
+
+    &.success, &.slds-theme_success {
+      background-color: $success-bg;
+      color: $success;
+      border: toRem(1) solid $success;
+    }
+    &.warning, &.slds-theme_warning {
+      background-color: $warning-bg;
+      color: $warning;
+      border: toRem(1) solid $warning;
+    }
+    &.error, &.slds-theme_error {
+      background-color: $danger-bg;
+      color: $danger;
+      border: toRem(1) solid $danger;
+    }
+    &.info, &.slds-theme_info {
+      background-color: $info-bg;
+      color: $info;
+      border: toRem(1) solid $info;
+    }
+
+    &.disabled {
+      background-color: var(--dd-disabled-300);
+    }
   }
 }
 // Badge [END]

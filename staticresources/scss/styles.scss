@@ -1,5 +1,7 @@
 @use "sass:math";
 @use "sass:color";
+@use "sass:meta";
+
 @import './../../node_modules/@salesforce-ux/design-system/scss/design-tokens';
 @import './mixins';
 @import './variables';
@@ -15,6 +17,9 @@
 @include fontSizeClass();
 @include fontWeightClass();
 
+// letter Spacing
+@include letterSpacingClass();
+
 //Padding and Margin Generator
 @include magpadClass();
 
@@ -26,6 +31,7 @@
 
 // gap classes
 @include gapClass();
+
 
 // border - radius generator
 @include border-radius-generator();
@@ -42,16 +48,16 @@
 @import './partials/typography';
 
 // // Alert
-// @import './partials/_alerts';
+@import './partials/_alerts';
 
 // // Badge
-// @import './partials/badges';
+@import './partials/badges';
 
 // // SlDS Table
 // @import './partials/_slds-table.scss';
 
 // // Main Layout
-// @import './partials/mainLayout';
+@import './partials/mainLayout';
 
 // // Headers
 // @import './partials/header';
