@@ -6,10 +6,16 @@
 //Global Styles
 *{box-sizing: border-box;}
 
-body{font-family: $bffamily; font-size: 16px; color: $bfcolor;
--webkit-font-smoothing: antialiased; /* Chrome, Safari */
--moz-osx-font-smoothing: grayscale; /* Firefox */
-}
+// body{font-family: $bffamily; font-size: 16px; color: $bfcolor;
+// -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+// -moz-osx-font-smoothing: grayscale; /* Firefox */
+// }
+
+// Deal Dash Wrapper [Start]
+#{$mainWrapperClass}{
+  font-family: $bffamily; font-size: $bfsize; color: $bfcolor;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
 
 .bfcolor{color:$bfcolor;}
 
@@ -457,8 +463,6 @@ input::-ms-clear {
 }
 // General Content Styling [END]
 
-// Deal Dash Wrapper [Start]
-#{$mainWrapperClass}{
-  font-family: $bffamily; font-size: $bfsize; color: $bfcolor;
+
 }
 // Deal Dash Wrapper [END]

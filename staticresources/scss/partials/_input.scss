@@ -36,7 +36,7 @@
   a{@extend .text-link;}
 
   .slds-icon-utility-check, .slds-icon-utility-steps {
-    @extend .border-gray-500;
+    @extend .border-gray-40;
     @include square(16px);
 
     display: flex;

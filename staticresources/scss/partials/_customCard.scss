@@ -1,7 +1,7 @@
 .customCard{
-    .slds-card{@extend .brd-4; border: toRem(1) $gray-375 solid; @extend .p-16px;
+    .slds-card{@extend .brd-4; @extend .p-24px;
         .slds-card__header{
-            @extend %pageheader; padding: toRem(16); @extend .brd-4;
+            color:#1A1818; @extend .pb-16px; border-bottom: 1px #E3E6E3 solid;
         }
         .slds-card__body{margin-bottom: 0;}
     }
