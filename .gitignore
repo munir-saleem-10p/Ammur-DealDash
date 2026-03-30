@@ -8,3 +8,4 @@ gulpfile.js
 node_modules
 .history/
 .vscode/
+.sfdx/

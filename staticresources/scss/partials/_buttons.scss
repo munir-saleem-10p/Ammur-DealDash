@@ -67,6 +67,15 @@
       }
     }
 
+    // inverse
+    &.btn-inverse, &.slds-button_inverse{
+      background: $button-inverse-bg; color: $button-inverse-font-color;
+
+      &:hover, &:active, &.active{
+        background: $button-inverse-bg-hover; color: $button-inverse-font-color-hover;
+      }
+    }
+
 
     // button-text
     &.btn-text{
