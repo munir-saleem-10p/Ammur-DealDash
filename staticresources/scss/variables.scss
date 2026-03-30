@@ -404,7 +404,7 @@ $button-link-hover-font-color: map.get($bt-primary, 100);
 // primary
 $button-primary-font-color: map.get($bt-secondary, 60);
 $button-primary-bg: map.get($bt-primary, 60);
-$button-primary-font-color-hover: $button-primary-font-color;
+$button-primary-font-color-hover: $white;
 $button-primary-bg-hover: map.get($bt-primary, 50);
 $button-primary-bg-active: $button-primary-bg-hover;
 $button-primary-focus: $button-primary-bg-hover;
@@ -449,6 +449,14 @@ $button-success-font-color-hover: $white;
 $button-success-bg-hover: $button-success-font-color;
 $button-success-bg-active: $button-success-bg-hover;
 $button-success-focus: $button-success-bg-hover;
+
+// inverse
+$button-inverse-font-color: $gray-500;
+$button-inverse-bg: unset;
+$button-inverse-font-color-hover: map.get($bt-secondary, 60);
+$button-inverse-bg-hover: $button-inverse-bg;
+$button-inverse-bg-active: $button-inverse-bg;
+$button-inverse-focus: $button-inverse-bg-hover;
 
 // button [END]
 

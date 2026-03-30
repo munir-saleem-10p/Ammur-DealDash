@@ -74,13 +74,17 @@ $icoAdditional: url("./../images/ico-additional.svg");
 $icoClipboardCheck: url("./../images/ico-clipboardCheck.svg");
 $icoCrown: url("./../images/ico-crown.svg");
 $icoMultiFiles: url("./../images/ico-multifiles.svg");
-
 $iconSalesNote: url("./../images/ico-salesNote.svg");
 $iconEditNotes: url("./../images/ico-editNotes.svg");
-
 $icoSFArrowdown : url("./../images/ico-sf-arrowdown.svg");
-
 $icoPolicy: url("./../images/ico-policy.svg");
+
+//zeeshan
+$icoDashboard: url("./../images/ico-dashboard.svg");
+$icoDealDetails: url("./../images/ico-dealDetails.svg");
+$icoDeals: url("./../images/ico-deals.svg");
+$icoDealAll: url("./../images/ico-dealAll.svg");
+$icoDollar: url("./../images/ico-dollar.svg");
 
 $icons: (
   "icoEye" : $icoEye,
@@ -147,4 +151,9 @@ $icons: (
   "icoCradit" : $icoCradit,
   "icoSFArrowdown": $icoSFArrowdown,
   "icoPolicy": $icoPolicy,
+  "icoDashboard": $icoDashboard,
+  "icoDealDetails": $icoDealDetails,
+  "icoDeals": $icoDeals,
+  "icoDealAll": $icoDealAll,
+  "icoDollar": $icoDollar,
 );
