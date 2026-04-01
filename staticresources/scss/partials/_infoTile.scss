@@ -1,0 +1,42 @@
+@use "sass:map";
+
+.infoTile{background-color: var(--infoTileBg, transparent); display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px var(--infoTileBorder, $gray-700) solid; border-radius: 12px; padding: 12px 16px;
+    .infoTileicon{
+        $circle: 24px;
+        
+        background: var(--infoTileIconBg, $gray-700); color: var(--infoTileIconColor, $secondary); font-size: 15px; flex:0 0 $circle; display: flex; align-items: center; justify-content: center;
+
+        @extend .amr-icon;
+        @extend .icon-icoFileText;  
+        @include square($circle, 50%);
+    }
+    .infoTileTitle{color: var(--infoTileTitle, $gray-100);}
+    .infoTileLink{color: var(--infoTileLink, map.get($bt-primary, 200));}
+
+    //contract
+    &.contract{
+        .infoTileicon{
+            @extend .icon-icoFileText;
+        }
+    }
+
+    //message
+    &.message{
+        .infoTileicon{
+            @extend .icon-icoMail;
+        }
+    }
+
+    //on error
+    &.error{
+        --infoTileBorder: var(--dd-error-300);
+        --infoTileIconBg: var(--dd-error-300);
+        --infoTileIconColor: var(--dd-error-100);        
+        --infoTileBg: var(--dd-error-200);
+        --infoTileLink: var(--dd-error-100);
+        
+        .infoTileicon{
+            @extend .icon-icoWarning;
+        }
+    }
+}

@@ -1,8 +1,15 @@
 .customCard{
-    .slds-card{@extend .brd-4; @extend .p-24px;
-        .slds-card__header{
-            color:#1A1818; @extend .pb-16px; border-bottom: 1px #E3E6E3 solid;
+    &.slds-card{@extend .brd-12; @extend .p-24px;
+        > .slds-card__header{padding: 0; margin: 0 0 16px 0;
+            @extend .pb-16px; border-bottom: 1px var(--card-header-border-color, $gray-700) solid;
+
+            .slds-card__header-title{
+                color:var(--card-header-font-color, $gray-100); @extend .h5;
+            }
         }
-        .slds-card__body{margin-bottom: 0;}
+        > .slds-card__body{margin-bottom: 16px;}
+        > .slds-card__footer{padding: 16px 0 0; margin: 0; text-align: unset;
+             border-top: 1px var(--card-footer-border-color, $gray-700) solid;
+        }
     }
 }

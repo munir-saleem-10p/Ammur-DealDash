@@ -1,5 +1,5 @@
 /* Buttons [Start] */
-.btn, .slds-button{color:$button-font-color; font-family: $button-font-family; font-size: $button-font-size;  padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
+.btn, .slds-button{color:$button-font-color; font-family: $button-font-family; font-size: $button-font-size; font-weight: $font-weight-semibold;  padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
 
   &[kx-type="ripple"]{
     &:before, &:after{
@@ -14,7 +14,7 @@
   }
   
   //primary
-  &.btn-primary, &.slds-button_brand{
+  &.btn-primary, &.slds-button_brand, &.slds-button--{
     background: $button-primary-bg; color: $button-primary-font-color;
 
     // hover / active
@@ -28,7 +28,7 @@
     }
   }
   //secondary
-  &.btn-secondary, &.slds-button_neutral{
+  &.btn-secondary, &.slds-button_neutral, &.slds-button--neutral{
     background: $button-secondary-bg; color: $button-secondary-font-color;
 
     &:hover, &:active, &.active{
@@ -37,7 +37,7 @@
   }
 
   // outlined
-  &.btn-outlined-primary, &.slds-button_outline-brand{
+  &.btn-outlined-primary, &.slds-button_outline-brand, &.slds-button--outline-brand{
     background: $button-outline-primary-bg; color: $button-outline-primary-font-color; border: toRem(1) $button-outline-primary-border solid;
 
     &:hover, &:active, &.active{
@@ -46,7 +46,7 @@
   }
 
   // destructive
-  &.btn-danger, &.slds-button_destructive{
+  &.btn-danger, &.slds-button_destructive, &.slds-button--destructive{
     background: $button-destructive-bg; color: $button-destructive-font-color;
 
     &:hover, &:active, &.active{
@@ -55,7 +55,7 @@
   }
 
   // success
-  &.btn-success, &.slds-button_success{
+  &.btn-success, &.slds-button_success, &.slds-button--success{
     background: $button-success-bg; color: $button-success-font-color;
 
     &:hover, &:active, &.active{
@@ -64,7 +64,7 @@
   }
 
     // inverse
-    &.btn-inverse, &.slds-button_inverse{
+    &.btn-inverse, &.slds-button_inverse, &.slds-button--inverse{
       background: $button-inverse-bg; color: $button-inverse-font-color;
 
       &:hover, &:active, &.active{
