@@ -33,10 +33,14 @@
   &-underline{text-decoration: underline !important;}
 }
 .text-transform{
-  &-normal{text-transform: none !important;}
-  &-uppercase{text-transform:uppercase !important ;}
-  &-lowercase{text-transform: lowercase !important;}
-  &-capitalize{text-transform: capitalize !important;}
+  &-normal{
+    &, &-all *{text-transform: none !important;}}
+  &-uppercase{
+    &, &-all *{text-transform:uppercase !important ;}}
+  &-lowercase{
+    &, &-all *{text-transform: lowercase !important;}}
+  &-capitalize{
+    &, &-all *{text-transform: capitalize !important;}}
 }
 
 // Short Classes
@@ -364,6 +368,13 @@ input::-ms-clear {
 }
 .slds-input__icon{
   .amr-icon{transform: translateY(toRem(-5));}
+}
+
+// slds utilities icon
+.slds-icon_container{
+  &.ico-white{
+    svg path{fill: $white}
+  }
 }
 // Icon [END]
 

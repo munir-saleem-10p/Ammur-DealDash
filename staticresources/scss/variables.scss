@@ -5,33 +5,33 @@
 // sample color set 2 [Start]
 
 $bt-primary: (
-  10 : var(--dd-primary-10),
-  15 : var(--dd-primary-15),
-  20 : var(--dd-primary-20),
-  30 : var(--dd-primary-30),
-  40 : var(--dd-primary-40),
-  50 : var(--dd-primary-50),
-  60 : var(--dd-primary-60),
-  65 : var(--dd-primary-65),
-  70 : var(--dd-primary-70),
-  80 : var(--dd-primary-80),
-  90 : var(--dd-primary-90),
-  95 : var(--dd-primary-95)
+  110 : var(--dd-primary-110),
+  150 : var(--dd-primary-150),
+  160 : var(--dd-primary-160),
+  200 : var(--dd-primary-200),
+  300 : var(--dd-primary-300),
+  400 : var(--dd-primary-400),
+  500 : var(--dd-primary-500),
+  600 : var(--dd-primary-600),
+  650 : var(--dd-primary-650),
+  700 : var(--dd-primary-700),
+  800 : var(--dd-primary-800),
+  900 : var(--dd-primary-900)
 );
 
 $bt-secondary: (
-  10: var(--dd-secondary-10),
-  15: var(--dd-secondary-15),
-  20: var(--dd-secondary-20),
-  30: var(--dd-secondary-30),
-  40: var(--dd-secondary-40),
-  50: var(--dd-secondary-50),
-  60: var(--dd-secondary-60),
-  65: var(--dd-secondary-65),
-  70: var(--dd-secondary-70),
-  80: var(--dd-secondary-80),
-  90: var(--dd-secondary-90),
-  95: var(--dd-secondary-95)
+  110: var(--dd-secondary-110),
+  150: var(--dd-secondary-150),
+  160: var(--dd-secondary-160),
+  200: var(--dd-secondary-200),
+  300: var(--dd-secondary-300),
+  400: var(--dd-secondary-400),
+  500: var(--dd-secondary-500),
+  600: var(--dd-secondary-600),
+  650: var(--dd-secondary-650),
+  700: var(--dd-secondary-700),
+  800: var(--dd-secondary-800),
+  900: var(--dd-secondary-900)
 );
 
 // $bt-tertiary: (
@@ -52,24 +52,42 @@ $bt-secondary: (
 // );
 
 // Theme Accent Colors
-// $bt-accent: (
-//   100: #ed4b68,
-//   150: #ffa4b4,
-//   200: #ffd5dc,
+$bt-accent: (
+  100: #FCE460,
+  // 150: #ffa4b4,
+  // 200: #ffd5dc,
 
-//   250: #e2a300,
-//   300: #f1bd38,
-//   350: #fcd97d,
-//   400: #fff1cd,
+  // 250: #e2a300,
+  // 300: #f1bd38,
+  // 350: #fcd97d,
+  // 400: #fff1cd,
 
-//   500: #37824E,
-//   600: #E692FF,
-//   700: #BEBEBE,
-// );
+  // 500: #37824E,
+  // 600: #E692FF,
+  // 700: #BEBEBE,
+);
 // sample color set 2 [END]
 
 // scss-docs-start gray-color-variables
 $white: #fff;
+$gray-100: var(--dd-grey-100);
+$gray-150: var(--dd-grey-150);
+$gray-200: var(--dd-grey-200);
+$gray-300: var(--dd-grey-300);
+$gray-310: var(--dd-grey-310);
+$gray-400: var(--dd-grey-400);
+$gray-500: var(--dd-grey-500);
+$gray-550: var(--dd-grey-550);
+$gray-600: var(--dd-grey-600);
+$gray-650: var(--dd-grey-650);
+$gray-700: var(--dd-grey-700);
+$gray-800: var(--dd-grey-800);
+$gray-900: var(--dd-grey-900);
+$gray-950: var(--dd-grey-950);
+$gray-960: var(--dd-grey-960);
+$black: #000;
+
+
 // $gray-100: var(--dd-grey-100);
 // $gray-200: var(--dd-grey-200);
 // $gray-300: var(--dd-grey-300);
@@ -79,21 +97,6 @@ $white: #fff;
 // $gray-700: var(--dd-grey-700);
 // $gray-800: var(--dd-grey-800);
 // $gray-900: var(--dd-grey-900);
-
-
-$gray-15: var(--dd-grey-15);
-$gray-20: var(--dd-grey-20);
-$gray-30: var(--dd-grey-30);
-$gray-40: var(--dd-grey-40);
-$gray-50: var(--dd-grey-50);
-$gray-60: var(--dd-grey-60);
-$gray-65: var(--dd-grey-65);
-$gray-70: var(--dd-grey-70);
-$gray-80: var(--dd-grey-80);
-$gray-90: var(--dd-grey-90);
-$gray-95: var(--dd-grey-95);
-$gray-100: var(--dd-grey-100);
-$black: #000;
 // scss-docs-end gray-color-
 
 //General Accent Colors Overwrite
@@ -103,7 +106,7 @@ $purple: #6f42c1;
 $pink: #d63384;
 $red: #dc3545;
 $orange: #fd7e14;
-$yellow: #ffc107;
+$yellow: #FCE460;
 $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
@@ -120,8 +123,8 @@ $warning2: #FFFF6F66;
 $darkRed: #B34122;
 
 // Theme color Variables [Start]
-$primary: map.get($bt-primary, 60);
-$secondary: map.get($bt-secondary, 60);
+$primary: map.get($bt-primary, 500);
+$secondary: map.get($bt-secondary, 400);
 
 $success: var(--dd-success-100);
 $success-bg: var(--dd-success-300);
@@ -132,22 +135,22 @@ $info-bg: var(--dd-info-300);
 $info-border: var(--dd-info-200);
 
 $warning: var(--dd-warning-300);
-$warning-bg: var(--dd-warning-100);
-$warning-border: var(--dd-warning-200);
+$warning-bg: var(--dd-warning-200);
+$warning-border: var(--dd-warning-100);
 
 $danger: var(--dd-error-100);
 $danger-bg: var(--dd-error-200);
 $danger-border: var(--dd-error-300);
 
 
-$light: $gray-95 !default;
-$dark: $gray-20 !default;
+$light: $gray-900 !default;
+$dark: $gray-100 !default;
 // Theme color Variables [END]
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
+  "primary": map.get($bt-primary, 400),
+  "secondary": map.get($bt-secondary, 500),
 
   "success": $success,
   "success200": var(--dd-success-200),
@@ -174,33 +177,33 @@ $theme-colors: (
 
   //adding theme color in bootstrap mixin to auto generte related classes
   // theme primary set
-  "bt-primary-10": map.get($bt-primary, 10),
-  "bt-primary-15": map.get($bt-primary, 15),
-  "bt-primary-20": map.get($bt-primary, 20),
-  "bt-primary-30": map.get($bt-primary, 30),
-  "bt-primary-40": map.get($bt-primary, 40),
-  "bt-primary-50": map.get($bt-primary, 50),
-  "bt-primary-60": map.get($bt-primary, 60),
-  "bt-primary-65": map.get($bt-primary, 65),
-  "bt-primary-70": map.get($bt-primary, 70),
-  "bt-primary-80": map.get($bt-primary, 80),
-  "bt-primary-90": map.get($bt-primary, 90),
-  "bt-primary-95": map.get($bt-primary, 95),
+  "bt-primary-110": map.get($bt-primary, 110),
+  "bt-primary-150": map.get($bt-primary, 150),
+  "bt-primary-160": map.get($bt-primary, 160),
+  "bt-primary-200": map.get($bt-primary, 200),
+  "bt-primary-300": map.get($bt-primary, 300),
+  "bt-primary-400": map.get($bt-primary, 500),
+  "bt-primary-500": map.get($bt-primary, 500),
+  "bt-primary-600": map.get($bt-primary, 600),
+  "bt-primary-650": map.get($bt-primary, 650),
+  "bt-primary-700": map.get($bt-primary, 700),
+  "bt-primary-800": map.get($bt-primary, 800),
+  "bt-primary-900": map.get($bt-primary, 900),
 
 
   // // theme secondary set
-  "bt-secondary-10": map.get($bt-secondary, 10),
-  "bt-secondary-15": map.get($bt-secondary, 15),
-  "bt-secondary-20": map.get($bt-secondary, 20),
-  "bt-secondary-30": map.get($bt-secondary, 30),
-  "bt-secondary-40": map.get($bt-secondary, 40),
-  "bt-secondary-50": map.get($bt-secondary, 50),
-  "bt-secondary-60": map.get($bt-secondary, 60),
-  "bt-secondary-65": map.get($bt-secondary, 65),
-  "bt-secondary-70": map.get($bt-secondary, 70),
-  "bt-secondary-80": map.get($bt-secondary, 80),
-  "bt-secondary-90": map.get($bt-secondary, 90),
-  "bt-secondary-95": map.get($bt-secondary, 95),
+  "bt-secondary-110": map.get($bt-secondary, 110),
+  "bt-secondary-150": map.get($bt-secondary, 150),
+  "bt-secondary-160": map.get($bt-secondary, 160),
+  "bt-secondary-200": map.get($bt-secondary, 200),
+  "bt-secondary-300": map.get($bt-secondary, 300),
+  "bt-secondary-400": map.get($bt-secondary, 400),
+  "bt-secondary-500": map.get($bt-secondary, 500),
+  "bt-secondary-600": map.get($bt-secondary, 600),
+  "bt-secondary-650": map.get($bt-secondary, 650),
+  "bt-secondary-700": map.get($bt-secondary, 700),
+  "bt-secondary-800": map.get($bt-secondary, 800),
+  "bt-secondary-900": map.get($bt-secondary, 900),
   
   // theme tertiary set
   // "bt-tertiary-100": map.get($bt-tertiary, 100),
@@ -216,7 +219,7 @@ $theme-colors: (
   // "bt-tertiary-900": map.get($bt-tertiary, 900),
 
   // theme accent set
-  // "bt-accent-50": map.get($bt-accent, 100),
+  "bt-accent-100": map.get($bt-accent, 100),
   // "bt-accent-100": map.get($bt-accent, 100),
   // "bt-accent-150": map.get($bt-accent, 150),
   // "bt-accent-200": map.get($bt-accent, 200),
@@ -237,18 +240,20 @@ $theme-colors: (
   // "gray-800": $gray-800,
   // "gray-900": $gray-900,
 
-  "gray-15": $gray-15,
-  "gray-20": $gray-20,
-  "gray-30": $gray-30,
-  "gray-40": $gray-40,
-  "gray-50": $gray-50,
-  "gray-60": $gray-60,
-  "gray-65": $gray-65,
-  "gray-70": $gray-70,
-  "gray-80": $gray-80,
-  "gray-90": $gray-90,
-  "gray-95": $gray-95,
   "gray-100": $gray-100,
+  "gray-150": $gray-150,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-550": $gray-550,
+  "gray-600": $gray-600,
+  "gray-650": $gray-650,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+  "gray-950": $gray-950,
+  "gray-960": $gray-960,
   "black": $black,
 
   // accent random color
@@ -292,7 +297,7 @@ $primary-font-family: "SF Pro Display", sans-serif !important;
 $font-size-base: toRem(16); //bootstrap 5 overwrite
 $bfsize: $font-size-base; //alias
 $bfweight: normal;
-$bfcolor: $gray-20;
+$bfcolor: $gray-100;
 
 //Font Family
 $font-family-base: $primary-font-family; //bootstrap 5 overwrite
@@ -308,7 +313,7 @@ $font-weight-bold: 700 !default;
 $font-weight-bolder: 800 !default;
 
 // Link
-$link-color: map.get($bt-primary, 200); //bootstrap 5 overwrite
+$link-color: $primary; //bootstrap 5 overwrite
 $link-hover-color: map.get($bt-primary, 300);
 $link-decoration: none;
 $link-hover-decoration: $link-decoration;
@@ -385,8 +390,8 @@ $grid-breakpoints: (
 
 // input fields [Start]
 $input-font-color: $bfcolor;
-$input-font-color-placeholder: $gray-40;
-$input-label-color: $gray-20;
+$input-font-color-placeholder: $gray-300;
+$input-label-color: $gray-100;
 $input-label-fontsize: toRem(16);
 $input-label-asteric-fontsize: toRem(11);
 $input-label-asteric-color: $rust;
@@ -401,18 +406,18 @@ $input-padding: toRem(4);
 $input-icon-right-padding: toRem(26);
 $input-disable-backgorund-color: $white;
 // $input-disable-label-color: $input-label-color;
-$input-disable-font-color: $gray-40;
+$input-disable-font-color: var(--disabled-100);
 
 $input-file-dropzone-width : 100%;
 $input-file-dropzone-height: toRem(145);
-$input-file-dropZone-border: toRem(1) dashed $gray-50;
+$input-file-dropZone-border: toRem(1) dashed $gray-500;
 
 // input fields [END]
 // button [Start]
 $button-font-family: $bffamily;
-$button-font-color: $gray-20;
+$button-font-color: $gray-100;
 $button-font-size: $bfsize;
-$button-font-weight: $font-weight-normal;
+$button-font-weight: $font-weight-semibold;
 $button-line-height: normal;
 $button-padding: toRem(6) toRem(16);
 // $button-padding-mobile: toRem(6) rem(12);
@@ -424,41 +429,41 @@ $button-border: none;
 $button-disabled-bg: var(--disabled-300);
 $button-disabled-font-color: var(--disabled-100);
 // link
-$button-link-font-color: map.get($bt-primary, 100);
-$button-link-hover-font-color: map.get($bt-primary, 100);
+$button-link-font-color: map.get($bt-primary, 500);
+$button-link-hover-font-color: map.get($bt-primary, 300);
 
 
 // primary
-$button-primary-font-color: map.get($bt-secondary, 60);
-$button-primary-bg: map.get($bt-primary, 60);
+$button-primary-font-color: map.get($bt-secondary, 400);
+$button-primary-bg: map.get($bt-primary, 500);
 $button-primary-font-color-hover: $white;
-$button-primary-bg-hover: map.get($bt-primary, 50);
+$button-primary-bg-hover: map.get($bt-primary, 500);
 $button-primary-bg-active: $button-primary-bg-hover;
 $button-primary-focus: $button-primary-bg-hover;
 
 // secondary
 $button-secondary-font-color: $white;
-$button-secondary-bg: map.get($bt-secondary, 60);
+$button-secondary-bg: map.get($bt-secondary, 500);
 $button-secondary-font-color-hover: $button-secondary-font-color;
-$button-secondary-bg-hover: map.get($bt-secondary, 30);
+$button-secondary-bg-hover: map.get($bt-secondary, 400);
 $button-secondary-bg-active: $button-secondary-bg-hover;
 $button-secondary-focus: $button-secondary-bg-hover;
 
 // outline primary
-$button-outline-primary-font-color: map.get($bt-secondary, 60);
+$button-outline-primary-font-color: map.get($bt-secondary, 400);
 $button-outline-primary-bg: transparent;
 $button-outline-primary-font-color-hover: $button-outline-primary-font-color;
-$button-outline-primary-bg-hover: map.get($bt-primary, 60);
-$button-outline-primary-border: map.get($bt-primary, 60);
+$button-outline-primary-bg-hover: map.get($bt-primary, 500);
+$button-outline-primary-border: map.get($bt-primary, 500);
 $button-outline-primary-focus: $button-outline-primary-bg-hover;
 
 
 // outline secondary
-$button-outline-secondary-font-color: map.get($bt-secondary, 60);
+$button-outline-secondary-font-color: map.get($bt-secondary, 400);
 $button-outline-secondary-bg: transparent;
 $button-outline-secondary-font-color-hover: $button-outline-secondary-font-color;
-$button-outline-secondary-bg-hover: map.get($bt-secondary, 60);
-$button-outline-secondary-border: map.get($bt-secondary, 60);
+$button-outline-secondary-bg-hover: map.get($bt-secondary, 400);
+$button-outline-secondary-border: map.get($bt-secondary, 400);
 $button-outline-secondary-focus: $button-outline-secondary-bg-hover;
 
 // destructive
@@ -478,24 +483,24 @@ $button-success-bg-active: $button-success-bg-hover;
 $button-success-focus: $button-success-bg-hover;
 
 // inverse
-$button-inverse-font-color: $gray-500;
+$button-inverse-font-color: map.get($bt-secondary, 400);
 $button-inverse-bg: unset;
-$button-inverse-font-color-hover: map.get($bt-secondary, 60);
+$button-inverse-font-color-hover: map.get($bt-secondary, 400);
 $button-inverse-bg-hover: $button-inverse-bg;
 $button-inverse-bg-active: $button-inverse-bg;
 $button-inverse-focus: $button-inverse-bg-hover;
 
-// button [END]
+// button [END] 
 
 // Alert Box
-$alert-bg-color: $gray-65;
+$alert-bg-color: $gray-550;
 $alert-font-size: toRem(14);
 $alert-font-weight: $font-weight-medium;
 $alert-font-color: $bfcolor;
 $alert-padding: toRem(14) toRem(16);
 $alert-border-width: toRem(1);
 $alert-border-type:solid;
-$alert-border-color: $gray-40;
+$alert-border-color: $gray-300;
 $alert-border-radius: toRem(12);
 $alert-icon-font-size:toRem(16);
 
@@ -535,9 +540,10 @@ $badge-font-size: toRem(12);
 $badge-font-weight: $font-weight-medium;
 $badge-lineheight: "130%";
 $badge-padding: toRem(6) toRem(12);
-$badge-border-radius: toRem(6);
-$badge-default-bg: $gray-100;
-$badge-default-color: $gray-20;
+$badge-border-radius: toRem(200);
+$badge-default-bg: $gray-800;
+$badge-default-color: $gray-100;
+$badge-default-border-color: $gray-500;
 
 
 // $badge-base: (
@@ -602,10 +608,10 @@ $badge-default-color: $gray-20;
 // Badge [Start]
 
 // Modal [Start]
-$modal-padding: toRem(20);
-$modal-border-radius: toRem(8);
+$modal-padding: 16px 20px;
+$modal-border-radius: 20px;
 $modal-heading-size: $hd4;
-$modal-heading-color: $primary;
+$modal-heading-color: $secondary;
 $modal-heading-font-weight: $font-weight-semibold;
 // Modal [END]
 

@@ -12,9 +12,11 @@
 // // Main Layout
 @import './partials/mainLayout';
 
+@include generate-root-color($theme-colors);
+
 #{$mainWrapperClass}{
     // Generator color base class
-    @include generate-root-color($theme-colors);
+    
     @include generate-color-classes($theme-colors);
 
     //Font and line-height Class Generator
@@ -89,6 +91,9 @@
 
     // // Custom card
     @import './partials/_customCard';
+
+    // // Info Tile
+    @import './partials/_infoTile';
 
     // ===============
 

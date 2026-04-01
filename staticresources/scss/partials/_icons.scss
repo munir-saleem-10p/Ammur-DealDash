@@ -17,7 +17,7 @@ $icoTimes: url("./../images/ico-times.svg");
 $icoPlus: url("./../images/ico-plus.svg");
 $icoCircleTimes: url("./../images/ico-circle-times.svg");
 $icoCircleInfo: url("./../images/ico-circle-info.svg");
-$icoFileText: url("./../images/ico-file-text.svg");
+$icoFileText: url("./../images/ico-file-text.svg"); //
 $icoFileLock: url("./../images/ico-fileLock.svg");
 $icoFilePDF: url("./../images/ico-pdf.svg");
 $icoFilePicture: url("./../images/ico-picture.svg");
@@ -78,6 +78,8 @@ $iconSalesNote: url("./../images/ico-salesNote.svg");
 $iconEditNotes: url("./../images/ico-editNotes.svg");
 $icoSFArrowdown : url("./../images/ico-sf-arrowdown.svg");
 $icoPolicy: url("./../images/ico-policy.svg");
+$icoWarning: url("./../images/ico-warning.svg");
+$icoTractor: url("./../images/ico-tractor.svg");
 
 //zeeshan
 $icoDashboard: url("./../images/ico-dashboard.svg");
@@ -101,7 +103,7 @@ $icons: (
   "icoSearch" : $icoSearch,
   "icoCircleHelp" : $icoCircleHelp,
   "icoFilter" : $icoFilter,
-  "icoTimes" : $icoTimes,
+  "icoTimes" : $icoTimes, //
   "icoPlus" : $icoPlus,
   "icoCircleTimes" : $icoCircleTimes,
   "icoCircleInfo" : $icoCircleInfo,
@@ -151,6 +153,9 @@ $icons: (
   "icoCradit" : $icoCradit,
   "icoSFArrowdown": $icoSFArrowdown,
   "icoPolicy": $icoPolicy,
+  "icoWarning": $icoWarning,
+  "icoTractor": $icoTractor,
+
   "icoDashboard": $icoDashboard,
   "icoDealDetails": $icoDealDetails,
   "icoDeals": $icoDeals,
