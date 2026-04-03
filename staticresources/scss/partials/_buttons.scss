@@ -1,6 +1,10 @@
 /* Buttons [Start] */
 .btn, .slds-button{color:$button-font-color; font-family: $button-font-family; font-size: $button-font-size; font-weight: $font-weight-semibold;  padding: $button-padding; border: 0; border-radius: $button-border-radius; line-height: $button-line-height; font-weight: $button-font-weight; 
 
+  &,* {
+    transition: all 0.3s ease-in-out;
+  }
+
   &[kx-type="ripple"]{
     &:before, &:after{
       display: none;
@@ -21,10 +25,16 @@
     &:hover, &:active, &.active{
       background: $button-primary-bg-hover;
       color: $button-primary-font-color-hover;
+      outline: none;
     }
 
     &:disabled{
       background: $primary; color: inherit; opacity: 0.5;
+    }
+
+    &:focus{
+      outline: none;
+      box-shadow: none;
     }
   }
   //secondary
@@ -169,3 +179,4 @@
   max-width: toRem(320);
   border-radius: toRem(25);
 }
+ 
