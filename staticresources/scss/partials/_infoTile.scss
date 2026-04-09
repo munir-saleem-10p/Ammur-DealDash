@@ -6,26 +6,26 @@
         
         background: var(--infoTileIconBg, $gray-700); color: var(--infoTileIconColor, $secondary); font-size: 15px; flex:0 0 $circle; display: flex; align-items: center; justify-content: center;
 
-        @extend .amr-icon;
-        @extend .icon-icoFileText;  
+        // @extend .amr-icon;
+        // @extend .icon-icoFileText;
         @include square($circle, 50%);
     }
     .infoTileTitle{color: var(--infoTileTitle, $gray-100);}
     .infoTileLink{color: var(--infoTileLink, map.get($bt-primary, 200));}
 
-    //contract
-    &.contract{
-        .infoTileicon{
-            @extend .icon-icoFileText;
-        }
-    }
+    // //contract
+    // &.contract{
+    //     .infoTileicon{
+    //         @extend .icon-icoFileText;
+    //     }
+    // }
 
-    //message
-    &.message{
-        .infoTileicon{
-            @extend .icon-icoMail;
-        }
-    }
+    // //message
+    // &.message{
+    //     .infoTileicon{
+    //         @extend .icon-icoMail;
+    //     }
+    // }
 
     //on error
     &.error{
@@ -35,8 +35,8 @@
         --infoTileBg: var(--dd-error-200);
         --infoTileLink: var(--dd-error-100);
         
-        .infoTileicon{
-            @extend .icon-icoWarning;
-        }
+        // .infoTileicon{
+        //     @extend .icon-icoWarning;
+        // }
     }
 }

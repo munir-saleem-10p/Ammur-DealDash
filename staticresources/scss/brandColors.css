@@ -1,0 +1,88 @@
+:root{
+    /* ============================= */    
+    /* Brand Colors */
+    /* ============================= */
+
+    /* primary shades group */
+    --dd-primary-110: #0A1F05;
+    --dd-primary-150: #143D0A;
+    --dd-primary-160: #2D6B1E; /* !! */
+    --dd-primary-200: #578927;
+    --dd-primary-300: #538E37;
+    --dd-primary-400: #71AD35;
+    --dd-primary-500: #91C855; /* default */
+    --dd-primary-600: #AEDA7C;
+    --dd-primary-650: #C8E3AA;
+    --dd-primary-700: #D4FCA9;
+    --dd-primary-800: #EDFADB;
+    --dd-primary-900: #F7FFF0;
+
+
+    /* secondary shades group */
+    --dd-secondary-110: #040C0C;
+    --dd-secondary-150: #091717;
+    --dd-secondary-160: #0E2323; /* !! */
+    --dd-secondary-200: #163535;
+    --dd-secondary-300: #1A3D3D;
+    --dd-secondary-400: #1E4646;/* default */
+    --dd-secondary-500: #1E5150;
+    --dd-secondary-600: #47564F;
+    --dd-secondary-650: #277A75;
+    --dd-secondary-700: #728D80;
+    --dd-secondary-800: #8AA196;
+    --dd-secondary-900: #D7DFDA;
+
+
+    /* gray shades group */
+    --dd-grey-100:#1A1818;
+    --dd-grey-150:#000101;
+    --dd-grey-200:#2E2E2E;
+    --dd-grey-300:#5C5C5C;
+    --dd-grey-310:#444444;
+    --dd-grey-400:#747474;
+    --dd-grey-500:#939393; /* default */
+    --dd-grey-550:#979696;
+    --dd-grey-600:#C9C9C9;
+    --dd-grey-650:#C4C4C4;
+    --dd-grey-700:#E3E6E3;
+    --dd-grey-800:#F0F4F0; /* amur highlight background */
+    --dd-grey-900:#FFFFFF;
+    --dd-grey-950:#F3F3F3;
+    --dd-grey-960:#FBFBFB;
+
+
+    /* ============================= */
+    /* Semantic Colors */
+    /* ============================= */
+
+    /* Success */
+    --dd-success-100:#578927;
+    --dd-success-200:#91C855;
+    --dd-success-300:#EDFADB;
+
+    /* Info */
+    --dd-info-100: #21678A;
+    --dd-info-200: #B8DCF5;
+    --dd-info-300: #FFFFFF;
+
+    /* Disabled */
+    --dd-disabled-100: #444444;
+    --dd-disabled-200: #939393;
+    --dd-disabled-300: #E3E6E3;
+
+    /* Error */
+    --dd-error-100: #B34122;
+    --dd-error-200: #FDE9E3;
+    --dd-error-300: #FECDCC;
+
+    /* Warning */
+    --dd-warning-100: #E8B30A;
+    --dd-warning-200: #FFF0A5;
+    --dd-warning-300: #8A7600;
+    /* --dd-warning-400 */
+
+    /* Background Layers */
+    --dd-surface-100: #F0F4F0;
+    --dd-surface-200: #F3F3F3;
+    --dd-surface-300: #FBFBFB;
+}

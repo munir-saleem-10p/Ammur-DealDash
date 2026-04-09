@@ -81,12 +81,23 @@ $icoPolicy: url("./../images/ico-policy.svg");
 $icoWarning: url("./../images/ico-warning.svg");
 $icoTractor: url("./../images/ico-tractor.svg");
 
-//zeeshan
 $icoDashboard: url("./../images/ico-dashboard.svg");
 $icoDealDetails: url("./../images/ico-dealDetails.svg");
 $icoDeals: url("./../images/ico-deals.svg");
 $icoDealAll: url("./../images/ico-deals-all.svg");
 $icoDollar: url("./../images/ico-dollar.svg");
+
+$icoThread: url("./../images/ico-thread.svg");
+$icoHammer: url("./../images/ico-hammer.svg");
+$icoUserShieldCheck: url("./../images/ico-userShieldCheck.svg");
+$icoCoobligor: url("./../images/ico-coobligor.svg");
+$icoBox: url("./../images/ico-box.svg");
+$icoBarGraph: url("./../images/ico-barGraph.svg");
+$icoAwardCheck: url("./../images/ico-awardCheck.svg");
+$icoEditFile: url("./../images/ico-editFile.svg");
+$icoDialog: url("./../images/ico-ico-dialog.svg");
+$icoCircleCheck: url("./../images/ico-circle-check.svg");
+
 
 $icons: (
   "icoEye" : $icoEye,
@@ -161,4 +172,15 @@ $icons: (
   "icoDeals": $icoDeals,
   "icoDealAll": $icoDealAll,
   "icoDollar": $icoDollar,
+
+  "icoThread": $icoThread,
+  "icoHammer": $icoHammer,
+  "icoUserShieldCheck": $icoUserShieldCheck,
+  "icoCoobligor": $icoCoobligor,
+  "icoBox": $icoBox,
+  "icoBarGraph": $icoBarGraph,
+  "icoAwardCheck": $icoAwardCheck,
+  "icoEditFile": $icoEditFile,
+  "icoDialog": $icoDialog,
+  "icoCircleCheck": $icoCircleCheck,
 );
