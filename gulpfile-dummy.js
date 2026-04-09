@@ -7,7 +7,8 @@ const cssnano = require("cssnano");
 
 const paths = {
   scss: "./staticresources/scss/styles.scss",
-  watch: "./staticresources/scss/**/*.scss",
+  brandCss: "./staticresources/scss/brandColors.css",
+  watch: "./staticresources/scss/**/*.{scss,css}",
   
   output: {
 	"dddev": "./../dealDash-dev/force-app/main/default/staticresources/DealDashAssets/css",
@@ -21,8 +22,14 @@ function compileSass(inputFile, outputDir) {
     // cssnano()
   ];
   return src(inputFile)
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(sass({ outputStyle: "compressed", quietDeps: true,
+    silenceDeprecations: ['legacy-js-api'] }).on("error", sass.logError))
     .pipe(postcss(plugins))
+    .pipe(dest(outputDir));
+}
+
+function copyBrandCss(outputDir) {
+  return src(paths.brandCss)
     .pipe(dest(outputDir));
 }
 
@@ -33,18 +40,17 @@ function createSassTask(env) {
   };
 }
 
+function createBrandCssTask(env) {
+  return function brandCssTask() {
+    return copyBrandCss(paths.output[env]);
+  };
+}
+
 // watch tasks functions
-function createWatchTask(env, type = "sass") {
+function createWatchTask(env) {
   return function watchFiles() {
-    let task;
-
-    switch (type) {
-      case "sass":
-      default:
-        task = createSassTask(env);
-    }
-
-    watch(paths.watch, task);
+    watch(paths.watch, createSassTask(env));
+    watch(paths.brandCss, createBrandCssTask(env));
   };
 }
 
@@ -53,4 +59,4 @@ function createWatchTask(env, type = "sass") {
 //exports.ptl_poc = series(createSassTask("poc"), createWatchTask("poc"));
 //exports.ptl_dev = series(createSassTask("dev"), createWatchTask("dev"));
 //exports.ptl_dcdev = series(createSassTask("dcdev"), createWatchTask("dcdev"));
-exports.ptl_dddev = series(createSassTask("dddev"), createWatchTask("dddev"));
+exports.ptl_dddev = series(createSassTask("dddev"), createBrandCssTask("dddev"), createWatchTask("dddev"));
