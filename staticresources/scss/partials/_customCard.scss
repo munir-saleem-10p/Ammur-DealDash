@@ -13,3 +13,9 @@
         }
     }
 }
+
+.aicCard{
+    .slds-card {
+        border: 1px var(--infoTileBorder, $gray-700) solid; border-radius: 12px;
+    }
+}
