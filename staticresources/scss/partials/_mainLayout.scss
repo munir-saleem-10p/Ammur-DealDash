@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Main Layout [Start]
 #{$mainWrapperClass}{
   --lwc-fontSize3: 16px;
@@ -6,7 +8,11 @@
     .boxSection{position: relative;
       
       &:not(:last-of-type):after{
-        content: ''; background: var(--boxSectionBorder , $dark); width: toRem(1); height: 80%; display: block; position: absolute; top:50%; bottom:0; right: 0; z-index: 1; border-radius: 200px; transform: translateY(-50%);
+        content: ''; background: var(--boxSectionBorder , $dark); width: toRem(1); height: 80%; display: block; position: absolute; top:50%; right: 0; z-index: 1; border-radius: 200px; transform: translateY(-50%);
+
+        @include mq(0, 1023px){
+          width: 80%; height: 1px; top:unset; right: unset; left:50%; transform: translateX(-50%);
+        }
       }
     }
   }
