@@ -1,189 +1,210 @@
 // Icon [Start]
-$icoEye: url("./../images/ico-eye.svg");
-$icoEyeSlash: url("./../images/ico-eye-slash.svg");
+$icoStatusApplication: url("./../images/ico-statusApplication.svg");
+$icoStarFile: url("./../images/ico-starFile.svg");
+$icoSignedContract: url("./../images/ico-signed-contract.svg");
 $icoSideArrowUp: url("./../images/ico-side-arrow-up.svg");
-$icoThumb: url("./../images/ico-thumbs-up.svg");
-$icoMoney: url("./../images/ico-money.svg");
-$icoOctagonAlert: url("./../images/ico-octagon-alert.svg");
-$icoOther: url("./../images/ico-other.svg");
-$icoPaperClip: url("./../images/ico-paperclip.svg");
-$icoCaretDown: url("./../images/ico-caretDown.svg");
-$icoCaretRight: url("./../images/ico-caretRight.svg");
-$icoCircleArrowRight :url("./../images/ico-circle-arrow-right.svg");
+$icoShieldCheck: url("./../images/ico-shieldCheck.svg");
+$icoSFArrowdown: url("./../images/ico-sf-arrowdown.svg");
+$icoSettingsList: url("./../images/ico-settingsList.svg");
+$icoSearchBox: url("./../images/ico-searchBox.svg");
 $icoSearch: url("./../images/ico-search.svg");
-$icoCircleHelp: url("./../images/ico-circle-help.svg");
-$icoFilter: url("./../images/ico-filter.svg");
-$icoTimes: url("./../images/ico-times.svg");
-$icoPlus: url("./../images/ico-plus.svg");
-$icoCircleTimes: url("./../images/ico-circle-times.svg");
-$icoCircleInfo: url("./../images/ico-circle-info.svg");
-$icoFileText: url("./../images/ico-file-text.svg"); //
-$icoFileLock: url("./../images/ico-fileLock.svg");
-$icoFilePDF: url("./../images/ico-pdf.svg");
-$icoFilePicture: url("./../images/ico-picture.svg");
-$icoFileDashed: url("./../images/ico-fileDashed.svg");
-$icoDownload: url("./../images/ico-downloadSimple.svg");
-$icolink: url("./../images/ico-linkSimple.svg");
-$icoArrowLeft: url("./../images/ico-arrow-left.svg");
-$icoArrowRight: url("./../images/ico-arrow-right.svg");
-$icoMapPin: url("./../images/ico-mapPin.svg");
-$icoCirclePlus: url("./../images/ico-circlePlus.svg");
-$icoChevronDown: url("./../images/ico-chevron-down.svg");
-$icoPlanBrochure: url("./../images/ico-planBrochure.svg");
-$icoArrowSquareOut: url("./../images/ico-arrow-square-out.svg");
-$icoArrowRotate: url("./../images/ico-arrow-rotate.svg");
+$icoSealQuestion: url("./../images/ico-sealQuestion.svg");
+$icoRightUp: url("./../images/ico-right-up.svg");
 $icoRegisterBook: url("./../images/ico-register-book.svg");
+$icoReceiptVerification: url("./../images/ico-receipt-verification.svg");
+$icoPlus: url("./../images/ico-plus.svg");
+$icoPlanBrochure: url("./../images/ico-planBrochure.svg");
+$icoFilePicture: url("./../images/ico-picture.svg");
 $icoPhone: url("./../images/ico-phone.svg");
-$icoMail : url("./../images/ico-mail.svg");
+$icoFilePDF: url("./../images/ico-pdf.svg");
+$icoPaperClip: url("./../images/ico-paperclip.svg");
+$icoOther: url("./../images/ico-other.svg");
+$icoOnlineBusiness: url("./../images/ico-onlineBusiness.svg");
+$icoOctagonAlert: url("./../images/ico-octagon-alert.svg");
+$icoNotesStar: url("./../images/ico-notesStar.svg");
+$icoNotes: url("./../images/ico-notes.svg");
+$icoMultiFiles: url("./../images/ico-multifiles.svg");
+$icoMoney: url("./../images/ico-money.svg");
+$icoClose: url("./../images/ico-menu-close.svg");
+$icoMenuBars: url("./../images/ico-menu-bars.svg");
+$icoMapPin: url("./../images/ico-mapPin.svg");
+$icoMail: url("./../images/ico-mail.svg");
+$icoMagnifyingGlassPlus: url("./../images/ico-magnifying-glass-plus.svg");
+$icolink: url("./../images/ico-linkSimple.svg");
+$icoLink2: url("./../images/ico-link.svg");
+$icoLead: url("./../images/ico-lead.svg");
+$icoLastActivitiy: url("./../images/ico-lastActivitiy.svg");
+$icoKey: url("./../images/ico-key.svg");
+$icoIndustry: url("./../images/ico-industry.svg");
+$icoIDCard: url("./../images/ico-IDcard.svg");
+$icoHome: url("./../images/ico-home.svg");
+$icoHistory: url("./../images/ico-history.svg");
 $icoHeadset: url("./../images/ico-headset.svg");
-$icoCheck: url("./../images/ico-check.svg");
+$icoHammer: url("./../images/ico-hammer.svg");
+$icoGear: url("./../images/ico-gear.svg");
+$icoFirstAid: url("./../images/ico-firstAid.svg");
+$icoFilterBars: url("./../images/ico-filterBars.svg");
+$icoFilter: url("./../images/ico-filter.svg");
+$icoFileText: url("./../images/ico-file-text.svg");
+$icoFileSearch: url("./../images/ico-file-search.svg");
+$icoFilePlus: url("./../images/ico-file-plus.svg");
+$icoFileLock: url("./../images/ico-fileLock.svg");
+$icoFileDashed: url("./../images/ico-fileDashed.svg");
+$icoFile: url("./../images/ico-file.svg");
+$icoEyeSlash: url("./../images/ico-eye-slash.svg");
+$icoEye: url("./../images/ico-eye.svg");
+$icoEditFile: url("./../images/ico-editFile.svg");
 $icoEdit: url("./../images/ico-edit.svg");
+$icoDownload: url("./../images/ico-download.svg");
+$icoDollarFile: url("./../images/ico-dollarFile.svg");
+$icoDollar: url("./../images/ico-dollar.svg");
+$icoDocList: url("./../images/ico-docList.svg");
+$icoDialog: url("./../images/ico-dialog.svg");
+$icoDealAll: url("./../images/ico-deals-all.svg");
+$icoDeals: url("./../images/ico-deals.svg");
+$icoDealDetails: url("./../images/ico-dealDetails.svg");
+$icoDashboard: url("./../images/ico-dashboard.svg");
+$icoCrown: url("./../images/ico-crown.svg");
+$icoCreditCard2: url("./../images/ico-credit-card.svg");
+$icoCreditCard: url("./../images/ico-creditCard.svg");
+$icoCoobligor: url("./../images/ico-coobligor.svg");
+$icoClipboardCheck: url("./../images/ico-clipboardCheck.svg");
+$icoClipboard: url("./../images/ico-clipboard.svg");
+$icoClear: url("./../images/ico-clear.svg");
+$icoCircleTimes: url("./../images/ico-circle-times.svg");
+$icoCirclePlus: url("./../images/ico-circlePlus.svg");
+$icoCircleInfo: url("./../images/ico-circle-info.svg");
+$icoCircleHelp: url("./../images/ico-circle-help.svg");
+$icoCircleCheck: url("./../images/ico-circle-check.svg");
+$icoCircleArrowRight: url("./../images/ico-circle-arrow-right.svg");
 $icoChevronRight: url("./../images/ico-chevron-right.svg");
 $icoChevronLeft: url("./../images/ico-chevron-left.svg");
-$icoArrowDown: url("./../images/ico-arrowDown.svg");
-$icoRightUp: url("./../images/ico-right-up.svg");
-$icoFile: url("./../images/ico-file.svg");
-$iconIdCard: url('./../images/ico-id-card.svg');
-$icoClipboard: url("./../images/ico-clipboard.svg");
-$icoSealQuestion: url("./../images/ico-sealQuestion.svg");
-$icoClose: url("./../images/ico-menu-close.svg");
-$icoChat: url("./../images/ico-chat.svg");
-$icoHome: url("./../images/ico-home.svg");
-$icoIDCard: url("./../images/ico-IDcard.svg");
-$icoFilePlus: url("./../images/ico-file-plus.svg");
+$icoChevronDown: url("./../images/ico-chevron-down.svg");
 $icoCheckSquareOffset: url("./../images/ico-check-square-offset.svg");
-$icoFileSearch: url("./../images/ico-file-search.svg");
-$icoMagnifyingGlassPlus: url("./../images/ico-magnifying-glass-plus.svg");
-$icoFilterBars: url("./../images/ico-filterBars.svg");
-$icoCreditCard: url("./../images/ico-creditCard.svg");
-$icoBank: url("./../images/ico-bank.svg");
-$icoNotes: url("./../images/ico-notes.svg");
-$icoHistory: url("./../images/ico-history.svg");
-$icoNote: url("./../images/ico-notes.svg");
-$icoIndustry: url("./../images/ico-industry.svg");
-$icoOnlineBusiness: url("./../images/ico-onlineBusiness.svg");
-$icoCradit: url("./../images/ico-cradit.svg");
-
-$icoLead: url("./../images/ico-lead.svg");
-$icoSearchBox: url("./../images/ico-searchBox.svg");
-$icoNotesStar: url("./../images/ico-notesStar.svg");
-$icoAccountInfo: url("./../images/ico-accountInfo.svg");
-$icoSettingsList: url("./../images/ico-settingsList.svg");
-$icoClear: url("./../images/ico-clear.svg");
-$icoAdditional: url("./../images/ico-additional.svg");
-$icoClipboardCheck: url("./../images/ico-clipboardCheck.svg");
-$icoCrown: url("./../images/ico-crown.svg");
-$icoMultiFiles: url("./../images/ico-multifiles.svg");
-$iconSalesNote: url("./../images/ico-salesNote.svg");
-$iconEditNotes: url("./../images/ico-editNotes.svg");
-$icoSFArrowdown : url("./../images/ico-sf-arrowdown.svg");
-$icoPolicy: url("./../images/ico-policy.svg");
-$icoWarning: url("./../images/ico-warning.svg");
-$icoTractor: url("./../images/ico-tractor.svg");
-
-$icoDashboard: url("./../images/ico-dashboard.svg");
-$icoDealDetails: url("./../images/ico-dealDetails.svg");
-$icoDeals: url("./../images/ico-deals.svg");
-$icoDealAll: url("./../images/ico-deals-all.svg");
-$icoDollar: url("./../images/ico-dollar.svg");
-
-$icoThread: url("./../images/ico-thread.svg");
-$icoHammer: url("./../images/ico-hammer.svg");
-$icoUserShieldCheck: url("./../images/ico-userShieldCheck.svg");
-$icoCoobligor: url("./../images/ico-coobligor.svg");
+$icoCheck: url("./../images/ico-check.svg");
+$icoChat: url("./../images/ico-chat.svg");
+$icoCaretRight: url("./../images/ico-caretRight.svg");
+$icoCaretDown: url("./../images/ico-caretDown.svg");
+$icoBriefcase: url("./../images/ico-briefcase.svg");
 $icoBox: url("./../images/ico-box.svg");
+$icoAdditional: url("./../images/ico-additional.svg");
 $icoBarGraph: url("./../images/ico-barGraph.svg");
+$icoAccountInfo: url("./../images/ico-accountInfo.svg");
+$icoBank: url("./../images/ico-bank.svg");
+$icoWarning: url("./../images/ico-warning.svg");
 $icoAwardCheck: url("./../images/ico-awardCheck.svg");
-$icoEditFile: url("./../images/ico-editFile.svg");
-$icoDialog: url("./../images/ico-ico-dialog.svg");
-$icoCircleCheck: url("./../images/ico-circle-check.svg");
-
-$icoAi: url("./../images/ico-ai.svg");
+$icoVendorReview: url("./../images/ico-vendor-review.svg");
+$icoArrowSquareOut: url("./../images/ico-arrow-square-out.svg");
+$icoUserShieldCheck: url("./../images/ico-userShieldCheck.svg");
+$icoArrowRotate: url("./../images/ico-arrow-rotate.svg");
+$icoUserCheck: url("./../images/ico-userCheck.svg");
+$icoArrowRight: url("./../images/ico-arrow-right.svg");
+$icoTransaction: url("./../images/ico-transaction.svg");
+$iconFile: url("./../images/ico-file.svg");
+$icoThread: url("./../images/ico-thread.svg");
 
 $icons: (
-  "icoEye" : $icoEye,
-  "icoEyeSlash" : $icoEyeSlash,
-  "icoSideArrowUp" : $icoSideArrowUp,
-  "icoThumb" : $icoThumb,
-  "icoMoney" : $icoMoney,
-  "icoOctagonAlert" : $icoOctagonAlert,
-  "icoOther" : $icoOther,
-  "icoPaperClip" : $icoPaperClip,
-  "icoCaretDown" : $icoCaretDown,
-  "icoCaretRight" : $icoCaretRight,
-  "icoCircleArrowRight" : $icoCircleArrowRight,
-  "icoSearch" : $icoSearch,
-  "icoCircleHelp" : $icoCircleHelp,
-  "icoFilter" : $icoFilter,
-  "icoTimes" : $icoTimes, //
-  "icoPlus" : $icoPlus,
-  "icoCircleTimes" : $icoCircleTimes,
-  "icoCircleInfo" : $icoCircleInfo,
-  "icoFileText" : $icoFileText,
-  "icoFileLock" : $icoFileLock,
-  "icoFilePDF" : $icoFilePDF,
-  "icoFilePicture" : $icoFilePicture,
-  "icoFileDashed" : $icoFileDashed,
-  "icoDownload" : $icoDownload,
-  "icolink" : $icolink,
-  "icoArrowLeft" : $icoArrowLeft,
-  "icoArrowRight" : $icoArrowRight,
-  "icoMapPin" : $icoMapPin,
-  "icoCirclePlus" : $icoCirclePlus,
-  "icoChevronDown" : $icoChevronDown,
-  "icoPlanBrochure" : $icoPlanBrochure,
-  "icoArrowSquareOut" : $icoArrowSquareOut,
-  "icoArrowRotate" : $icoArrowRotate,
-  "icoRegisterBook" : $icoRegisterBook,
-  "icoPhone" : $icoPhone,
-  "icoMail" : $icoMail,
-  "icoHeadset" : $icoHeadset,
-  "icoCheck" : $icoCheck,
-  "icoEdit" : $icoEdit,
-  "icoChevronRight" : $icoChevronRight,
-  "icoChevronLeft" : $icoChevronLeft,
-  "icoArrowDown" : $icoArrowDown,
-  "icoRightUp" : $icoRightUp,
-  "icoFile" : $icoFile,
-  "iconIdCard" : $iconIdCard,
-  "icoClipboard" : $icoClipboard,
-  "icoSealQuestion" : $icoSealQuestion,
-  "icoClose" : $icoClose,
-  "icoChat" : $icoChat,
-  "icoHome" : $icoHome,
-  "icoIDCard" : $icoIDCard,
-  "icoFilePlus" : $icoFilePlus,
-  "icoCheckSquareOffset" : $icoCheckSquareOffset,
-  "icoFileSearch" : $icoFileSearch,
-  "icoMagnifyingGlassPlus" : $icoMagnifyingGlassPlus,
-  "icoFilterBars" : $icoFilterBars,
-  "icoCreditCard" : $icoCreditCard,
-  "icoBank" : $icoBank,
-  "icoNotes" : $icoNotes,
-  // "icoHistory" : $icoHistory,
-  // "icoNote" : $icoNote,
-  "icoCradit" : $icoCradit,
-  "icoSFArrowdown": $icoSFArrowdown,
-  "icoPolicy": $icoPolicy,
-  "icoWarning": $icoWarning,
-  "icoTractor": $icoTractor,
-
-  "icoDashboard": $icoDashboard,
-  "icoDealDetails": $icoDealDetails,
-  "icoDeals": $icoDeals,
-  "icoDealAll": $icoDealAll,
-  "icoDollar": $icoDollar,
-
-  "icoThread": $icoThread,
-  "icoHammer": $icoHammer,
-  "icoUserShieldCheck": $icoUserShieldCheck,
-  "icoCoobligor": $icoCoobligor,
-  "icoBox": $icoBox,
-  "icoBarGraph": $icoBarGraph,
-  "icoAwardCheck": $icoAwardCheck,
-  "icoEditFile": $icoEditFile,
-  "icoDialog": $icoDialog,
-  "icoCircleCheck": $icoCircleCheck,
-  
-  "icoAi": $icoAi
+  'icoStatusApplication' : $icoStatusApplication,
+  'icoStarFile' : $icoStarFile,
+  'icoSignedContract' : $icoSignedContract,
+  'icoSideArrowUp' : $icoSideArrowUp,
+  'icoShieldCheck' : $icoShieldCheck,
+  'icoSFArrowdown' : $icoSFArrowdown,
+  'icoSettingsList' : $icoSettingsList,
+  'icoSearchBox' : $icoSearchBox,
+  'icoSearch' : $icoSearch,
+  'icoSealQuestion' : $icoSealQuestion,
+  'icoRightUp' : $icoRightUp,
+  'icoRegisterBook' : $icoRegisterBook,
+  'icoReceiptVerification' : $icoReceiptVerification,
+  'icoPlus' : $icoPlus,
+  'icoPlanBrochure' : $icoPlanBrochure,
+  'icoFilePicture' : $icoFilePicture,
+  'icoPhone' : $icoPhone,
+  'icoFilePDF' : $icoFilePDF,
+  'icoPaperClip' : $icoPaperClip,
+  'icoOther' : $icoOther,
+  'icoOnlineBusiness' : $icoOnlineBusiness,
+  'icoOctagonAlert' : $icoOctagonAlert,
+  'icoNotesStar' : $icoNotesStar,
+  'icoNotes' : $icoNotes,
+  'icoMultiFiles' : $icoMultiFiles,
+  'icoMoney' : $icoMoney,
+  'icoClose' : $icoClose,
+  'icoMenuBars' : $icoMenuBars,
+  'icoMapPin' : $icoMapPin,
+  'icoMail' : $icoMail,
+  'icoMagnifyingGlassPlus' : $icoMagnifyingGlassPlus,
+  'icolink' : $icolink,
+  'icoLink2' : $icoLink2,
+  'icoLead' : $icoLead,
+  'icoLastActivitiy' : $icoLastActivitiy,
+  'icoKey' : $icoKey,
+  'icoIndustry' : $icoIndustry,
+  'icoIDCard' : $icoIDCard,
+  'icoHome' : $icoHome,
+  'icoHistory' : $icoHistory,
+  'icoHeadset' : $icoHeadset,
+  'icoHammer' : $icoHammer,
+  'icoGear' : $icoGear,
+  'icoFirstAid' : $icoFirstAid,
+  'icoFilterBars' : $icoFilterBars,
+  'icoFilter' : $icoFilter,
+  'icoFileText' : $icoFileText,
+  'icoFileSearch' : $icoFileSearch,
+  'icoFilePlus' : $icoFilePlus,
+  'icoFileLock' : $icoFileLock,
+  'icoFileDashed' : $icoFileDashed,
+  'icoFile' : $icoFile,
+  'icoEyeSlash' : $icoEyeSlash,
+  'icoEye' : $icoEye,
+  'icoEditFile' : $icoEditFile,
+  'icoEdit' : $icoEdit,
+  'icoDownload' : $icoDownload,
+  'icoDollarFile' : $icoDollarFile,
+  'icoDollar' : $icoDollar,
+  'icoDocList' : $icoDocList,
+  'icoDialog' : $icoDialog,
+  'icoDealAll' : $icoDealAll,
+  'icoDeals' : $icoDeals,
+  'icoDealDetails' : $icoDealDetails,
+  'icoDashboard' : $icoDashboard,
+  'icoCrown' : $icoCrown,
+  'icoCreditCard2' : $icoCreditCard2,
+  'icoCreditCard' : $icoCreditCard,
+  'icoCoobligor' : $icoCoobligor,
+  'icoClipboardCheck' : $icoClipboardCheck,
+  'icoClipboard' : $icoClipboard,
+  'icoClear' : $icoClear,
+  'icoCircleTimes' : $icoCircleTimes,
+  'icoCirclePlus' : $icoCirclePlus,
+  'icoCircleInfo' : $icoCircleInfo,
+  'icoCircleHelp' : $icoCircleHelp,
+  'icoCircleCheck' : $icoCircleCheck,
+  'icoCircleArrowRight' : $icoCircleArrowRight,
+  'icoChevronRight' : $icoChevronRight,
+  'icoChevronLeft' : $icoChevronLeft,
+  'icoChevronDown' : $icoChevronDown,
+  'icoCheckSquareOffset' : $icoCheckSquareOffset,
+  'icoCheck' : $icoCheck,
+  'icoChat' : $icoChat,
+  'icoCaretRight' : $icoCaretRight,
+  'icoCaretDown' : $icoCaretDown,
+  'icoBriefcase' : $icoBriefcase,
+  'icoBox' : $icoBox,
+  'icoAdditional' : $icoAdditional,
+  'icoBarGraph' : $icoBarGraph,
+  'icoAccountInfo' : $icoAccountInfo,
+  'icoBank' : $icoBank,
+  'icoWarning' : $icoWarning,
+  'icoAwardCheck' : $icoAwardCheck,
+  'icoVendorReview' : $icoVendorReview,
+  'icoArrowSquareOut' : $icoArrowSquareOut,
+  'icoUserShieldCheck' : $icoUserShieldCheck,
+  'icoArrowRotate' : $icoArrowRotate,
+  'icoUserCheck' : $icoUserCheck,
+  'icoArrowRight' : $icoArrowRight,
+  'icoTransaction': $icoTransaction,
+  'iconFile' : $iconFile,
+  'icoThread' : $icoThread
 );
