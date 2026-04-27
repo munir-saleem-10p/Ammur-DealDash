@@ -71,6 +71,7 @@ $icoCoobligor: url("./../images/ico-coobligor.svg");
 $icoClipboardCheck: url("./../images/ico-clipboardCheck.svg");
 $icoClipboard: url("./../images/ico-clipboard.svg");
 $icoClear: url("./../images/ico-clear.svg");
+$icoTimes: url("./../images/ico-times.svg");
 $icoCircleTimes: url("./../images/ico-circle-times.svg");
 $icoCirclePlus: url("./../images/ico-circlePlus.svg");
 $icoCircleInfo: url("./../images/ico-circle-info.svg");
@@ -102,6 +103,7 @@ $icoArrowRight: url("./../images/ico-arrow-right.svg");
 $icoTransaction: url("./../images/ico-transaction.svg");
 $iconFile: url("./../images/ico-file.svg");
 $icoThread: url("./../images/ico-thread.svg");
+$icoTractor: url("./../images/ico-tractor.svg");
 
 $icons: (
   'icoStatusApplication' : $icoStatusApplication,
@@ -176,6 +178,7 @@ $icons: (
   'icoClipboardCheck' : $icoClipboardCheck,
   'icoClipboard' : $icoClipboard,
   'icoClear' : $icoClear,
+  'icoTimes': $icoTimes,
   'icoCircleTimes' : $icoCircleTimes,
   'icoCirclePlus' : $icoCirclePlus,
   'icoCircleInfo' : $icoCircleInfo,
@@ -206,5 +209,6 @@ $icons: (
   'icoArrowRight' : $icoArrowRight,
   'icoTransaction': $icoTransaction,
   'iconFile' : $iconFile,
-  'icoThread' : $icoThread
+  'icoThread' : $icoThread,
+  'icoTractor' : $icoTractor
 );
