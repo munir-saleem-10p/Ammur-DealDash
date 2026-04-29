@@ -7,6 +7,9 @@
     //simple Modal [Start]
     &.simpleModal{
 
+        &.slds-modal__danger{
+            .slds-modal__content{border: 2px var(--dd-error-300) solid;}
+        }
         // %before{content: ''; width: calc(100% - ($modal-padding * 2)); height: toRem(1); background: rgba($black, 0.1); position: absolute; left: toRem(20); z-index: 1; display: block;}
 
         .slds-modal__container{}
@@ -15,18 +18,26 @@
         .slds-modal__header{text-align: left; padding:toRem(30) toRem(20) toRem(16);
         border-bottom: none; position: relative; border-radius: $modal-border-radius $modal-border-radius 0 0;
 
-            // &:before{border-bottom-width: toRem(1); bottom: 0; @extend %before;}
-
             .slds-modal__title{color:$modal-heading-color; font-size: $modal-heading-size; font-weight: $modal-heading-font-weight; line-height: toRem(26); margin-bottom: 0;}
         }
         //content
         .slds-modal__content{
-            padding: $modal-padding;
+            padding: $modal-padding; 
+            // box-shadow: $modal-dropShadow !important; border-radius: $modal-borderRadius;
         }
         //footer
         .slds-modal__footer{padding: $modal-padding; border-radius: 0 0 $modal-border-radius $modal-border-radius; border-top: none; position: relative;
 
             // &:before{border-top-width: toRem(1); top: 0; @extend %before;}
+        }
+        
+
+        // danger modal status
+        &.slds-modal__danger{
+            //content
+            .slds-modal__content{
+                box-shadow: $modal-dropShadow !important; border-radius: $modal-borderRadius;
+            }
         }
     }
     //simple Modal [END]

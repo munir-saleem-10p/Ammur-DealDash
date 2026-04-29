@@ -104,6 +104,13 @@ $icoTransaction: url("./../images/ico-transaction.svg");
 $iconFile: url("./../images/ico-file.svg");
 $icoThread: url("./../images/ico-thread.svg");
 $icoTractor: url("./../images/ico-tractor.svg");
+$icoCopy: url("./../images/ico-copy.svg");
+
+$icoCircleSuccess: url("./../images/ico-circle-success.svg");
+$icoCircleWarning: url("./../images/ico-circle-warning.svg");
+$icoCircleInfo2: url("./../images/ico-circle-info2.svg");
+$icoCircleAlert: url("./../images/ico-circle-alert.svg");
+
 
 $icons: (
   'icoStatusApplication' : $icoStatusApplication,
@@ -210,5 +217,6 @@ $icons: (
   'icoTransaction': $icoTransaction,
   'iconFile' : $iconFile,
   'icoThread' : $icoThread,
-  'icoTractor' : $icoTractor
+  'icoTractor' : $icoTractor,
+  'icoCopy' : $icoCopy
 );
