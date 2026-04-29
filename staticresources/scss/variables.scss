@@ -171,6 +171,32 @@ $theme-colors: (
   "surface100": var(--dd-surface-100),
   "surface200": var(--dd-surface-200),
   "surface300": var(--dd-surface-300),
+
+  /* Alert default */
+  "alert100" : var(--dd-alert-100),
+  "alert200" : var(--dd-alert-200),
+  "alert300" : var(--dd-alert-300),
+    
+  /* Alert info */
+  "alert-info100" : var(--dd-alert-info-100),
+  "alert-info200" : var(--dd-alert-info-200),
+  "alert-info300" : var(--dd-alert-info-300),
+
+  /* Alert warning */
+  "alert-warning100" : var(--dd-alert-warning-100),
+  "alert-warning200" : var(--dd-alert-warning-200),
+  "alert-warning300" : var(--dd-alert-warning-300),
+
+  /* Alert success */
+  "alert-success100" : var(--dd-alert-success-100),
+  "alert-success200" : var(--dd-alert-success-200),
+  "alert-success300" : var(--dd-alert-success-300),
+
+  /* Alert danger */
+  "alert-danger100" : var(--dd-alert-danger-100),
+  "alert-danger200" : var(--dd-alert-danger-200),
+  "alert-danger300" : var(--dd-alert-danger-300),
+
   
   "light": $light,
   "dark": $dark,
@@ -494,43 +520,47 @@ $button-inverse-focus: $button-inverse-bg-hover;
 // button [END] 
 
 // Alert Box
-$alert-bg-color: $gray-550;
-$alert-font-size: toRem(14);
-$alert-font-weight: $font-weight-medium;
-$alert-font-color: $bfcolor;
-$alert-padding: toRem(14) toRem(16);
+$alert-bg-color: var(--dd-alert-100);
+$alert-font-size: toRem(12);
+$alert-font-weight: $font-weight-normal;
+$alert-font-color: var(--dd-alert-200);
+$alert-padding: toRem(22) toRem(12);
 $alert-border-width: toRem(1);
 $alert-border-type:solid;
-$alert-border-color: $gray-300;
+$alert-border-color: var(--dd-alert-300);
 $alert-border-radius: toRem(12);
 $alert-icon-font-size:toRem(16);
 
 //compact style
 $alert-compact-font-size: toRem(12);
-$alert-compact-font-weight: $font-weight-medium;
-$alert-compact-font-color: $bfcolor;
+$alert-compact-font-weight: $font-weight-normal;
+$alert-compact-font-color: var(--dd-alert-200);
 $alert-compact-padding:toRem(4);
 $alert-compact-border-radius: toRem(4);
 
 //danger
-$alert-danger-font-color: $danger;
-$alert-danger-bg-color: $danger-bg;
-$alert-danger-border-color: $danger-border;
+$alert-danger-font-color: var(--dd-alert-danger-200);
+$alert-danger-bg-color: var(--dd-alert-danger-100);
+$alert-danger-border-color: var(--dd-alert-danger-300);
+$alert-danger-heading: var(--dd-alert-danger-300);
 
 //warning
-$alert-warning-font-color:$warning;
-$alert-warning-bg-color: $warning-bg;
-$alert-warning-border-color: $warning-border;
+$alert-warning-font-color: var(--dd-alert-warning-200);
+$alert-warning-bg-color: var(--dd-alert-warning-100);
+$alert-warning-border-color: var(--dd-alert-warning-300);
+$alert-warning-heading: var(--dd-alert-warning-300);
 
 //success
-$alert-success-font-color: $success;
-$alert-success-bg-color: $success-bg;
-$alert-success-border-color: $success-border;
+$alert-success-font-color: var(--dd-alert-success-200);
+$alert-success-bg-color: var(--dd-alert-success-100);
+$alert-success-border-color: var(--dd-alert-success-300);
+$alert-success-heading: var(--dd-alert-success-300);
 
 //info
-$alert-info-font-color:$info;
-$alert-info-bg-color:$info-bg;
-$alert-info-border-color:$info-border;
+$alert-info-font-color:var(--dd-alert-info-200);
+$alert-info-bg-color:var(--dd-alert-info-100);
+$alert-info-border-color:var(--dd-alert-info-300);
+$alert-info-heading:var(--dd-alert-info-300);
 
 // Main Layout config
 // $sidebarCol-width: toRem(315);
@@ -614,6 +644,8 @@ $modal-border-radius: 20px;
 $modal-heading-size: $hd4;
 $modal-heading-color: $secondary;
 $modal-heading-font-weight: $font-weight-semibold;
+$modal-dropShadow:  -1px 2px 16px 0 rgba(0,0,0,0.15);
+$modal-borderRadius: 20px;
 // Modal [END]
 
 //icons
