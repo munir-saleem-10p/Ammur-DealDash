@@ -531,6 +531,10 @@ $alert-border-color: var(--dd-alert-300);
 $alert-border-radius: toRem(12);
 $alert-icon-font-size:toRem(16);
 
+// Status Box
+$status-bg-color: $white;
+$status-font-size: toRem(20);
+
 //compact style
 $alert-compact-font-size: toRem(12);
 $alert-compact-font-weight: $font-weight-normal;
