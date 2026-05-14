@@ -24,6 +24,18 @@
         .slds-modal__content{
             padding: $modal-padding; 
             // box-shadow: $modal-dropShadow !important; border-radius: $modal-borderRadius;
+
+            &::-webkit-scrollbar {
+            display: block !important;
+            width: 8px !important;
+            }
+            &::-webkit-scrollbar-track {
+            background: #f1f1f1 !important;
+            }
+            &::-webkit-scrollbar-thumb {
+            background: #888 !important;
+            border-radius: 4px !important;
+            }
         }
         //footer
         .slds-modal__footer{padding: $modal-padding; border-radius: 0 0 $modal-border-radius $modal-border-radius; border-top: none; position: relative;
