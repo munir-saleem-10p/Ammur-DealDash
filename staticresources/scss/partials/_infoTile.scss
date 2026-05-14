@@ -1,6 +1,6 @@
 @use "sass:map";
 
-.infoTile{background-color: var(--infoTileBg, transparent); display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px var(--infoTileBorder, $gray-700) solid; border-radius: 12px; padding: 12px 16px;
+.infoTile{background-color: var(--infoTileBg, transparent); display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px var(--infoTileBorder, $gray-700) solid; border-radius: 12px; padding: 12px 16px; @extend .trans-3all;
     .infoTileicon{
         $circle: 24px;
         
@@ -38,5 +38,18 @@
         // .infoTileicon{
         //     @extend .icon-icoWarning;
         // }
+    }
+    &.success{
+        --infoTileBorder: var(--dd-success-200);
+        --infoTileIconBg: var(--dd-success-200);
+        --infoTileIconColor: var(--dd-white);
+        --infoTileBg: var(--dd-success-300);
+        --infoTileLink: var(--dd-success-100);
+
+        .infoTileicon{
+            &::before{
+                @extend .icon-icoCheck;
+            }
+        }
     }
 }
