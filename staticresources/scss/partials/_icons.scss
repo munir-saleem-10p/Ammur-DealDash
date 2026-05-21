@@ -105,6 +105,7 @@ $iconFile: url("./../images/ico-file.svg");
 $icoThread: url("./../images/ico-thread.svg");
 $icoTractor: url("./../images/ico-tractor.svg");
 $icoCopy: url("./../images/ico-copy.svg");
+$icoAi: url("./../images/ico-ai.svg");
 
 $icoCircleSuccess: url("./../images/ico-circle-success.svg");
 $icoCircleWarning: url("./../images/ico-circle-warning.svg");
@@ -218,5 +219,6 @@ $icons: (
   'iconFile' : $iconFile,
   'icoThread' : $icoThread,
   'icoTractor' : $icoTractor,
-  'icoCopy' : $icoCopy
+  'icoCopy' : $icoCopy,
+  'icoAi' : $icoAi
 );
