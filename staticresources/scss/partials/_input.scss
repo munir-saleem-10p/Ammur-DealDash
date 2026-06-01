@@ -62,6 +62,19 @@
   .slds-textarea{min-height: toRem(32) !important; font-size: var(--lwc-fontSize3, 0.8125rem); padding-left: toRem(8) !important; padding-right: toRem(8) !important;}
 }
 
+.slds-checkbox{
+    input[type=checkbox]{width: 8px; height: 8px;}
+    input[type=checkbox]:checked+.slds-checkbox__label .slds-checkbox_faux{
+        background: $primary; box-shadow:inset 2px 2px 5px toRem(1) rgba($black, 10%);
+        &:after{border-bottom-color: $white; border-left-color: $white;}
+        .amr-icon{opacity: 1;}
+    }
+
+    .slds-checkbox_faux{background: $white; display: flex; justify-content: center; align-items: center; border-color: $gray-600; @include square(16px, 4px); @extend .trans-2all;
+       .amr-icon{opacity: 0; position: relative; z-index: 1;}
+    }
+}
+
 .amr-fulCol-fld{
   @media (min-width: 48em) {
     .slds-form-element_horizontal .slds-form-element__control, .slds-form_horizontal .slds-form-element .slds-form-element__control, .slds-form_stacked .slds-form-element_horizontal .slds-form-element__control {
