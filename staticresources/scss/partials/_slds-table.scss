@@ -1,20 +1,21 @@
 // Slds Table [Start]
 .slds-table{
   // lightTable
-  &.lightTable{border:toRem(1) $gray-100 solid; border-radius: toRem(6); overflow: hidden;
+  &.lightTable{border:toRem(1) $gray-950 solid; border-radius: toRem(16); overflow: hidden;
 
     thead{
       > tr{
-        > th{background-color: $gray-100; font-size:toRem(12); font-weight: $font-weight-semibold; text-transform: uppercase; letter-spacing: toRem(0.48); padding: toRem(14) toRem(12);
+        > th{background-color: $gray-950; font-size:toRem(12); font-weight: $font-weight-semibold; text-transform: uppercase; letter-spacing: toRem(0.48); padding: toRem(14) toRem(12);
           > div{color: $black !important;}
         }
       }
     }
     tbody{
       > tr {
-        td{font-size: toRem(14); line-height: normal; font-weight: $font-weight-normal; padding: toRem(14) toRem(12); border-bottom:toRem(1) $gray-100 solid; border-top: none;
+        td{font-size: toRem(14); line-height: normal; font-weight: $font-weight-normal; padding: toRem(14) toRem(12); border-bottom:toRem(1) $gray-950 solid; border-top: none;
           
           &:first-of-type{
+            border-left:2px $gray-950 solid;
             *:not(.badge){
               color: $bfcolor !important; font-weight: $font-weight-semibold !important;
               &.text-primary{
@@ -23,7 +24,10 @@
               &.fw-normal{
                 @extend .fw-normal;
               }
-            }            
+            }
+          }
+          &:last-of-type{
+            border-right:2px $gray-950 solid;
           }
           .badge{margin: 0 !important; font-size: $badge-font-size !important;}
         }
@@ -34,6 +38,10 @@
             box-shadow: none !important;
             background: none;
           }
+        }
+
+        &:last-of-type{
+          td{border-right-width:2px;}
         }
       }
     }
@@ -98,7 +106,7 @@
   }
 
   // grey Table
-  &.greyTable{background: $gray-100;
+  &.greyTable{background: $gray-950;
     tbody > tr{
       &:last-of-type > td {border:none}
 

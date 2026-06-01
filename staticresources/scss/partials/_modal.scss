@@ -30,10 +30,10 @@
             width: 8px !important;
             }
             &::-webkit-scrollbar-track {
-            background: #f1f1f1 !important;
+            background: $gray-950 !important;
             }
             &::-webkit-scrollbar-thumb {
-            background: #888 !important;
+            background: $primary !important;
             border-radius: 4px !important;
             }
         }
