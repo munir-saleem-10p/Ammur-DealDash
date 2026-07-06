@@ -5,14 +5,14 @@
 
     thead{
       > tr{
-        > th{background-color: $gray-950; font-size:toRem(12); font-weight: $font-weight-semibold; text-transform: uppercase; letter-spacing: toRem(0.48); padding: toRem(14) toRem(12);
+        > th{background-color: $gray-950; font-size:toRem(12); font-weight: $font-weight-semibold; text-transform: uppercase; letter-spacing: toRem(0.48); padding: toRem(14) toRem(12); text-align:center;
           > div{color: $black !important;}
         }
       }
     }
     tbody{
       > tr {
-        td{font-size: toRem(14); line-height: normal; font-weight: $font-weight-normal; padding: toRem(14) toRem(12); border-bottom:toRem(1) $gray-950 solid; border-top: none;
+        td{font-size: toRem(14); line-height: normal; font-weight: $font-weight-normal; padding: toRem(14) toRem(12); border-bottom:toRem(1) $gray-950 solid; border-top: none; text-align: center;
           
           &:first-of-type{
             border-left:2px $gray-950 solid;
