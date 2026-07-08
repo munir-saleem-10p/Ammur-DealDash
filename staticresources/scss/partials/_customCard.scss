@@ -14,6 +14,22 @@
     }
 }
 
+.greyCard{
+    &.slds-card{@extend .brd-12; border: 1px var(--card-body-border-color, $gray-800) solid; overflow: hidden;
+        > .slds-card__header{background: var(--card-header-background-color, $gray-800); padding: 0; margin: 0;
+            @extend .py-16px; @extend .px-20px; border-bottom: 1px var(--card-header-border-color, $gray-800) solid;
+
+            .slds-card__header-title{
+                color:var(--card-header-font-color, $gray-310); @extend .h5;
+            }
+        }
+        > .slds-card__body{margin-bottom: 16px;}
+        > .slds-card__footer{padding: 16px 0 0; margin: 0; text-align: unset;
+             border-top: 1px var(--card-footer-border-color, $gray-700) solid;
+        }
+    }
+}
+
 .aicCard{
     .slds-card {
         border: 1px var(--infoTileBorder, $gray-700) solid; border-radius: 12px;
