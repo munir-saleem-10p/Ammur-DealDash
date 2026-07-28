@@ -54,3 +54,19 @@
     }
     //simple Modal [END]
 }
+
+.loaderSpinner {
+  background: url("./../images/ico-loading.svg") no-repeat center center;
+  display: inline-block;
+  width: 53px;
+  height: 53px;
+  position: relative;
+  animation: rotation 0.75s linear infinite;
+  border-radius: 100em;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
