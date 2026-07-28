@@ -111,6 +111,7 @@ $icoCircleSuccess: url("./../images/ico-circle-success.svg");
 $icoCircleWarning: url("./../images/ico-circle-warning.svg");
 $icoCircleInfo2: url("./../images/ico-circle-info2.svg");
 $icoCircleAlert: url("./../images/ico-circle-alert.svg");
+$icoLoading: url("./../images/ico-loading.svg");
 
 
 $icons: (
@@ -221,5 +222,6 @@ $icons: (
   'icoTractor' : $icoTractor,
   'icoCopy' : $icoCopy,
   'icoPriceCards': $icoPriceCards,
-  'icoAi' : $icoAi
+  'icoAi' : $icoAi,
+  'icoLoading' : $icoLoading,
 );
