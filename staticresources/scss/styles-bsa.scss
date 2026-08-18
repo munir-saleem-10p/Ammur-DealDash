@@ -6,11 +6,14 @@
 @import './mixins';
 @import './variables';
 
+// resetting main wrapper class
+$mainWrapperClass : ".bsaWrapper";
+
 @import './partials/_fonts';
 @import './partials/_general';
 
 // // Main Layout
-@import './partials/mainLayout';
+// @import './partials/mainLayout';
 
 @include generate-root-color($theme-colors);
 
@@ -60,10 +63,10 @@
     @import './partials/badges';
 
     // // SlDS Table
-    @import './partials/_slds-table.scss';
+    @import './partials/_slds-table';
 
     //Grid Table
-    // @import './partials/_gridTable';
+    @import './partials/_gridTable';
 
     // // Headers
     // @import './partials/header';
@@ -96,7 +99,7 @@
     @import './partials/_customCard';
 
     // // Info Tile
-    @import './partials/_infoTile';
+    // @import './partials/_infoTile';
 
     // ===============
 

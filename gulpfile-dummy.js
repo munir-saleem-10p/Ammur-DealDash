@@ -6,12 +6,17 @@ const cssnano = require("cssnano");
 // const autoprefixer = require("autoprefixer");
 
 const paths = {
-  scss: "./staticresources/scss/styles.scss",
+  scss: {
+	  "dddev": "./staticresources/scss/styles.scss",
+	  "bsadev": "./staticresources/scss/styles-bsa.scss",
+	  
+	},
   brandCss: "./staticresources/scss/brandColors.css",
   watch: "./staticresources/scss/**/*.{scss,css}",
-  
+	
   output: {
 	"dddev": "./../dealDash-dev/force-app/main/default/staticresources/DealDashAssets/css",
+	"bsadev": "./../../deal-coach/dealCoach-dev/force-app/main/default/staticresources/AMUR_BankStatementAssets/css",
   },
 };
 
@@ -36,7 +41,7 @@ function copyBrandCss(outputDir) {
 //portal scss task
 function createSassTask(env) {
   return function sassTask() {
-    return compileSass(paths.scss, paths.output[env]);
+    return compileSass(paths.scss[env], paths.output[env]);
   };
 }
 
@@ -59,4 +64,7 @@ function createWatchTask(env) {
 //exports.ptl_poc = series(createSassTask("poc"), createWatchTask("poc"));
 //exports.ptl_dev = series(createSassTask("dev"), createWatchTask("dev"));
 //exports.ptl_dcdev = series(createSassTask("dcdev"), createWatchTask("dcdev"));
+
 exports.ptl_dddev = series(createSassTask("dddev"), createBrandCssTask("dddev"), createWatchTask("dddev"));
+
+exports.ptl_bsadev = series(createSassTask("bsadev"), createBrandCssTask("bsadev"), createWatchTask("bsadev"));

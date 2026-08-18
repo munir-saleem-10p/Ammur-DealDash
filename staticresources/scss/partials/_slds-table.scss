@@ -1,3 +1,4 @@
+@use "sass:map";
 // Slds Table [Start]
 .slds-table{
   // lightTable
@@ -112,7 +113,7 @@
 
       > td{border-bottom-color: rgba($black, 0.1);} 
     }
-  } 
+  }
 
   // Responsive Table
   &.responsive-table{
@@ -124,6 +125,10 @@
         }
       }
     }
+  }
+
+  .col-divider{
+    border-left: 1px solid $gray-650;
   }
 }
 // Slds Table [END]
