@@ -1,0 +1,72 @@
+// Grid Table [Start]
+.gridTable{
+  background: var(--dd-white);
+  border: 1px solid var(--dd-grey-650);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .header-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--dd-primary-150);
+    color: var(--dd-white);
+  }
+  .head-cell {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 12px;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  /* --- THE ENTIRE TRICK, PURE CSS --- */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, auto);
+    break-inside: avoid;
+  }
+
+  .cell {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 12px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--dd-grey-650);
+    align-items: start;
+
+
+
+  //   .cell:nth-child(odd)  { background: var(--dd-white); }
+  // .cell:nth-child(even) { background: var(--dd-primary-800); }
+  
+
+    &:nth-child(7n+1), &:nth-child(7n+3),
+    &:nth-child(7n+5), &:nth-child(7n+7) { background: var(--dd-primary-800); }
+
+    &:nth-child(7n+2), &:nth-child(7n+4),
+    &:nth-child(7n+6) { background: var(--dd-white); }
+
+  }
+
+  .field { font-weight: 700; }
+  .summary { color: var(--muted); font-size: 14px; line-height: 1.4; }
+  .summary-link {
+      color: var(--dd-primary-800);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+  }
+  .summary-link:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    .grid { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+    .header-row { grid-template-columns: 1fr; }
+    .head-cell:last-child { display: none; }
+  }
+}
+// Grid Table [END]

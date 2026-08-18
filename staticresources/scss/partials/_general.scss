@@ -357,10 +357,10 @@ input::-ms-clear {
       content: "";
       background-color: currentColor;
       @include square(1em);
-      mask: no-repeat center center;
-      mask-size: contain;
       -webkit-mask: no-repeat center center;
+      mask: no-repeat center center;
       -webkit-mask-size: contain;
+      mask-size: contain;
       display: block;
   }
 }
