@@ -69,7 +69,7 @@ $bt-accent: (
 // sample color set 2 [END]
 
 // scss-docs-start gray-color-variables
-$white: #fff;
+$white: var(--dd-whiteColor);
 $gray-100: var(--dd-grey-100);
 $gray-150: var(--dd-grey-150);
 $gray-200: var(--dd-grey-200);
@@ -85,7 +85,7 @@ $gray-800: var(--dd-grey-800);
 $gray-900: var(--dd-grey-900);
 $gray-950: var(--dd-grey-950);
 $gray-960: var(--dd-grey-960);
-$black: #000;
+$black: var(--dd-blackColor);
 
 
 // $gray-100: var(--dd-grey-100);
