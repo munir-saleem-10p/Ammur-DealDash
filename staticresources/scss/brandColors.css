@@ -18,6 +18,7 @@
     --dd-primary-700: #D4FCA9;
     --dd-primary-800: #EDFADB;
     --dd-primary-900: #F7FFF0;
+    --dd-primary-950: #F7FAF6;
 
 
     /* secondary shades group */
@@ -38,6 +39,7 @@
 
 
     /* gray shades group */
+     --dd-whiteColor: #ffffff;
     --dd-grey-100: #1A1818;
     --dd-grey-150: #000101;
     --dd-grey-200: #2E2E2E;
@@ -55,6 +57,7 @@
     --dd-grey-900: #FFFFFF;
     --dd-grey-950: #F3F3F3;
     --dd-grey-960: #FBFBFB;
+     --dd-blackColor: #000000;
 
 
     /* ============================= */

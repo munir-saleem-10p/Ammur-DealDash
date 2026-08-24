@@ -8,4 +8,25 @@
       }
     }
   }
+
+  // outline help icon
+  &.outlineHelpIcon{
+    lightning-helptext{
+      .slds-button{
+        background: none;
+        width: 16px;
+        height: 16px;
+        border: none;
+        padding: 0;
+
+        @extend .amr-icon;
+        @extend .icon-icoCircleInfo;
+        &:before{
+          background: $white;
+          opacity: 0.55;
+        }
+      }
+      lightning-primitive-icon{display: none;}
+    }
+  }
 }

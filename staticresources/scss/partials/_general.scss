@@ -1,7 +1,7 @@
 @use "sass:map";
-:root{
-  // --lwc-varLineHeightText: normal;
-}
+// :root{
+//   // --lwc-varLineHeightText: normal;
+// }
 
 //Global Styles
 *{box-sizing: border-box;}
@@ -112,7 +112,12 @@ height: 100% !important;
 
 .whitespace-normal{white-space: normal;}
 .whitespace-nowrap{white-space: nowrap;}
-.whitespace-break-spaces{white-space: break-spaces;}
+.whitespace-break-spaces{
+  white-space: -moz-pre-wrap;
+  white-space: -webkit-pre-wrap;
+  white-space: pre-wrap;
+  white-space: break-spaces;
+}
 
 .img-responsive{max-width: 100%;}
 
@@ -307,6 +312,7 @@ transition: all 0.8s ease-in-out;
       background-color: $gray-100;
       padding: toRem(16);
       justify-content: space-between;
+      -ms-flex-direction: row-reverse;
       flex-direction: row-reverse;
       margin: 0;
       min-height: toRem(52);
@@ -365,7 +371,7 @@ input::-ms-clear {
   }
 }
 .slds-input__icon{
-  .amr-icon{transform: translateY(toRem(-5));}
+  .amr-icon{-ms-transform: translateY(toRem(-5)); transform: translateY(toRem(-5));}
 }
 
 // slds utilities icon
@@ -384,10 +390,12 @@ input::-ms-clear {
   .childItem,
   .whiteBox{margin-bottom:0 !important;
     @media only screen and (min-width: $mq-large){
+      -ms-flex: 1 1 calc(100vw - (50vw + toRem(314)));
       flex: 1 1 calc(100vw - (50vw + toRem(314)));
       min-width: calc(100vw - 70vw);
     }
     @include mq(0, $mq-large){
+      -ms-flex: 1 1 100%;
       flex: 1 1 100%;
       max-width: 100%;
     }
@@ -458,6 +466,7 @@ input::-ms-clear {
 }
 
 .scaleX-flip{
+  -ms-transform: scaleX(-100%);
   transform: scaleX(-100%);
 }
 

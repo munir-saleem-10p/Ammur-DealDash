@@ -73,6 +73,7 @@
     }
   }
 
+  //simple table
   &.simpleTable{    
     background: none;
     tbody{
@@ -115,13 +116,38 @@
     }
   }
 
+  //primary table
+  &.primaryTable{
+    thead > tr > th{
+      background-color: var(--dd-secondary-400);
+      color: var(--dd-white);
+      padding: 8px;
+
+      &:not(:first-of-type){border-left: 1px solid var(--dd-secondary-400) !important;}
+    }
+    tbody > tr{
+      &:nth-child(even){background-color: var(--dd-primary-950);}
+      &:hover{background-color: var(--dd-primary-800);}
+
+      &.is-highlight{background-color: var(--dd-primary-800);
+        &:hover{background-color: var(--dd-primary-700);}
+
+        > td{color: var(--dd-primary-300); font-weight: $font-weight-bold;}
+      }
+
+      > td{padding: 12px 8px;}
+    }
+  }
+
   // Responsive Table
   &.responsive-table{
     thead,
     tbody{
       > tr{
         @include mq(0, $mq-small){
-          display: flex; flex-direction: column; 
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column;
         }
       }
     }
@@ -129,6 +155,9 @@
 
   .col-divider{
     border-left: 1px solid $gray-650;
+  }
+  .td-vertical-align-bottom{
+    vertical-align: bottom;
   }
 }
 // Slds Table [END]
