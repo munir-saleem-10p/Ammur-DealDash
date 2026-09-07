@@ -1,6 +1,17 @@
 // help tooltip
 .customInfo{
- 
+  lightning-helptext{
+    .slds-button{
+        background: none;
+        width: 16px;
+        height: 16px;
+        border: none;
+        padding: 0;
+        -ms-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+  }
+
   &.primaryTooltip{
     lightning-helptext{
       .slds-button{
@@ -13,12 +24,6 @@
   &.outlineHelpIcon{
     lightning-helptext{
       .slds-button{
-        background: none;
-        width: 16px;
-        height: 16px;
-        border: none;
-        padding: 0;
-
         @extend .amr-icon;
         @extend .icon-icoCircleInfo;
         &:before{
