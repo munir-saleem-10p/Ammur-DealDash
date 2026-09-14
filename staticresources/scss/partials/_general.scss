@@ -26,6 +26,20 @@
 
 .text-link-all, .text-link-all a{color:$link-color !important; text-decoration: $link-decoration !important;
   &:hover{color: $link-hover-color !important; text-decoration: $link-hover-decoration !important;}
+
+  &.icoSideArrowUp{
+    a{display: flex; -ms-flex-direction: row-reverse; flex-direction: row-reverse; align-items: center; gap: 4px;
+
+      &::before{
+        @extend .amr-icon;
+        @extend .icon-icoSideArrowUp;
+        color: inherit
+      }
+    }
+  }
+  &.fw-bold a{
+    @extend .fw-bold;
+  }
 }
 
 .text-decoration{
